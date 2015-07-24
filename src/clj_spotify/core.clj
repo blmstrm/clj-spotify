@@ -43,6 +43,7 @@
     (build-new-url "" split-url act-tmplt-keys)
     )))
 
+;TODO - doc string
 (defmacro spotify-api-call
   ""
   [f verb url doc-string]
@@ -129,10 +130,28 @@
     Example: (get-an-artists-related-artists {:id \"4EF5vIcCYKMM61oYOG2Tqa\"} \"BQBw-JtC..._7GvA\")")
 
 ;Browse
-(spotify-api-call get-a-list-of-featured-playlists client/get (str spotify-api-url "browse/featured-playlists") "")
+(spotify-api-call get-a-list-of-featured-playlists client/get (str spotify-api-url "browse/featured-playlists")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    There are no compulsary keys in m, optional keys are :locale, :country, :timestamp, :limit and :offset.
+    :locale is an ISO 639 language code and a ISO 3166-1 alpha-2 country code joined with an underscore.
+    :country is an ISO 3166-1 alpha-2 country code.
+    :timestamp is ISO 8601 formatted timestamp. 
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-list-of-featured-playlists {:locale \"sv_SE\" :country \"SE\" :timestamp \"2015-10-23T09:00:00\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
+
 (spotify-api-call get-a-list-of-new-releases client/get (str spotify-api-url "browse/new-releases") "")
 (spotify-api-call get-a-list-of-categories client/get (str spotify-api-url "browse/categories") "")
-(spotify-api-call get-a-category client/get (str spotify-api-url "browse/categories/category_id") "")
+(spotify-api-call get-a-category client/get (str spotify-api-url "browse/categories/category_id")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :category_id, optional keys are :country and :locale.
+    :category_id has to be a spotify category id.
+    :country is an ISO 3166-1 alpha-2 country code.
+    :locale is an ISO 639 language code and a ISO 3166-1 alpha-2 country code joined with an underscore.
+
+    Example: (get-a-category {:category_id \"dinner\" :country \"SE\" :locale \"sv_SE\"} \"BQBw-JtC..._7GvA\")")
+
 (spotify-api-call get-a-categorys-playlists client/get (str spotify-api-url "browse/categories/category_id/playlists") "")
 
 ;Follow
