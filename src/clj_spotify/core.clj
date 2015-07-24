@@ -87,12 +87,12 @@
     Example: (get-tracks-of-album {:id \"3XCGFOBqESirxxICswSity\" :market \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
 
 ;Artists
-(spotify-api-call get-artist client/get (str spotify-api-url "artists/id")
+(spotify-api-call get-an-artist client/get (str spotify-api-url "artists/id")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
     Compulsory key in m is :id.
     :id has to have the value of an existing artist's id.
 
-    Example: (get-artist {:id \"5CE2IfdYZEQGIDsfiRm8SI\"} \"BQBw-JtC..._7GvA\")")
+    Example: (get-an-artist {:id \"5CE2IfdYZEQGIDsfiRm8SI\"} \"BQBw-JtC..._7GvA\")")
 
 (spotify-api-call get-several-artists client/get (str spotify-api-url "artists") 
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
@@ -101,9 +101,32 @@
 
     Example: (get-several-artists {:ids \"1kK2LYgoP3raZNngbb1qMT,2RitCPbwEYyYNw5LkbXTGv\"} \"BQBw-JtC..._7GvA\")")
 
-(spotify-api-call get-artists-albums client/get (str spotify-api-url "artists/id/albums") "")
-(spotify-api-call get-artists-top-tracks client/get (str spotify-api-url "artists/id/top-tracks") "")
-(spotify-api-call get-artists-related-artists client/get (str spotify-api-url "artists/id/related-artists") "")
+(spotify-api-call get-an-artists-albums client/get (str spotify-api-url "artists/id/albums")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :id, optional keys are :album_type, :market, :limit and :offset.
+    :id has to have the value of an existing artist's id.
+    :album_type a comma-separated list of one or several of the following:
+     album, single, appears_on and compilation. Default is to query for all types.
+    :market is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-an-artists-albums {:id \"7lOJ7WXyopaxri0dbOiZkd\" :album_type \"album, single\" :market \"SE\" :limit 50 :offset 50}} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call get-an-artists-top-tracks client/get (str spotify-api-url "artists/id/top-tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in m are :id and :country.
+    :id has to be a spotify artist id.
+    :country is an ISO 3166-1 alpha-2 country code.
+
+    Example: (get-an-artists-top-tracks {:id \"7hCsRnXtcbez8msLPfjbkz\" :country \"SE\"} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call get-an-artists-related-artists client/get (str spotify-api-url "artists/id/related-artists")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :id.
+    :id has to be a spotify artist id.
+
+    Example: (get-an-artists-related-artists {:id \"4EF5vIcCYKMM61oYOG2Tqa\"} \"BQBw-JtC..._7GvA\")")
 
 ;Browse
 (spotify-api-call get-a-list-of-featured-playlists client/get (str spotify-api-url "browse/featured-playlists") "")
