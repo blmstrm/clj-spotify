@@ -141,8 +141,24 @@
 
     Example: (get-a-list-of-featured-playlists {:locale \"sv_SE\" :country \"SE\" :timestamp \"2015-10-23T09:00:00\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
 
-(spotify-api-call get-a-list-of-new-releases client/get (str spotify-api-url "browse/new-releases") "")
-(spotify-api-call get-a-list-of-categories client/get (str spotify-api-url "browse/categories") "")
+(spotify-api-call get-a-list-of-new-releases client/get (str spotify-api-url "browse/new-releases")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    There are no compulsary keys in m, optional keys are :country, :limit and :offset.
+    :country is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-list-of-new-releases {:country \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call get-a-list-of-categories client/get (str spotify-api-url "browse/categories")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    There are no compulsary keys in m, optional keys are :country, :limit and :offset.
+    :country is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-list-of-categories {:country \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
+
 (spotify-api-call get-a-category client/get (str spotify-api-url "browse/categories/category_id")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
     Compulsory key in m is :category_id, optional keys are :country and :locale.
@@ -152,7 +168,15 @@
 
     Example: (get-a-category {:category_id \"dinner\" :country \"SE\" :locale \"sv_SE\"} \"BQBw-JtC..._7GvA\")")
 
-(spotify-api-call get-a-categorys-playlists client/get (str spotify-api-url "browse/categories/category_id/playlists") "")
+(spotify-api-call get-a-categorys-playlists client/get (str spotify-api-url "browse/categories/category_id/playlists") 
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :category_id, optional keys are :country, :limit and :offset.
+    :category_id has to be a spotify category id.
+    :country is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-categorys-playlist {:category_id \"dinner\" :country \"SE\" :locale \"sv_SE\"} \"BQBw-JtC..._7GvA\") ")
 
 ;Follow
 (spotify-api-call get-users-followed-artists client/get (str spotify-api-url "me/following") "")
