@@ -43,7 +43,7 @@
     (build-new-url "" split-url act-tmplt-keys)
     )))
 
-;TODO - doc string
+;TODO - better doc string
 (defmacro spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
   [f verb url doc-string]
@@ -204,16 +204,70 @@
 
     Example: (unfollow-artists-or-users {:type \"artist\" :ids \"0uCCBpmg6MrPb1KY2msceF,1WsMRWV5KEC2AxpYkeb2Cf\" } \"BQBw-JtC..._7GvA\")")
 
-(spotify-api-call user-following-artists-or-users? client/get (str spotify-api-url "me/following/contains") "")
-(spotify-api-call follow-a-playlist client/put (str spotify-api-url "users/owner_id/playlists/playlist_id/followers") "")
-(spotify-api-call unfollow-a-playlist client/delete (str spotify-api-url "users/owner_id/playlists/playlist_id/followers") "")
-(spotify-api-call user-following-playlist? client/get (str spotify-api-url "users/owner_id/playlists/playlist_id/followers/contains") "")
+(spotify-api-call user-following-artists-or-users? client/get (str spotify-api-url "me/following/contains")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :type and :ids.
+    :type has to be set to \"artist\" or \"user\".
+    :ids has to be a comma separated list of users or artists. 
+
+    Example: (user-following-artists-or-users? {:type \"artist\" :ids \"3H6Js0rhywEhHda3UwuhGW,4r8bVMyYyGyARs9OfBvyj4\" } \"BQBw-JtC..._7GvA\")")
+
+;TODO - public:true in request body.
+(spotify-api-call follow-a-playlist client/put (str spotify-api-url "users/owner_id/playlists/playlist_id/followers")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in m are :owner_id and :playlist_id.
+    :owner_id has to be the spotify user id of the user owning the playlist.
+    :playlist_id the spotify playlist id. 
+
+    Example: (follow-a-playlist {:owner_id \"sondre_lerche\" :playlist_id \"7q8QuE0YbAgbvzR0NJVwV8\" } \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call unfollow-a-playlist client/delete (str spotify-api-url "users/owner_id/playlists/playlist_id/followers")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in m are :owner_id and :playlist_id.
+    :owner_id has to be the spotify user id of the user owning the playlist.
+    :playlist_id the spotify playlist id. 
+
+    Example: (unfollow-a-playlist {:owner_id \"ulyssestone\" :playlist_id \"3WG4abOpUpocexRakPioAg\" } \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call user-following-playlist? client/get (str spotify-api-url "users/owner_id/playlists/playlist_id/followers/contains")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in m are :owner_id and :playlist_id.
+    :owner_id has to be the spotify user id of the user owning the playlist.
+    :playlist_id the spotify playlist id. 
+
+    Example: (user-following-playlist? {:owner_id \"lecowboy\" :playlist_id \"2PftXV7dgcxFjMWe75GuSG\" } \"BQBw-JtC..._7GvA\")")
 
 ;Library
-(spotify-api-call save-tracks-for-user client/put (str spotify-api-url "me/tracks") "")
-(spotify-api-call get-users-saved-tracks client/get (str spotify-api-url "me/tracks") "")
-(spotify-api-call remove-users-saved-tracks client/delete (str spotify-api-url "me/tracks") "")
-(spotify-api-call check-users-saved-tracks client/get (str spotify-api-url "me/tracks/contains") "")
+(spotify-api-call save-tracks-for-user client/put (str spotify-api-url "me/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :ids.
+    :ids has to be a comma separated list of spotify track ids.
+
+    Example: (save-tracks-for-user {:ids \"3BSpuy2yHhoEazfXVU7WGq,0BcaWLANkstu2v9kghrCAj\"} \"BQBw-JtC..._7GvA\")")
+                                                                    
+(spotify-api-call get-users-saved-tracks client/get (str spotify-api-url "me/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    There are no compulsory keys in m, optional keys are :market, :limit and :offset.
+    :market is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-users-saved-tracks {:market \"SE\" :limit 50 :offset 50}} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call remove-users-saved-tracks client/delete (str spotify-api-url "me/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :ids.
+    :ids has to be a comma separated list of spotify track ids.
+
+    Example: (remove-users-saved-tracks {:ids \"1RyZgkIghj1eL2U1zlYOoE,6NwbeybX6TDtXlpXvnUOZC\"} \"BQBw-JtC..._7GvA\")")
+
+;TODO - better name for this function
+(spotify-api-call check-users-saved-tracks client/get (str spotify-api-url "me/tracks/contains")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :ids.
+    :ids has to be a comma separated list of spotify track ids.
+
+    Example: (check-users-saved-tracks {:ids \"28nlyt9KhVZQ0lGQsg8Yht,09ZGF6mwJVzw5jxqbtT53E\"} \"BQBw-JtC..._7GvA\")")
 
 ;Playlists
 (spotify-api-call get-a-list-of-a-users-playlists client/get (str spotify-api-url "users/user_id/playlists") "")
