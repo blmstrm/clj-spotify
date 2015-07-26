@@ -45,7 +45,7 @@
 
 ;TODO - doc string
 (defmacro spotify-api-call
-  ""
+  "Creates a function f with doc-string d that calls the http-verb verb for url url."
   [f verb url doc-string]
   `(defn ~f 
      ~doc-string
@@ -176,12 +176,34 @@
     :limit is the maxium number of tracks to return, default is 20.
     :offset is the index of the first track to return, default is 0.
 
-    Example: (get-a-categorys-playlist {:category_id \"dinner\" :country \"SE\" :locale \"sv_SE\"} \"BQBw-JtC..._7GvA\") ")
+    Example: (get-a-categorys-playlist {:category_id \"dinner\" :country \"SE\" :locale \"sv_SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\") ")
 
 ;Follow
-(spotify-api-call get-users-followed-artists client/get (str spotify-api-url "me/following") "")
-(spotify-api-call follow-artists-or-users client/put (str spotify-api-url "me/following") "")
-(spotify-api-call unfollow-artists-or-users client/delete (str spotify-api-url "me/following") "")
+(spotify-api-call get-users-followed-artists client/get (str spotify-api-url "me/following")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :type, optional keys are :limit and :after.
+    :type has to be set to \"artist\".
+    :limit is the maxium number of items to return, default is 20.
+    :after the last artist id retrieved from a previous request. Use this to get next set of artists.
+
+    Example: (get-users-followed-artists {:type \"artist\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\") ")
+
+(spotify-api-call follow-artists-or-users client/put (str spotify-api-url "me/following")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :type and :ids.
+    :type has to be set to \"artist\" or \"user\".
+    :ids has to be a comma separated list of users or artists. 
+
+    Example: (follow-artists-or-users {:type \"artist\" :ids \"2933wDUojoQmvqSdTAE5NB,1AUCkAIfT6Ig8lOegDGK3Z\" } \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call unfollow-artists-or-users client/delete (str spotify-api-url "me/following")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :type and :ids.
+    :type has to be set to \"artist\" or \"user\".
+    :ids has to be a comma separated list of users or artists. 
+
+    Example: (unfollow-artists-or-users {:type \"artist\" :ids \"0uCCBpmg6MrPb1KY2msceF,1WsMRWV5KEC2AxpYkeb2Cf\" } \"BQBw-JtC..._7GvA\")")
+
 (spotify-api-call user-following-artists-or-users? client/get (str spotify-api-url "me/following/contains") "")
 (spotify-api-call follow-a-playlist client/put (str spotify-api-url "users/owner_id/playlists/playlist_id/followers") "")
 (spotify-api-call unfollow-a-playlist client/delete (str spotify-api-url "users/owner_id/playlists/playlist_id/followers") "")
@@ -214,3 +236,4 @@
 ;Tracks
 (spotify-api-call get-a-track client/get (str spotify-api-url "tracks/id") "")
 (spotify-api-call get-several-tracks client/get (str spotify-api-url "tracks") "")
+
