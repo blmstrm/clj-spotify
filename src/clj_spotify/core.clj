@@ -61,13 +61,13 @@
           )))))
 
 ;Albums
-(spotify-api-call get-album client/get (str spotify-api-url "albums/id")
+(spotify-api-call get-an-album client/get (str spotify-api-url "albums/id")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
     Compulsory key in m is :id, optional key is :market.
     :id has to have the value of an existing album's id.
     :market is an ISO 3166-1 alpha-2 country code.
 
-    Example: (get-album {:id \"0MnG7y5F1n4Wns63RjEItx\" :market \"SE\"} \"BQBw-JtC..._7GvA\")")
+    Example: (get-an-album {:id \"0MnG7y5F1n4Wns63RjEItx\" :market \"SE\"} \"BQBw-JtC..._7GvA\")")
 
 (spotify-api-call get-several-albums client/get (str spotify-api-url "albums")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
@@ -281,13 +281,44 @@
 (spotify-api-call change-a-playlists-details client/put (str spotify-api-url "users/user_id/playlists/playlist_id") "")
 
 ;Profiles
-(spotify-api-call get-a-users-profile client/get (str spotify-api-url "users/user_id") "")
-(spotify-api-call get-current-users-profile client/get (str spotify-api-url "me") "")
+(spotify-api-call get-a-users-profile client/get (str spotify-api-url "users/user_id")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :user_id.
+    :user_id has to be a spotify user id.
+
+    Example: (get-a-users-profile {:user_id \"elkalel\"} \"BQBw-JtC..._7GvA\")")
+
+;TODO - what happens when map is not present or nil?
+(spotify-api-call get-current-users-profile client/get (str spotify-api-url "me") 
+" Takes an oauth-token t.
+
+    Example: (get-current-users-profile {} \"BQBw-JtC..._7GvA\")") 
 
 ;Search
-(spotify-api-call search client/get (str spotify-api-url "search") "")
+(spotify-api-call search client/get (str spotify-api-url "search")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in m are :q and :type, optional keys are :market, :limit and :offset.
+    :q is the search string.
+    :type is a comma separated list of items types to search for, album, artist, playlist and track.
+    :market is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (search {:q \"Gerry Rafferty\" :type \"artist\"  :market \"SE\" :limit 50 :offset 50}} \"BQBw-JtC..._7GvA\")")
 
 ;Tracks
-(spotify-api-call get-a-track client/get (str spotify-api-url "tracks/id") "")
-(spotify-api-call get-several-tracks client/get (str spotify-api-url "tracks") "")
+(spotify-api-call get-a-track client/get (str spotify-api-url "tracks/id") 
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :id, optional key is :market.
+    :id has to have the value of an existing track's id.
+    :market is an ISO 3166-1 alpha-2 country code.
 
+    Example: (get-a-track {:id \"3BEmmHuv5jm0tbCUVI6ceD\" :market \"SE\"} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call get-several-tracks client/get (str spotify-api-url "tracks") 
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m is :ids, optional key is :market.
+    :ids has to be a comma separated string of spotify track ids.
+    :market is an ISO 3166-1 alpha-2 country code.
+
+    Example: (get-several-tracks {:ids \"2Dlo9QsN9ohaz9kASYkKmv,6XYvLpqJFebcjnOTolwkGw\" :market \"SE\"} \"BQBw-JtC..._7GvA\")")
