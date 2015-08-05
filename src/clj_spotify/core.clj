@@ -9,6 +9,7 @@
 
 (def spotify-api-url "https://api.spotify.com/v1/")
 
+;TODO - add http response header type as meta-data.
 (defn response-to-map
   "Parse body of http respose to json"
   [response]
@@ -44,6 +45,7 @@
     )))
 
 ;TODO - better doc string
+;TODO - rename to def-spotify-api-call
 (defmacro spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
   [f verb url doc-string]
@@ -59,6 +61,8 @@
             )
           (response-to-map)
           )))))
+
+;TODO - Replace all comma separated strings with maps?
 
 ;Albums
 (spotify-api-call get-an-album client/get (str spotify-api-url "albums/id")
@@ -270,8 +274,29 @@
     Example: (check-users-saved-tracks {:ids \"28nlyt9KhVZQ0lGQsg8Yht,09ZGF6mwJVzw5jxqbtT53E\"} \"BQBw-JtC..._7GvA\")")
 
 ;Playlists
-(spotify-api-call get-a-list-of-a-users-playlists client/get (str spotify-api-url "users/user_id/playlists") "")
-(spotify-api-call get-a-playlist client/get (str spotify-api-url "users/user_id/playlists/playlist_id") "")
+(spotify-api-call get-a-list-of-a-users-playlists client/get (str spotify-api-url "users/user_id/playlists")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in  m is :user_id, optional keys are :limit and :offset.
+    :user_id is the users spotify id.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-list-of-a-users-playlists {:user_id \"elkalel\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
+
+;TODO - Can you pass :limit and :offset here? Let's assume you can.
+;TODO - Change this fields string to be a map?
+(spotify-api-call get-a-playlist client/get (str spotify-api-url "users/user_id/playlists/playlist_id")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in  m is :user_id and :playlist_id, optional keys are :fields, :market, :limit and :ffset.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :fields is a comma-separated string of fields to return from the playlist.
+     See developer.spotify.com for a full list of field names.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\":limit 50 :offset 50} \"BQBw-JtC..._7GvA\")  ")
+
 (spotify-api-call get-a-playlists-tracks client/get (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
 (spotify-api-call create-a-playlist client/post (str spotify-api-url "users/user_id/playlists") "")
 (spotify-api-call add-tracks-to-a-playlist client/post (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
