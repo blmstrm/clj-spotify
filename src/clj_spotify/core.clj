@@ -46,6 +46,7 @@
 
 ;TODO - better doc string
 ;TODO - rename to def-spotify-api-call
+;TODO - Maybe change everything to be sent through request body?
 (defmacro spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
   [f verb url doc-string]
@@ -287,23 +288,96 @@
 ;TODO - Change this fields string to be a map?
 (spotify-api-call get-a-playlist client/get (str spotify-api-url "users/user_id/playlists/playlist_id")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
-    Compulsory key in  m is :user_id and :playlist_id, optional keys are :fields, :market, :limit and :ffset.
+    Compulsory keys in  m are :user_id and :playlist_id, optional keys are :fields, :market, :limit and :offset.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :fields is a comma-separated string of fields to return from the playlist.
+     See developer.spotify.com for a full list of field names.
+    :market is an ISO 3166-1 alpha-2 country code.
+    :limit is the maxium number of tracks to return, default is 20.
+    :offset is the index of the first track to return, default is 0.
+
+    Example: (get-a-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\" :market \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call get-a-playlists-tracks client/get (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in  m are :user_id and :playlist_id, optional keys are :fields, :limit and :offset and :market.
     :user_id is the users spotify id.
     :playlist_id is the playlist spotify id.
     :fields is a comma-separated string of fields to return from the playlist.
      See developer.spotify.com for a full list of field names.
     :limit is the maxium number of tracks to return, default is 20.
     :offset is the index of the first track to return, default is 0.
+    :market is an ISO 3166-1 alpha-2 country code.
 
-    Example: (get-a-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\":limit 50 :offset 50} \"BQBw-JtC..._7GvA\")  ")
+    Example: (get-a-playlists-tracks {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\":limit 50 :offset 50 :market \"SE\"} \"BQBw-JtC..._7GvA\")")
 
-(spotify-api-call get-a-playlists-tracks client/get (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
-(spotify-api-call create-a-playlist client/post (str spotify-api-url "users/user_id/playlists") "")
-(spotify-api-call add-tracks-to-a-playlist client/post (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
-(spotify-api-call remove-tracks-from-a-playlist client/delete (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
-(spotify-api-call reorder-a-playlists-tracks client/put (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
-(spotify-api-call replace-a-playlists-tracks client/put (str spotify-api-url "users/user_id/playlists/playlist_id/tracks") "")
-(spotify-api-call change-a-playlists-details client/put (str spotify-api-url "users/user_id/playlists/playlist_id") "")
+;TODO - Deal with request body data for values of :name and :public.
+(spotify-api-call create-a-playlist client/post (str spotify-api-url "users/user_id/playlists")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory keys in m are :user_id and :name, optional key is :public.
+    :user_id is the users spotify id.
+    :name is the name for the new playlist.
+    :public is set to true if a playlist should be public and false if not.
+
+    Example: (create-a-playlist {:user_id \"elkalel\" :name \"The songs you didn't know you liked.\" :public true} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call add-tracks-to-a-playlist client/post (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m are :user_id and :playlist_id, optional keys are :uris and :position.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :uris a list of spotify track uris.
+    :position the position to insert the tracks. 
+
+    Example: (add-tracks-to-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :uris \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh,
+spotify:track:1301WleyT98MSxVHPZCA6M\" :position 2} \"BQBw-JtC..._7GvA\")")
+
+;TODO - Deal with request body data, very nescessary here.
+;TODO - Deal with correct formatting of :tracks. 
+;TODO - Additional doc string with optional and required values in :tracks.
+(spotify-api-call remove-tracks-from-a-playlist client/delete (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m are :user_id, :playlist_id and :tracks, optional keys is :snapshot_id.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :tracks an array of objects containing spotify URI strings and corresponding position maps.
+    :snapshot_id a playlist snapshot ID.
+     See the spotify developer API for the logic behind deleting tracks.
+
+    Example: (remove-tracks-from-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :tracks [{:uri \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\", :positions [2]} {:uri \"spotify:track:1301WleyT98MSxVHPZCA6M\", :positions [7]}]}  \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call reorder-a-playlists-tracks client/put (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m are :user_id, :playlist_id, :range_start and :insert_before, optional keys are :range_length and :snapshot_id.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :range_start the position of the first track to be reordered.
+    :insert_before the positions where the tracks should be inserted.
+    :range_length the amount of tracks to be reordered.
+    :snapshot_id a playlist snapshot ID.
+
+    Example: (reorder-a-playlists-tracks {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :range_start 1 :range_length 2 :insert_before 3} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call replace-a-playlists-tracks client/put (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m are :user_id and :playlist_id, optional keys are :uris and :position.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :uris a list of spotify track uris.
+
+    Example: (replace-a-playlists-tracks {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :uris \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh,
+spotify:track:1301WleyT98MSxVHPZCA6M\"} \"BQBw-JtC..._7GvA\")")
+
+(spotify-api-call change-a-playlists-details client/put (str spotify-api-url "users/user_id/playlists/playlist_id")
+" Takes two arguments, a map m with query parameters and an optional oauth-token t.
+    Compulsory key in m are :user_id and :playlist_id, optional keys are :name and :public.
+    :user_id is the users spotify id.
+    :playlist_id is the playlist spotify id.
+    :name is the name for the new playlist.
+    :public is set to true if a playlist should be public and false if not.
+
+    Example: (change-a-playlists-details {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :name \"Fantastic playlist\" :public true} \"BQBw-JtC..._7GvA\")")
 
 ;Profiles
 (spotify-api-call get-a-users-profile client/get (str spotify-api-url "users/user_id")
