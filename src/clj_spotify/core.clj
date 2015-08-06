@@ -9,15 +9,15 @@
 
 (def spotify-api-url "https://api.spotify.com/v1/")
 
-;TODO - add http response header type as meta-data.
 (defn response-to-map
   "Parse body of http respose to json"
   [response]
+  (with-meta
   (try
     (json/read-str (:body response) :key-fn keyword)
     (catch java.lang.NullPointerException e {:error {:status "NullPointerException"  :message (.getMessage e)}})
     (catch Exception e {:error {:status "Exception"  :message (.getMessage e)}})
-    )
+    ) {:status (:status response)})
   )
 
 (defn- build-new-url
@@ -45,7 +45,6 @@
     )))
 
 ;TODO - better doc string
-;TODO - Maybe change everything to be sent through request body?
 (defmacro def-spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
   [f verb url doc-string]
@@ -53,7 +52,7 @@
      ~doc-string
      ([m#] (~f m# nil))
      ([m# t#]
-      (let [query-params# {:query-params (apply dissoc m# template-keys) :oauth-token t#}]
+      (let [query-params# {:form-params (apply dissoc m# template-keys) :oauth-token t# :content-type :json}]
         (->
           (try
             (~verb (replace-url-values m# ~url) query-params#)
@@ -62,8 +61,7 @@
           (response-to-map)
           )))))
 
-;TODO - Replace all comma separated strings with maps?
-
+;TODO - Replace all comma separated strings with seqs?
 ;Albums
 (def-spotify-api-call get-an-album client/get (str spotify-api-url "albums/id")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
@@ -216,7 +214,6 @@
 
     Example: (user-following-artists-or-users? {:type \"artist\" :ids \"3H6Js0rhywEhHda3UwuhGW,4r8bVMyYyGyARs9OfBvyj4\" } \"BQBw-JtC..._7GvA\")")
 
-;TODO - public:true in request body.
 (def-spotify-api-call follow-a-playlist client/put (str spotify-api-url "users/owner_id/playlists/playlist_id/followers")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
     Compulsory keys in m are :owner_id and :playlist_id.
@@ -283,7 +280,6 @@
 
     Example: (get-a-list-of-a-users-playlists {:user_id \"elkalel\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
 
-;TODO - Can you pass :limit and :offset here? Let's assume you can.
 ;TODO - Change this fields string to be a map?
 (def-spotify-api-call get-a-playlist client/get (str spotify-api-url "users/user_id/playlists/playlist_id")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
@@ -311,7 +307,6 @@
 
     Example: (get-a-playlists-tracks {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\":limit 50 :offset 50 :market \"SE\"} \"BQBw-JtC..._7GvA\")")
 
-;TODO - Deal with request body data for values of :name and :public.
 (def-spotify-api-call create-a-playlist client/post (str spotify-api-url "users/user_id/playlists")
 " Takes two arguments, a map m with query parameters and an optional oauth-token t.
     Compulsory keys in m are :user_id and :name, optional key is :public.
@@ -332,7 +327,6 @@
     Example: (add-tracks-to-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :uris \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh,
 spotify:track:1301WleyT98MSxVHPZCA6M\" :position 2} \"BQBw-JtC..._7GvA\")")
 
-;TODO - Deal with request body data, very nescessary here.
 ;TODO - Deal with correct formatting of :tracks. 
 ;TODO - Additional doc string with optional and required values in :tracks.
 (def-spotify-api-call remove-tracks-from-a-playlist client/delete (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
