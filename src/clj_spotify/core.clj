@@ -45,7 +45,6 @@
     )))
 
 ;TODO - better doc string
-;TODO - rename to def-def-spotify-api-call
 ;TODO - Maybe change everything to be sent through request body?
 (defmacro def-spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
