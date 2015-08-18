@@ -77,6 +77,7 @@
   )
 
 ;TODO - solve json data in request body on put/post etc.
+;       (= "get" (name 'verb)) add one of these for default, put and post.
 ;TODO - better doc string
 (defmacro def-spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
