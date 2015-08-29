@@ -76,8 +76,17 @@
     )
   )
 
-;TODO - solve json data in request body on put/post etc.
-;       (= "get" (name 'verb)) add one of these for default, put and post.
+(defn set-params-type
+  "Return either :query-params or :form-params key depending on value of verb"
+  [verb]
+ (let [verb-type (type verb)] 
+  (if
+    (or (= verb-type clj_http.client$put) (= verb-type clj_http.client$post))
+    :form-params
+    :query-params 
+    ))
+  )
+
 ;TODO - better doc string
 (defmacro def-spotify-api-call
   "Creates a function f with doc-string d that calls the http-verb verb for url url."
@@ -86,7 +95,7 @@
      ~doc-string
      ([m#] (~f m# nil))
      ([m# t#]
-      (let [query-params# {:query-params (modify-form-params m#) :oauth-token t# :content-type :json}]
+      (let [query-params# {(set-params-type ~verb) (modify-form-params m#) :oauth-token t# :content-type :json}]
         (prn query-params#)
         (->
           (try
