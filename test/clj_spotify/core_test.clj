@@ -2,6 +2,10 @@
   (:require [clojure.test :refer :all]
             [clj-spotify.core :refer :all]))
 
+;TODO - Create fixtures for json responses.
+;TODO - Use spotifys client credentials flow to get token to perform tests.
+;TODO - Encrypt client_id,client_secret to use with travis.
+
 (def correct-map {:test-key "test-value" :test-map {:a "a"} :test-vector [1 2 3] :test-null nil})
 
 (def correctly-formatted-response {:body "{\"test-key\": \"test-value\", \"test-map\" : {\"a\": \"a\"}, \"test-vector\" : [1 2 3], \"test-null\" : null}"}) 
