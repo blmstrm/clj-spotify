@@ -47,7 +47,6 @@
 (defn comma-separate
   "If v is a sequence, convert to a comma separated string." 
   [k v]
-  (prn k v)
   (if (or (seq? v) (vector? v))
     [k (string/join "," v)]
     [k v]
@@ -96,7 +95,6 @@
      ([m#] (~f m# nil))
      ([m# t#]
       (let [query-params# {(set-params-type ~verb) (modify-form-params m#) :oauth-token t# :content-type :json}]
-        (prn query-params#)
         (->
           (try
             (~verb (replace-url-values m# ~url) query-params#)

@@ -7,7 +7,11 @@
 ;TODO - Use spotifys client credentials flow to get token to perform tests.
 ;TODO - Encrypt client_id,client_secret to use with travis.
 
-(def album-data-file "./test/clj_spotify/data/album.json")
+(def album-data-file "./test/clj_spotify/test-data/album.json")
+(def albums-data-file "./test/clj_spotify/test-data/albums.json")
+(def track-of-album-data-file "./test/clj_spotify/test-data/tracks-of-album.json")
+(def artist-data-file "./test/clj_spotify/test-data/artist.json")
+(def artists-data-file "./test/clj_spotify/test-data/artists.json")
 
 (defn parse-json [s]
   (json/read-str s :key-fn keyword)
@@ -56,8 +60,41 @@
 
 (deftest test-get-an-album
   (testing "Get a spotify album and verify the json data to be equal to test data in album.json"
-    (let [correct-album-data (parse-json (slurp album-data-file))]
+    (let [correct-test-data (parse-json (slurp album-data-file))]
       
-    (is (= (get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"}) correct-album-data)))
+    (is (= (get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"}) correct-test-data)))
     )
   )
+
+(deftest test-get-several-albums
+  (testing "Get several spotify albums and verify the json data to be equal to test data in albums.json"
+    (let [correct-test-data (parse-json (slurp albums-data-file))]
+      (is (= (get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]}) correct-test-data))
+      )
+    )
+  )
+
+(deftest test-get-tracks-of-an-album
+  (testing "Get the tracks of a spotify album and verify the json data to be equal to test data in tracks-of-an-album.json"
+    (let [correct-test-data (parse-json (slurp track-of-album-data-file))]
+    (is (= (get-tracks-of-album {:id "6akEvsycLGftJxYudPjmqK"}) correct-test-data)))
+    )
+  )
+
+(deftest test-get-an-artist
+  (testing "Get an artist and verify the json data to be equal to test data in artist.json"
+    (let [correct-test-data (parse-json (slurp artist-data-file))]
+      
+    (is (= (get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"}) correct-test-data)))
+    )
+  )
+
+(deftest test-get-several-artists
+  (testing "Get several artists and verify the json data to be equal to test data in artist.json"
+    (let [correct-test-data (parse-json (slurp artists-data-file))]
+      
+    (is (= (get-several-artists {:ids ["0oSGxfWSnnOXhD2fKuz2Gy","3dBVyJ7JuOMt4GE9607Qin"]}) correct-test-data)))
+    )
+  )
+
+
