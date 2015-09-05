@@ -1,10 +1,17 @@
 (ns clj-spotify.core-test
   (:require [clojure.test :refer :all]
-            [clj-spotify.core :refer :all]))
+            [clj-spotify.core :refer :all] [clojure.data.json :as json]
+            ))
 
 ;TODO - Create fixtures for json responses.
 ;TODO - Use spotifys client credentials flow to get token to perform tests.
 ;TODO - Encrypt client_id,client_secret to use with travis.
+
+(def album-data-file "./test/clj_spotify/data/album.json")
+
+(defn parse-json [s]
+  (json/read-str s :key-fn keyword)
+  )
 
 (def correct-map {:test-key "test-value" :test-map {:a "a"} :test-vector [1 2 3] :test-null nil})
 
@@ -44,5 +51,13 @@
     )
   (testing "Call replace-url-values with key in param-map not present in url"
     (is (= test-url (replace-url-values keys-not-present-param-map test-url)))
+    )
+  )
+
+(deftest test-get-an-album
+  (testing "Get a spotify album and verify the json data to be equal to test data in album.json"
+    (let [correct-album-data (parse-json (slurp album-data-file))]
+      
+    (is (= (get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"}) correct-album-data)))
     )
   )
