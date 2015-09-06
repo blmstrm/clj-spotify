@@ -3,10 +3,6 @@
     "external_urls" : {
       "spotify" : "https://open.spotify.com/artist/0oSGxfWSnnOXhD2fKuz2Gy"
     },
-    "followers" : {
-      "href" : null,
-      "total" : 836500
-    },
     "genres" : [ "art rock", "glam rock", "permanent wave" ],
     "href" : "https://api.spotify.com/v1/artists/0oSGxfWSnnOXhD2fKuz2Gy",
     "id" : "0oSGxfWSnnOXhD2fKuz2Gy",
@@ -34,10 +30,6 @@
   }, {
     "external_urls" : {
       "spotify" : "https://open.spotify.com/artist/3dBVyJ7JuOMt4GE9607Qin"
-    },
-    "followers" : {
-      "href" : null,
-      "total" : 75057
     },
     "genres" : [ "glam rock", "protopunk" ],
     "href" : "https://api.spotify.com/v1/artists/3dBVyJ7JuOMt4GE9607Qin",

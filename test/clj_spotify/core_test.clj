@@ -6,6 +6,7 @@
 ;TODO - Create fixtures for json responses.
 ;TODO - Use spotifys client credentials flow to get token to perform tests.
 ;TODO - Encrypt client_id,client_secret to use with travis.
+;TODO - Remove followers key from artist data as it changes over time.
 
 (def album-data-file "./test/clj_spotify/test-data/album.json")
 (def albums-data-file "./test/clj_spotify/test-data/albums.json")
@@ -15,6 +16,11 @@
 
 (defn parse-json [s]
   (json/read-str s :key-fn keyword)
+  )
+
+(defn remove-followers-key
+  [artist]
+  (dissoc artist :followers) 
   )
 
 (def correct-map {:test-key "test-value" :test-map {:a "a"} :test-vector [1 2 3] :test-null nil})
@@ -85,7 +91,7 @@
   (testing "Get an artist and verify the json data to be equal to test data in artist.json"
     (let [correct-test-data (parse-json (slurp artist-data-file))]
       
-    (is (= (get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"}) correct-test-data)))
+    (is (= (dissoc (get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"}) :followers)  correct-test-data)))
     )
   )
 
