@@ -9,12 +9,18 @@
 
 (def spotify-api-url "https://api.spotify.com/v1/")
 
+(defn json-string-to-map
+  "Read string and transform into json"
+  [s]
+  (json/read-str s :key-fn keyword)
+  )
+
 (defn response-to-map
   "Parse body of http respose to json"
   [response]
   (with-meta
   (try
-    (json/read-str (:body response) :key-fn keyword)
+    (json-string-to-map (:body response))
     (catch java.lang.NullPointerException e {:error {:status "NullPointerException"  :message (.getMessage e)}})
     (catch Exception e {:error {:status "Exception"  :message (.getMessage e)}})
     ) {:status (:status response)})
