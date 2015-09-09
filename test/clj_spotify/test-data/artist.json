@@ -2,7 +2,11 @@
   "external_urls" : {
     "spotify" : "https://open.spotify.com/artist/0OdUWJ0sBjDrqHygGUXeCF"
   },
-   "genres" : [ "indie folk", "indie pop" ],
+  "followers" : {
+    "href" : null,
+    "total" : 0
+  },
+  "genres" : [ "indie folk", "indie pop" ],
   "href" : "https://api.spotify.com/v1/artists/0OdUWJ0sBjDrqHygGUXeCF",
   "id" : "0OdUWJ0sBjDrqHygGUXeCF",
   "images" : [ {
@@ -23,7 +27,7 @@
     "width" : 64
   } ],
   "name" : "Band of Horses",
-  "popularity" : 73,
+  "popularity" : 72,
   "type" : "artist",
   "uri" : "spotify:artist:0OdUWJ0sBjDrqHygGUXeCF"
 }
