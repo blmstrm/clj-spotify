@@ -2,6 +2,7 @@
   (:require [clojure.test :refer :all]
             [clj-spotify.core :as sptfy]
             [clojure.data.json :as json]
+            [clojure.data :as data]
             ))
 
 ;TODO - Create fixtures for json responses.
@@ -14,19 +15,22 @@
 (def track-of-album-data-file "./test/clj_spotify/test-data/tracks-of-album.json")
 (def artist-data-file "./test/clj_spotify/test-data/artist.json")
 (def artists-data-file "./test/clj_spotify/test-data/artists.json")
+(def artists-albums-file "./test/clj_spotify/test-data/artists-albums.json")
 
-(defn reset-followers
-  "Function to reset followers to zero in parsed json as this changes all of the time."
+
+(defn reset-volatile-vals
+  "Function to reset values that change over time such as amount of followers or popularity ranking."
   [k v]
-  (if (= k :followers)
-     {:href nil, :total 0}
-     v
-    )
+  (cond
+  (= k :followers){:href nil, :total 0}
+  (= k :popularity) 0
+  :else v
+  )
   )
 
 (defn test-json-string-to-map [s]
   "Read string and transform to json but ignore key :followers"
-  (json/read-str s :value-fn reset-followers :key-fn keyword)
+  (json/read-str s :value-fn reset-volatile-vals :key-fn keyword)
   )
 
 (defn parse-json [s]
@@ -75,41 +79,63 @@
 
 (deftest test-get-an-album
   (testing "Get a spotify album and verify the json data to be equal to test data in album.json"
-    (let [correct-test-data (parse-json (slurp album-data-file))]
-
-      (is (= (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"}) correct-test-data)))
+    ( with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+    (let [correct-test-data (parse-json (slurp album-data-file))
+          differences (data/diff (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"}) correct-test-data)]  
+      (is (= nil (first differences) (second differences)))))
     )
   )
 
 (deftest test-get-several-albums
   (testing "Get several spotify albums and verify the json data to be equal to test data in albums.json"
-    (let [correct-test-data (parse-json (slurp albums-data-file))]
-      (is (= (sptfy/get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]}) correct-test-data))
-      )
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+    (let [correct-test-data (parse-json (slurp albums-data-file))
+          differences (data/diff (sptfy/get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]}) correct-test-data)
+          ]
+      (is (= nil (first differences) (second differences)))
+      ))
     )
   )
 
 (deftest test-get-tracks-of-an-album
   (testing "Get the tracks of a spotify album and verify the json data to be equal to test data in tracks-of-an-album.json"
-    (let [correct-test-data (parse-json (slurp track-of-album-data-file))]
-      (is (= (sptfy/get-tracks-of-album {:id "6akEvsycLGftJxYudPjmqK"}) correct-test-data)))
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+    (let [correct-test-data (parse-json (slurp track-of-album-data-file))
+          differences (data/diff (sptfy/get-tracks-of-album  {:id "6akEvsycLGftJxYudPjmqK"}) correct-test-data)
+          ]
+      (is (= nil (first differences) (second differences)))))
     )
   )
 
 (deftest test-get-an-artist
   (testing "Get an artist and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-    (let [correct-test-data (parse-json (slurp artist-data-file))]
-      (is (= (sptfy/get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"}) correct-test-data))))
+    (let [correct-test-data (parse-json (slurp artist-data-file))
+          differences (data/diff  (sptfy/get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"}) correct-test-data) 
+          ]
+      (is (= nil (first differences) (second differences)) )))
     )
   )
 
 (deftest test-get-several-artists
   (testing "Get several artists and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (parse-json (slurp artists-data-file))]
-        (is (= (sptfy/get-several-artists {:ids ["0oSGxfWSnnOXhD2fKuz2Gy","3dBVyJ7JuOMt4GE9607Qin"]}) correct-test-data))))
+      (let [correct-test-data (parse-json (slurp artists-data-file))
+            differences (data/diff ( sptfy/get-several-artists {:ids ["0oSGxfWSnnOXhD2fKuz2Gy","3dBVyJ7JuOMt4GE9607Qin"]}) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences)))))
     )
   )
+
+(deftest test-get-artists-albums
+  (testing "Get an artists albums and verify the json data to be equal to test data in artist.json"
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (parse-json (slurp artists-albums-file))
+            differences (data/diff ( sptfy/get-an-artists-albums {:id "1vCWHaC5f2uS3yhpwWbIA6"}) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences) ))))
+    )
+  )
+
 
 

@@ -42,7 +42,7 @@
       "width" : 64
     } ],
     "name" : "The Best Of Keane (Deluxe Edition)",
-    "popularity" : 64,
+    "popularity" : 0,
     "release_date" : "2013-01-01",
     "release_date_precision" : "day",
     "tracks" : {
@@ -1049,7 +1049,7 @@
       "width" : 64
     } ],
     "name" : "Strangeland",
-    "popularity" : 60,
+    "popularity" : 0,
     "release_date" : "2012-01-01",
     "release_date_precision" : "day",
     "tracks" : {
@@ -1556,7 +1556,7 @@
       "width" : 64
     } ],
     "name" : "Night Train",
-    "popularity" : 46,
+    "popularity" : 0,
     "release_date" : "2010-01-01",
     "release_date_precision" : "day",
     "tracks" : {

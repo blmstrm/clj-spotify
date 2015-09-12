@@ -1,0 +1,489 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on",
+  "items" : [ {
+    "album_type" : "album",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0h2knr6qpiAq0tV5ri5JMF"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0h2knr6qpiAq0tV5ri5JMF",
+    "id" : "0h2knr6qpiAq0tV5ri5JMF",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/3b0db511855bc991cb3c95ea25825762fae8c114",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/26bd9866253b0af7192d003f89a0b57be6b88443",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/5cb428351b16f02dd7b9b31dfef055253b0900ae",
+      "width" : 64
+    } ],
+    "name" : "The Days / Nights",
+    "type" : "album",
+    "uri" : "spotify:album:0h2knr6qpiAq0tV5ri5JMF"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2zcx8cMjC0zHU94PrIZZd0"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2zcx8cMjC0zHU94PrIZZd0",
+    "id" : "2zcx8cMjC0zHU94PrIZZd0",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/4d73a8eba7731dc3d0e1c1ef67cf7ce7ad715ce6",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/7e820b61c3a2677658576db13bbeab3b96504d4d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/1a42b80615866a6ec140212a71eb69ac09b8271c",
+      "width" : 64
+    } ],
+    "name" : "True: Avicii By Avicii",
+    "type" : "album",
+    "uri" : "spotify:album:2zcx8cMjC0zHU94PrIZZd0"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0ignCov9foaLxuqND5GMtl"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0ignCov9foaLxuqND5GMtl",
+    "id" : "0ignCov9foaLxuqND5GMtl",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/7ea05219f9555fd82be4d805f8762abd65da322a",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/16121ac2c2d443119db1e45f725a034cabb66f99",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/5a8ddb544b197c113b41df3e0e232e6d617ca14f",
+      "width" : 64
+    } ],
+    "name" : "True: Avicii By Avicii",
+    "type" : "album",
+    "uri" : "spotify:album:0ignCov9foaLxuqND5GMtl"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/02h9kO2oLKnLtycgbElKsw"
+    },
+    "href" : "https://api.spotify.com/v1/albums/02h9kO2oLKnLtycgbElKsw",
+    "id" : "02h9kO2oLKnLtycgbElKsw",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/a2691d83006245d8aa072041f88302820ff0650c",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/0348f700446e044515b6c73a70252627b2ea362f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/4a9fa8ef0fc75885e511d97648b471002437eda2",
+      "width" : 64
+    } ],
+    "name" : "True",
+    "type" : "album",
+    "uri" : "spotify:album:02h9kO2oLKnLtycgbElKsw"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1s9tU91VJt4sU5owi29GD3"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1s9tU91VJt4sU5owi29GD3",
+    "id" : "1s9tU91VJt4sU5owi29GD3",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/402669c5b7606d4d4883e6c9431c7637075af64e",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/23c1aa0b01733eb322df45192ccfae6ae32b4f1b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/6848876a924e1ad016a953130594ebab3d87442b",
+      "width" : 64
+    } ],
+    "name" : "True",
+    "type" : "album",
+    "uri" : "spotify:album:1s9tU91VJt4sU5owi29GD3"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1oRvqWh2IkWMDF90jDEgzz"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1oRvqWh2IkWMDF90jDEgzz",
+    "id" : "1oRvqWh2IkWMDF90jDEgzz",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/2626556c707ad974cdf465d560375c3bdc7342fd",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8878dee1c0f5c505a3c33ae184649153e2e06d63",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/b0ce4aaf8ce7ecd053df0ef57c28adec1fb7bf34",
+      "width" : 64
+    } ],
+    "name" : "For A Better Day (KSHMR Remix)",
+    "type" : "album",
+    "uri" : "spotify:album:1oRvqWh2IkWMDF90jDEgzz"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7cpxWasP1aV9Boo4pU2REk"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7cpxWasP1aV9Boo4pU2REk",
+    "id" : "7cpxWasP1aV9Boo4pU2REk",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/b26022e3e955bc2fc971288270bdfc5daeed2fcb",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/3923bec024966065c4453e9e1ddad3387e3ec206",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/738db72313767015a54e5f80c9f661ca600b4110",
+      "width" : 64
+    } ],
+    "name" : "For A Better Day (KSHMR Remix)",
+    "type" : "album",
+    "uri" : "spotify:album:7cpxWasP1aV9Boo4pU2REk"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/619UZxb8Rn2WVxNHVCfzSX"
+    },
+    "href" : "https://api.spotify.com/v1/albums/619UZxb8Rn2WVxNHVCfzSX",
+    "id" : "619UZxb8Rn2WVxNHVCfzSX",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/61022cc9db5e592c8eb437611ac84f49120b2f7c",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/2dd7938e5cf4ae505f04b430925b2e3540c916eb",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/3ef1bf7fd1607abc80d7732e203e3d9522ab8186",
+      "width" : 64
+    } ],
+    "name" : "Pure Grinding For A Better Day",
+    "type" : "album",
+    "uri" : "spotify:album:619UZxb8Rn2WVxNHVCfzSX"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2PrYDGvB6xY9N3B2gydRNv"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2PrYDGvB6xY9N3B2gydRNv",
+    "id" : "2PrYDGvB6xY9N3B2gydRNv",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d99dc41fda2642f774bfd735fdc547257c73b1f5",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/da8f15c14a4868be853babeb97fc764be8867bb5",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/03a9017a0017a48f54103a23e9bca551c8471a1e",
+      "width" : 64
+    } ],
+    "name" : "Pure Grinding For A Better Day",
+    "type" : "album",
+    "uri" : "spotify:album:2PrYDGvB6xY9N3B2gydRNv"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1AcFDN75J4JVO2bDKCjAxh"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1AcFDN75J4JVO2bDKCjAxh",
+    "id" : "1AcFDN75J4JVO2bDKCjAxh",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/f17ead3c20c7559eb31014fc6368887797e4be75",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/87a83a7b03018c74fb147bcc945c06ac0485b0d5",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/2d3f7d516edd4c2249af20d249e59c16bd62720e",
+      "width" : 64
+    } ],
+    "name" : "Waiting For Love (Remixes Pt. II)",
+    "type" : "album",
+    "uri" : "spotify:album:1AcFDN75J4JVO2bDKCjAxh"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6zGYMf7735htmC3XNQmONX"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6zGYMf7735htmC3XNQmONX",
+    "id" : "6zGYMf7735htmC3XNQmONX",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/60866acb9fb600c6fc36429e858b74b2840ac2b8",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/e6f180550dc2d29605aaa473dd788f26349c1125",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/02325fa0b819112c54e3cbecf2943816d25b986e",
+      "width" : 64
+    } ],
+    "name" : "Waiting For Love (Remixes Pt. II)",
+    "type" : "album",
+    "uri" : "spotify:album:6zGYMf7735htmC3XNQmONX"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4yjiauN4w1HUe5dmv7An24"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4yjiauN4w1HUe5dmv7An24",
+    "id" : "4yjiauN4w1HUe5dmv7An24",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/77bb97cf87d92a585eabfe9e3bd921699b5a4741",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/62a2c9338d5766f950ad522c002f2dcb4dd83038",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/0f6c379a115bc1f407455bcdea516a55ca3ef08e",
+      "width" : 64
+    } ],
+    "name" : "Waiting For Love (Remixes)",
+    "type" : "album",
+    "uri" : "spotify:album:4yjiauN4w1HUe5dmv7An24"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0yEH5iJwqTrrqWMmS0OQ1D"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0yEH5iJwqTrrqWMmS0OQ1D",
+    "id" : "0yEH5iJwqTrrqWMmS0OQ1D",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/c4bceb45fc356771b4ba35c90540f51efda3102e",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/706b6946ac8aff55b811be376babf88d1b937619",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/e8ab7bc20c5c442d7ff6bce1b84540c568432636",
+      "width" : 64
+    } ],
+    "name" : "Waiting For Love (Remixes)",
+    "type" : "album",
+    "uri" : "spotify:album:0yEH5iJwqTrrqWMmS0OQ1D"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3bWO7zjRbZeyMMPpzmmKnJ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3bWO7zjRbZeyMMPpzmmKnJ",
+    "id" : "3bWO7zjRbZeyMMPpzmmKnJ",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d4b91c357087554d2720c20e53e288253ba16db8",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/d25e5580dda0ce4813bd94ff26abda81f6eb7270",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/e647c979efb38947910cca1ed88f6c30cc8c7768",
+      "width" : 64
+    } ],
+    "name" : "Waiting For Love",
+    "type" : "album",
+    "uri" : "spotify:album:3bWO7zjRbZeyMMPpzmmKnJ"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0LUr5Q06EQu7QIid7cACFU"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0LUr5Q06EQu7QIid7cACFU",
+    "id" : "0LUr5Q06EQu7QIid7cACFU",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/ef4e4f5732956a9b6faca866800a5a536c7900d8",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/b8067976de1d33cda461d77c393993008f362c63",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/d2cbf79027c647be581125a24fe556809c3f1c3a",
+      "width" : 64
+    } ],
+    "name" : "Waiting For Love",
+    "type" : "album",
+    "uri" : "spotify:album:0LUr5Q06EQu7QIid7cACFU"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5fM4du8mdVKzG1hZDAfazY"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5fM4du8mdVKzG1hZDAfazY",
+    "id" : "5fM4du8mdVKzG1hZDAfazY",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/acfe9d01bd25233e54075907e888630df3245b46",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/d290a2ffdd89803e45d230563226d042c8458fb5",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/f120b226c79219938211db6ec602684aa090aad2",
+      "width" : 64
+    } ],
+    "name" : "Feeling Good",
+    "type" : "album",
+    "uri" : "spotify:album:5fM4du8mdVKzG1hZDAfazY"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/61PsRCFu5HEOfH2Dv52PNv"
+    },
+    "href" : "https://api.spotify.com/v1/albums/61PsRCFu5HEOfH2Dv52PNv",
+    "id" : "61PsRCFu5HEOfH2Dv52PNv",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/ce93d21b36ea9116505848c6894a2e8fe690af50",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/e20a724ddc63a1b69d2b814446a2e656e19bf33b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/a4ec0f80700e55cda5cc0afeff31df809c465403",
+      "width" : 64
+    } ],
+    "name" : "Feeling Good",
+    "type" : "album",
+    "uri" : "spotify:album:61PsRCFu5HEOfH2Dv52PNv"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "GB" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6NUwvJNh9sUYpauXI61KOL"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6NUwvJNh9sUYpauXI61KOL",
+    "id" : "6NUwvJNh9sUYpauXI61KOL",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/492b478d41092ccbe7dab9bdf685c6aad4f9ad0b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/45e989464ba34ae9573dffb705a20d30012dd0f7",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/585cee85aa6a4fa972b0b2ce65b7654cced137f4",
+      "width" : 64
+    } ],
+    "name" : "The Nights",
+    "type" : "album",
+    "uri" : "spotify:album:6NUwvJNh9sUYpauXI61KOL"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1WXM7DYQRT7QX8AKBJRfK9"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1WXM7DYQRT7QX8AKBJRfK9",
+    "id" : "1WXM7DYQRT7QX8AKBJRfK9",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/590dbe5504d2898c120b942bee2b699404783896",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/9a4db24b1930e8683b4dfd19c7bd2a40672c6718",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/d5cfc167e03ed328ae7dfa9b56d3628d81b6831b",
+      "width" : 64
+    } ],
+    "name" : "The Days / Nights",
+    "type" : "album",
+    "uri" : "spotify:album:1WXM7DYQRT7QX8AKBJRfK9"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3ckwyt0bTOcDbXovWbweMp"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3ckwyt0bTOcDbXovWbweMp",
+    "id" : "3ckwyt0bTOcDbXovWbweMp",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/144ac57ad073741e99b5243c59abebe1500ada0a",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/4680e5f3af02219fd9e79ce432c1b18f97af6426",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8c803d6cb612b6f2b37a7276deb2ff05f5a77097",
+      "width" : 64
+    } ],
+    "name" : "The Days / Nights",
+    "type" : "album",
+    "uri" : "spotify:album:3ckwyt0bTOcDbXovWbweMp"
+  } ],
+  "limit" : 20,
+  "next" : "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 1038
+}

@@ -28,7 +28,7 @@
       "width" : 64
     } ],
     "name" : "David Bowie",
-    "popularity" : 79,
+    "popularity" : 0,
     "type" : "artist",
     "uri" : "spotify:artist:0oSGxfWSnnOXhD2fKuz2Gy"
   }, {
@@ -60,7 +60,7 @@
       "width" : 64
     } ],
     "name" : "T. Rex",
-    "popularity" : 62,
+    "popularity" : 0,
     "type" : "artist",
     "uri" : "spotify:artist:3dBVyJ7JuOMt4GE9607Qin"
   } ]
