@@ -1,489 +1,489 @@
 {
-  "href" : "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on",
+  "href" : "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on",
   "items" : [ {
     "album_type" : "album",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "available_markets" : [ "AD", "BE", "BG", "CY", "CZ", "DK", "EE", "ES", "FI", "FR", "GB", "GR", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK", "TR" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/0h2knr6qpiAq0tV5ri5JMF"
+      "spotify" : "https://open.spotify.com/album/67PTz2RQnuh6fRf1JgxUI7"
     },
-    "href" : "https://api.spotify.com/v1/albums/0h2knr6qpiAq0tV5ri5JMF",
-    "id" : "0h2knr6qpiAq0tV5ri5JMF",
+    "href" : "https://api.spotify.com/v1/albums/67PTz2RQnuh6fRf1JgxUI7",
+    "id" : "67PTz2RQnuh6fRf1JgxUI7",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/3b0db511855bc991cb3c95ea25825762fae8c114",
+      "url" : "https://i.scdn.co/image/cc6c9be0e7d92b6779e1ac1346fcd40bf90102ca",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/26bd9866253b0af7192d003f89a0b57be6b88443",
+      "url" : "https://i.scdn.co/image/1204a4b52bede0594311d5f48ee9b6f6546df7de",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/5cb428351b16f02dd7b9b31dfef055253b0900ae",
+      "url" : "https://i.scdn.co/image/22e7aab55c81274bbcc1eb03df0bbbfe40891c75",
       "width" : 64
     } ],
-    "name" : "The Days / Nights",
+    "name" : "Dale",
     "type" : "album",
-    "uri" : "spotify:album:0h2knr6qpiAq0tV5ri5JMF"
+    "uri" : "spotify:album:67PTz2RQnuh6fRf1JgxUI7"
   }, {
     "album_type" : "album",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "available_markets" : [ "AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/2zcx8cMjC0zHU94PrIZZd0"
+      "spotify" : "https://open.spotify.com/album/62AITKgUMplmKKSTsTlDDo"
     },
-    "href" : "https://api.spotify.com/v1/albums/2zcx8cMjC0zHU94PrIZZd0",
-    "id" : "2zcx8cMjC0zHU94PrIZZd0",
+    "href" : "https://api.spotify.com/v1/albums/62AITKgUMplmKKSTsTlDDo",
+    "id" : "62AITKgUMplmKKSTsTlDDo",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/4d73a8eba7731dc3d0e1c1ef67cf7ce7ad715ce6",
+      "url" : "https://i.scdn.co/image/cc6c9be0e7d92b6779e1ac1346fcd40bf90102ca",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/7e820b61c3a2677658576db13bbeab3b96504d4d",
+      "url" : "https://i.scdn.co/image/1204a4b52bede0594311d5f48ee9b6f6546df7de",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/1a42b80615866a6ec140212a71eb69ac09b8271c",
+      "url" : "https://i.scdn.co/image/22e7aab55c81274bbcc1eb03df0bbbfe40891c75",
       "width" : 64
     } ],
-    "name" : "True: Avicii By Avicii",
+    "name" : "Dale",
     "type" : "album",
-    "uri" : "spotify:album:2zcx8cMjC0zHU94PrIZZd0"
+    "uri" : "spotify:album:62AITKgUMplmKKSTsTlDDo"
   }, {
     "album_type" : "album",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "available_markets" : [ "AT", "CH", "DE", "LI" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/0ignCov9foaLxuqND5GMtl"
+      "spotify" : "https://open.spotify.com/album/2HRKbLqu1kLcYRMZpSuq4k"
     },
-    "href" : "https://api.spotify.com/v1/albums/0ignCov9foaLxuqND5GMtl",
-    "id" : "0ignCov9foaLxuqND5GMtl",
+    "href" : "https://api.spotify.com/v1/albums/2HRKbLqu1kLcYRMZpSuq4k",
+    "id" : "2HRKbLqu1kLcYRMZpSuq4k",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/7ea05219f9555fd82be4d805f8762abd65da322a",
+      "url" : "https://i.scdn.co/image/cc6c9be0e7d92b6779e1ac1346fcd40bf90102ca",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/16121ac2c2d443119db1e45f725a034cabb66f99",
+      "url" : "https://i.scdn.co/image/1204a4b52bede0594311d5f48ee9b6f6546df7de",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/5a8ddb544b197c113b41df3e0e232e6d617ca14f",
+      "url" : "https://i.scdn.co/image/22e7aab55c81274bbcc1eb03df0bbbfe40891c75",
       "width" : 64
     } ],
-    "name" : "True: Avicii By Avicii",
+    "name" : "Dale",
     "type" : "album",
-    "uri" : "spotify:album:0ignCov9foaLxuqND5GMtl"
+    "uri" : "spotify:album:2HRKbLqu1kLcYRMZpSuq4k"
   }, {
     "album_type" : "album",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/02h9kO2oLKnLtycgbElKsw"
+      "spotify" : "https://open.spotify.com/album/1KugyPdDes7ppC7SUcT4gS"
     },
-    "href" : "https://api.spotify.com/v1/albums/02h9kO2oLKnLtycgbElKsw",
-    "id" : "02h9kO2oLKnLtycgbElKsw",
+    "href" : "https://api.spotify.com/v1/albums/1KugyPdDes7ppC7SUcT4gS",
+    "id" : "1KugyPdDes7ppC7SUcT4gS",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/a2691d83006245d8aa072041f88302820ff0650c",
+      "url" : "https://i.scdn.co/image/e8a34a8c0bb8e16c63fb0ac784639aebda667d65",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/0348f700446e044515b6c73a70252627b2ea362f",
+      "url" : "https://i.scdn.co/image/4677d22cde0a938f500381a8c40ae7769d3685ef",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/4a9fa8ef0fc75885e511d97648b471002437eda2",
+      "url" : "https://i.scdn.co/image/3027622a40980ab0466fed9e509e4574b6a30460",
       "width" : 64
     } ],
-    "name" : "True",
+    "name" : "Fun (Remixes)",
     "type" : "album",
-    "uri" : "spotify:album:02h9kO2oLKnLtycgbElKsw"
+    "uri" : "spotify:album:1KugyPdDes7ppC7SUcT4gS"
   }, {
     "album_type" : "album",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/1s9tU91VJt4sU5owi29GD3"
+      "spotify" : "https://open.spotify.com/album/4EUf4YyNjuXypWY6W5wEDm"
     },
-    "href" : "https://api.spotify.com/v1/albums/1s9tU91VJt4sU5owi29GD3",
-    "id" : "1s9tU91VJt4sU5owi29GD3",
+    "href" : "https://api.spotify.com/v1/albums/4EUf4YyNjuXypWY6W5wEDm",
+    "id" : "4EUf4YyNjuXypWY6W5wEDm",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/402669c5b7606d4d4883e6c9431c7637075af64e",
+      "url" : "https://i.scdn.co/image/835884befb1b595476e590e656f27b3ec028308b",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/23c1aa0b01733eb322df45192ccfae6ae32b4f1b",
+      "url" : "https://i.scdn.co/image/b3074557f3c45bb3a2c9884ecbfeb692f3c51be4",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/6848876a924e1ad016a953130594ebab3d87442b",
+      "url" : "https://i.scdn.co/image/6dc754ec4bc27563dc707fb2178a55c71b7352c9",
       "width" : 64
     } ],
-    "name" : "True",
+    "name" : "Globalization",
     "type" : "album",
-    "uri" : "spotify:album:1s9tU91VJt4sU5owi29GD3"
+    "uri" : "spotify:album:4EUf4YyNjuXypWY6W5wEDm"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "AR", "AU", "BO", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "IE", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/1oRvqWh2IkWMDF90jDEgzz"
+      "spotify" : "https://open.spotify.com/album/398EKzFttiMH4ojxOsnd7t"
     },
-    "href" : "https://api.spotify.com/v1/albums/1oRvqWh2IkWMDF90jDEgzz",
-    "id" : "1oRvqWh2IkWMDF90jDEgzz",
+    "href" : "https://api.spotify.com/v1/albums/398EKzFttiMH4ojxOsnd7t",
+    "id" : "398EKzFttiMH4ojxOsnd7t",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/2626556c707ad974cdf465d560375c3bdc7342fd",
+      "url" : "https://i.scdn.co/image/835884befb1b595476e590e656f27b3ec028308b",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/8878dee1c0f5c505a3c33ae184649153e2e06d63",
+      "url" : "https://i.scdn.co/image/b3074557f3c45bb3a2c9884ecbfeb692f3c51be4",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/b0ce4aaf8ce7ecd053df0ef57c28adec1fb7bf34",
+      "url" : "https://i.scdn.co/image/6dc754ec4bc27563dc707fb2178a55c71b7352c9",
       "width" : 64
     } ],
-    "name" : "For A Better Day (KSHMR Remix)",
+    "name" : "Globalization",
     "type" : "album",
-    "uri" : "spotify:album:1oRvqWh2IkWMDF90jDEgzz"
+    "uri" : "spotify:album:398EKzFttiMH4ojxOsnd7t"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "AD", "DO", "GB", "IE", "IS", "LI", "MC" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/7cpxWasP1aV9Boo4pU2REk"
+      "spotify" : "https://open.spotify.com/album/3xMLqaskrhtCvvACgulDbq"
     },
-    "href" : "https://api.spotify.com/v1/albums/7cpxWasP1aV9Boo4pU2REk",
-    "id" : "7cpxWasP1aV9Boo4pU2REk",
+    "href" : "https://api.spotify.com/v1/albums/3xMLqaskrhtCvvACgulDbq",
+    "id" : "3xMLqaskrhtCvvACgulDbq",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/b26022e3e955bc2fc971288270bdfc5daeed2fcb",
+      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/3923bec024966065c4453e9e1ddad3387e3ec206",
+      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/738db72313767015a54e5f80c9f661ca600b4110",
+      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
       "width" : 64
     } ],
-    "name" : "For A Better Day (KSHMR Remix)",
+    "name" : "Global Warming (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:7cpxWasP1aV9Boo4pU2REk"
+    "uri" : "spotify:album:3xMLqaskrhtCvvACgulDbq"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "FR" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/619UZxb8Rn2WVxNHVCfzSX"
+      "spotify" : "https://open.spotify.com/album/1rRi2XpTdpOp4D3uQxg1pF"
     },
-    "href" : "https://api.spotify.com/v1/albums/619UZxb8Rn2WVxNHVCfzSX",
-    "id" : "619UZxb8Rn2WVxNHVCfzSX",
+    "href" : "https://api.spotify.com/v1/albums/1rRi2XpTdpOp4D3uQxg1pF",
+    "id" : "1rRi2XpTdpOp4D3uQxg1pF",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/61022cc9db5e592c8eb437611ac84f49120b2f7c",
+      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/2dd7938e5cf4ae505f04b430925b2e3540c916eb",
+      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/3ef1bf7fd1607abc80d7732e203e3d9522ab8186",
+      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
       "width" : 64
     } ],
-    "name" : "Pure Grinding For A Better Day",
+    "name" : "Global Warming (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:619UZxb8Rn2WVxNHVCfzSX"
+    "uri" : "spotify:album:1rRi2XpTdpOp4D3uQxg1pF"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "AU", "HK", "MY", "NZ", "PH", "SG" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/2PrYDGvB6xY9N3B2gydRNv"
+      "spotify" : "https://open.spotify.com/album/3zDXeAmrZkjvWsQqa8niwc"
     },
-    "href" : "https://api.spotify.com/v1/albums/2PrYDGvB6xY9N3B2gydRNv",
-    "id" : "2PrYDGvB6xY9N3B2gydRNv",
+    "href" : "https://api.spotify.com/v1/albums/3zDXeAmrZkjvWsQqa8niwc",
+    "id" : "3zDXeAmrZkjvWsQqa8niwc",
     "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/d99dc41fda2642f774bfd735fdc547257c73b1f5",
+      "height" : 636,
+      "url" : "https://i.scdn.co/image/559ee42d34920098f3262b4f7d399bbc3df94429",
       "width" : 640
     }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/da8f15c14a4868be853babeb97fc764be8867bb5",
+      "height" : 298,
+      "url" : "https://i.scdn.co/image/690077c865110e31baa8aabe51862f41c44bc870",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/03a9017a0017a48f54103a23e9bca551c8471a1e",
+      "url" : "https://i.scdn.co/image/b434b6fdf582e0fd3c23221b4523ff5711f7e971",
       "width" : 64
     } ],
-    "name" : "Pure Grinding For A Better Day",
+    "name" : "Global Warming (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:2PrYDGvB6xY9N3B2gydRNv"
+    "uri" : "spotify:album:3zDXeAmrZkjvWsQqa8niwc"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "US" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/1AcFDN75J4JVO2bDKCjAxh"
+      "spotify" : "https://open.spotify.com/album/2USiuZqEAyfOcKmcujg4hs"
     },
-    "href" : "https://api.spotify.com/v1/albums/1AcFDN75J4JVO2bDKCjAxh",
-    "id" : "1AcFDN75J4JVO2bDKCjAxh",
+    "href" : "https://api.spotify.com/v1/albums/2USiuZqEAyfOcKmcujg4hs",
+    "id" : "2USiuZqEAyfOcKmcujg4hs",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/f17ead3c20c7559eb31014fc6368887797e4be75",
+      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/87a83a7b03018c74fb147bcc945c06ac0485b0d5",
+      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/2d3f7d516edd4c2249af20d249e59c16bd62720e",
+      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
       "width" : 64
     } ],
-    "name" : "Waiting For Love (Remixes Pt. II)",
+    "name" : "Global Warming (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:1AcFDN75J4JVO2bDKCjAxh"
+    "uri" : "spotify:album:2USiuZqEAyfOcKmcujg4hs"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "US" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/6zGYMf7735htmC3XNQmONX"
+      "spotify" : "https://open.spotify.com/album/7I4Vx91kradxSJNwg1ycbq"
     },
-    "href" : "https://api.spotify.com/v1/albums/6zGYMf7735htmC3XNQmONX",
-    "id" : "6zGYMf7735htmC3XNQmONX",
+    "href" : "https://api.spotify.com/v1/albums/7I4Vx91kradxSJNwg1ycbq",
+    "id" : "7I4Vx91kradxSJNwg1ycbq",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/60866acb9fb600c6fc36429e858b74b2840ac2b8",
+      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/e6f180550dc2d29605aaa473dd788f26349c1125",
+      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/02325fa0b819112c54e3cbecf2943816d25b986e",
+      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
       "width" : 64
     } ],
-    "name" : "Waiting For Love (Remixes Pt. II)",
+    "name" : "Global Warming (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:6zGYMf7735htmC3XNQmONX"
+    "uri" : "spotify:album:7I4Vx91kradxSJNwg1ycbq"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AT", "BE", "BG", "CH", "CY", "CZ", "DE", "EE", "ES", "FI", "FR", "GB", "GR", "HU", "IE", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK", "TR" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/4yjiauN4w1HUe5dmv7An24"
+      "spotify" : "https://open.spotify.com/album/4aawyAB9vmqN3uQ7FjRGTy"
     },
-    "href" : "https://api.spotify.com/v1/albums/4yjiauN4w1HUe5dmv7An24",
-    "id" : "4yjiauN4w1HUe5dmv7An24",
+    "href" : "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy",
+    "id" : "4aawyAB9vmqN3uQ7FjRGTy",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/77bb97cf87d92a585eabfe9e3bd921699b5a4741",
+      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/62a2c9338d5766f950ad522c002f2dcb4dd83038",
+      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/0f6c379a115bc1f407455bcdea516a55ca3ef08e",
+      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
       "width" : 64
     } ],
-    "name" : "Waiting For Love (Remixes)",
+    "name" : "Global Warming",
     "type" : "album",
-    "uri" : "spotify:album:4yjiauN4w1HUe5dmv7An24"
+    "uri" : "spotify:album:4aawyAB9vmqN3uQ7FjRGTy"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/0yEH5iJwqTrrqWMmS0OQ1D"
+      "spotify" : "https://open.spotify.com/album/4brEzXAZB8SWqgQIOBn7nF"
     },
-    "href" : "https://api.spotify.com/v1/albums/0yEH5iJwqTrrqWMmS0OQ1D",
-    "id" : "0yEH5iJwqTrrqWMmS0OQ1D",
+    "href" : "https://api.spotify.com/v1/albums/4brEzXAZB8SWqgQIOBn7nF",
+    "id" : "4brEzXAZB8SWqgQIOBn7nF",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/c4bceb45fc356771b4ba35c90540f51efda3102e",
+      "url" : "https://i.scdn.co/image/63f66228ccd63d047788d903f4b4e955ab92dcb4",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/706b6946ac8aff55b811be376babf88d1b937619",
+      "url" : "https://i.scdn.co/image/9796552d6abe30ddcd24eb79f590abe2d1e694dd",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/e8ab7bc20c5c442d7ff6bce1b84540c568432636",
+      "url" : "https://i.scdn.co/image/8d7087dc0de61f4648af061ac056f6eec2eeacbd",
       "width" : 64
     } ],
-    "name" : "Waiting For Love (Remixes)",
+    "name" : "I Am Armando (Armando Reloaded)",
     "type" : "album",
-    "uri" : "spotify:album:0yEH5iJwqTrrqWMmS0OQ1D"
+    "uri" : "spotify:album:4brEzXAZB8SWqgQIOBn7nF"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "AR", "AT", "BE", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "DE", "DK", "DO", "EC", "GT", "HN", "IS", "LI", "LU", "MX", "NI", "NL", "PA", "PE", "PY", "SV", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/3bWO7zjRbZeyMMPpzmmKnJ"
+      "spotify" : "https://open.spotify.com/album/2F7tejLHzTqFq2XLol9ZGy"
     },
-    "href" : "https://api.spotify.com/v1/albums/3bWO7zjRbZeyMMPpzmmKnJ",
-    "id" : "3bWO7zjRbZeyMMPpzmmKnJ",
+    "href" : "https://api.spotify.com/v1/albums/2F7tejLHzTqFq2XLol9ZGy",
+    "id" : "2F7tejLHzTqFq2XLol9ZGy",
     "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/d4b91c357087554d2720c20e53e288253ba16db8",
+      "height" : 636,
+      "url" : "https://i.scdn.co/image/d096684f9d3fa3525421f2c4204f4e8e2cbba471",
       "width" : 640
     }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/d25e5580dda0ce4813bd94ff26abda81f6eb7270",
+      "height" : 298,
+      "url" : "https://i.scdn.co/image/fad28af03d6381d90324a95c7bf702503c00c311",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/e647c979efb38947910cca1ed88f6c30cc8c7768",
+      "url" : "https://i.scdn.co/image/f40eb2678f5a001c70d66423926cd4d760b7b6c1",
       "width" : 64
     } ],
-    "name" : "Waiting For Love",
+    "name" : "Global Warming: Meltdown (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:3bWO7zjRbZeyMMPpzmmKnJ"
+    "uri" : "spotify:album:2F7tejLHzTqFq2XLol9ZGy"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "CA", "GB", "US" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/0LUr5Q06EQu7QIid7cACFU"
+      "spotify" : "https://open.spotify.com/album/7sIlk4PsSWt7WhUs0JsFoG"
     },
-    "href" : "https://api.spotify.com/v1/albums/0LUr5Q06EQu7QIid7cACFU",
-    "id" : "0LUr5Q06EQu7QIid7cACFU",
+    "href" : "https://api.spotify.com/v1/albums/7sIlk4PsSWt7WhUs0JsFoG",
+    "id" : "7sIlk4PsSWt7WhUs0JsFoG",
     "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/ef4e4f5732956a9b6faca866800a5a536c7900d8",
+      "height" : 636,
+      "url" : "https://i.scdn.co/image/d096684f9d3fa3525421f2c4204f4e8e2cbba471",
       "width" : 640
     }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/b8067976de1d33cda461d77c393993008f362c63",
+      "height" : 298,
+      "url" : "https://i.scdn.co/image/fad28af03d6381d90324a95c7bf702503c00c311",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/d2cbf79027c647be581125a24fe556809c3f1c3a",
+      "url" : "https://i.scdn.co/image/f40eb2678f5a001c70d66423926cd4d760b7b6c1",
       "width" : 64
     } ],
-    "name" : "Waiting For Love",
+    "name" : "Global Warming: Meltdown (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:0LUr5Q06EQu7QIid7cACFU"
+    "uri" : "spotify:album:7sIlk4PsSWt7WhUs0JsFoG"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "GB", "IE" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/5fM4du8mdVKzG1hZDAfazY"
+      "spotify" : "https://open.spotify.com/album/516hWSssyH0S1SBp9Xb2N2"
     },
-    "href" : "https://api.spotify.com/v1/albums/5fM4du8mdVKzG1hZDAfazY",
-    "id" : "5fM4du8mdVKzG1hZDAfazY",
+    "href" : "https://api.spotify.com/v1/albums/516hWSssyH0S1SBp9Xb2N2",
+    "id" : "516hWSssyH0S1SBp9Xb2N2",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/acfe9d01bd25233e54075907e888630df3245b46",
+      "url" : "https://i.scdn.co/image/3d397071d0e97f18471ebe45852d14681773da0b",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/d290a2ffdd89803e45d230563226d042c8458fb5",
+      "url" : "https://i.scdn.co/image/be5fe65fdcce64bab564fc02c75b11c7a6eee270",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/f120b226c79219938211db6ec602684aa090aad2",
+      "url" : "https://i.scdn.co/image/91c5816e713663e7aa642293d4d19e444e9ab15c",
       "width" : 64
     } ],
-    "name" : "Feeling Good",
+    "name" : "Planet Pit",
     "type" : "album",
-    "uri" : "spotify:album:5fM4du8mdVKzG1hZDAfazY"
+    "uri" : "spotify:album:516hWSssyH0S1SBp9Xb2N2"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "AR", "BO", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/61PsRCFu5HEOfH2Dv52PNv"
+      "spotify" : "https://open.spotify.com/album/3K3wPSsFq3jt0tgZXerYma"
     },
-    "href" : "https://api.spotify.com/v1/albums/61PsRCFu5HEOfH2Dv52PNv",
-    "id" : "61PsRCFu5HEOfH2Dv52PNv",
+    "href" : "https://api.spotify.com/v1/albums/3K3wPSsFq3jt0tgZXerYma",
+    "id" : "3K3wPSsFq3jt0tgZXerYma",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/ce93d21b36ea9116505848c6894a2e8fe690af50",
+      "url" : "https://i.scdn.co/image/441e5a7bdab0793f942d2e2765394866fc845064",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/e20a724ddc63a1b69d2b814446a2e656e19bf33b",
+      "url" : "https://i.scdn.co/image/7b300abf411f892f2dc5d374aa416f8e4b0524a8",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/a4ec0f80700e55cda5cc0afeff31df809c465403",
+      "url" : "https://i.scdn.co/image/ebe9beae6680db9ee5265fea9615dfedb67bc62c",
       "width" : 64
     } ],
-    "name" : "Feeling Good",
+    "name" : "Planet Pit",
     "type" : "album",
-    "uri" : "spotify:album:61PsRCFu5HEOfH2Dv52PNv"
+    "uri" : "spotify:album:3K3wPSsFq3jt0tgZXerYma"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "GB" ],
+    "album_type" : "album",
+    "available_markets" : [ "AR", "BO", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/6NUwvJNh9sUYpauXI61KOL"
+      "spotify" : "https://open.spotify.com/album/30JZqToNZZH4mN7I0ymGvH"
     },
-    "href" : "https://api.spotify.com/v1/albums/6NUwvJNh9sUYpauXI61KOL",
-    "id" : "6NUwvJNh9sUYpauXI61KOL",
+    "href" : "https://api.spotify.com/v1/albums/30JZqToNZZH4mN7I0ymGvH",
+    "id" : "30JZqToNZZH4mN7I0ymGvH",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/492b478d41092ccbe7dab9bdf685c6aad4f9ad0b",
+      "url" : "https://i.scdn.co/image/3d397071d0e97f18471ebe45852d14681773da0b",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/45e989464ba34ae9573dffb705a20d30012dd0f7",
+      "url" : "https://i.scdn.co/image/be5fe65fdcce64bab564fc02c75b11c7a6eee270",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/585cee85aa6a4fa972b0b2ce65b7654cced137f4",
+      "url" : "https://i.scdn.co/image/91c5816e713663e7aa642293d4d19e444e9ab15c",
       "width" : 64
     } ],
-    "name" : "The Nights",
+    "name" : "Planet Pit",
     "type" : "album",
-    "uri" : "spotify:album:6NUwvJNh9sUYpauXI61KOL"
+    "uri" : "spotify:album:30JZqToNZZH4mN7I0ymGvH"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "CA", "MX", "US" ],
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/1WXM7DYQRT7QX8AKBJRfK9"
+      "spotify" : "https://open.spotify.com/album/4rG0MhkU6UojACJxkMHIXB"
     },
-    "href" : "https://api.spotify.com/v1/albums/1WXM7DYQRT7QX8AKBJRfK9",
-    "id" : "1WXM7DYQRT7QX8AKBJRfK9",
+    "href" : "https://api.spotify.com/v1/albums/4rG0MhkU6UojACJxkMHIXB",
+    "id" : "4rG0MhkU6UojACJxkMHIXB",
     "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/590dbe5504d2898c120b942bee2b699404783896",
+      "height" : 636,
+      "url" : "https://i.scdn.co/image/1dcac421f3ddb49cb12a007929bbc4733d5c3b96",
       "width" : 640
     }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/9a4db24b1930e8683b4dfd19c7bd2a40672c6718",
+      "height" : 298,
+      "url" : "https://i.scdn.co/image/af821d65c1a0a08488ac480247f0b6a77f13f96f",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/d5cfc167e03ed328ae7dfa9b56d3628d81b6831b",
+      "url" : "https://i.scdn.co/image/0feadca0eaa45ca2de6662c20b2344b8e6cd65b5",
       "width" : 64
     } ],
-    "name" : "The Days / Nights",
+    "name" : "Planet Pit (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:1WXM7DYQRT7QX8AKBJRfK9"
+    "uri" : "spotify:album:4rG0MhkU6UojACJxkMHIXB"
   }, {
-    "album_type" : "single",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+    "album_type" : "album",
+    "available_markets" : [ "AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/3ckwyt0bTOcDbXovWbweMp"
+      "spotify" : "https://open.spotify.com/album/6QYAJnxQVosXMMszGfVGvO"
     },
-    "href" : "https://api.spotify.com/v1/albums/3ckwyt0bTOcDbXovWbweMp",
-    "id" : "3ckwyt0bTOcDbXovWbweMp",
+    "href" : "https://api.spotify.com/v1/albums/6QYAJnxQVosXMMszGfVGvO",
+    "id" : "6QYAJnxQVosXMMszGfVGvO",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/144ac57ad073741e99b5243c59abebe1500ada0a",
+      "url" : "https://i.scdn.co/image/cd24aed2633e740145aa0ce739791facd907fbee",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/4680e5f3af02219fd9e79ce432c1b18f97af6426",
+      "url" : "https://i.scdn.co/image/6be3f0c32e5de32ae0563bea264d4e9ff9fbe4f2",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/8c803d6cb612b6f2b37a7276deb2ff05f5a77097",
+      "url" : "https://i.scdn.co/image/2ad16fdd28e264e2552aea01290be1be1df66c80",
       "width" : 64
     } ],
-    "name" : "The Days / Nights",
+    "name" : "Planet Pit (Deluxe Version)",
     "type" : "album",
-    "uri" : "spotify:album:3ckwyt0bTOcDbXovWbweMp"
+    "uri" : "spotify:album:6QYAJnxQVosXMMszGfVGvO"
   } ],
   "limit" : 20,
-  "next" : "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on",
+  "next" : "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on",
   "offset" : 0,
   "previous" : null,
-  "total" : 1038
+  "total" : 0
 }

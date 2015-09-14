@@ -16,6 +16,8 @@
 (def artist-data-file "./test/clj_spotify/test-data/artist.json")
 (def artists-data-file "./test/clj_spotify/test-data/artists.json")
 (def artists-albums-file "./test/clj_spotify/test-data/artists-albums.json")
+(def artists-top-tracks-file "./test/clj_spotify/test-data/artists-top-tracks.json")
+(def artists-related-artists-file "./test/clj_spotify/test-data/artists-related-artists.json")
 
 
 (defn reset-volatile-vals
@@ -24,6 +26,7 @@
   (cond
   (= k :followers){:href nil, :total 0}
   (= k :popularity) 0
+  (= k :total) 0
   :else v
   )
   )
@@ -127,11 +130,31 @@
     )
   )
 
-(deftest test-get-artists-albums
+(deftest test-get-an-artists-albums
   (testing "Get an artists albums and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (parse-json (slurp artists-albums-file))
-            differences (data/diff ( sptfy/get-an-artists-albums {:id "1vCWHaC5f2uS3yhpwWbIA6"}) correct-test-data)
+            differences (data/diff (sptfy/get-an-artists-albums {:id "0TnOYISbd1XYRBk9myaseg"}) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences)))))
+    )
+  )
+
+(deftest test-get-an-artists-top-tracks
+  (testing "Get an artists top tracks and verify the json data to be equal to test data in artists-otp-tracks.json"
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (parse-json (slurp artists-top-tracks-file))
+            differences (data/diff ( sptfy/get-an-artists-top-tracks {:id "0TnOYISbd1XYRBk9myaseg" :country "ES"}) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences) ))))
+    )
+  )
+
+(deftest test-get-artists-related-artists
+  (testing "Get an artists top tracks and verify the json data to be equal to test data in artists-otp-tracks.json"
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (parse-json (slurp artists-related-artists-file))
+            differences (data/diff ( sptfy/get-an-artists-related-artists {:id "0TnOYISbd1XYRBk9myaseg"}) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )

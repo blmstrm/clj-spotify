@@ -1002,7 +1002,7 @@
       "next" : null,
       "offset" : 0,
       "previous" : null,
-      "total" : 38
+      "total" : 0
     },
     "type" : "album",
     "uri" : "spotify:album:41MnTivkwTO3UUJ8DrqEJJ"
@@ -1509,7 +1509,7 @@
       "next" : null,
       "offset" : 0,
       "previous" : null,
-      "total" : 18
+      "total" : 0
     },
     "type" : "album",
     "uri" : "spotify:album:6JWc4iAiJ9FjyK0B59ABb4"
@@ -1818,7 +1818,7 @@
       "next" : null,
       "offset" : 0,
       "previous" : null,
-      "total" : 9
+      "total" : 0
     },
     "type" : "album",
     "uri" : "spotify:album:6UXCm6bOO4gFlDQZV5yL37"
