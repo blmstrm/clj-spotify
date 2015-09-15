@@ -3,12 +3,24 @@
             [clj-spotify.core :as sptfy]
             [clojure.data.json :as json]
             [clojure.data :as data]
+            [clj-http.client :as client]
+            [clojure.data.codec.base64 :as b64]
             ))
 
 ;TODO - Create fixtures for json responses.
 ;TODO - Use spotifys client credentials flow to get token to perform tests.
 ;TODO - Encrypt client_id,client_secret to use with travis.
 ;TODO - Remove followers key from artist data as it changes over time.
+
+
+;TODO - Make the below look nice! Separate maybe.
+(defn create-enc-auth-string
+  "Create base64 encoded auth string"
+  []
+ (str "Basic " (String. (b64/encode (.getBytes (str (System/getenv "SPOTIFY_CLIENT_ID") ":" (System/getenv "SPOTIFY_SECRET_TOKEN")))) "UTF-8")) 
+  )
+
+(def spotify-oauth-token (:access_token (json/read-str (:body (client/post "https://accounts.spotify.com/api/token" {:form-params { :grant_type "client_credentials"} :headers {:Authorization (create-enc-auth-string)}})) :key-fn keyword)))
 
 (def album-data-file "./test/clj_spotify/test-data/album.json")
 (def albums-data-file "./test/clj_spotify/test-data/albums.json")
@@ -84,7 +96,7 @@
   (testing "Get a spotify album and verify the json data to be equal to test data in album.json"
     ( with-redefs [sptfy/json-string-to-map test-json-string-to-map]
     (let [correct-test-data (parse-json (slurp album-data-file))
-          differences (data/diff (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"}) correct-test-data)]  
+          differences (data/diff (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"} spotify-oauth-token) correct-test-data)]  
       (is (= nil (first differences) (second differences)))))
     )
   )
@@ -93,7 +105,7 @@
   (testing "Get several spotify albums and verify the json data to be equal to test data in albums.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
     (let [correct-test-data (parse-json (slurp albums-data-file))
-          differences (data/diff (sptfy/get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]}) correct-test-data)
+          differences (data/diff (sptfy/get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]} spotify-oauth-token) correct-test-data)
           ]
       (is (= nil (first differences) (second differences)))
       ))
@@ -104,7 +116,7 @@
   (testing "Get the tracks of a spotify album and verify the json data to be equal to test data in tracks-of-an-album.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
     (let [correct-test-data (parse-json (slurp track-of-album-data-file))
-          differences (data/diff (sptfy/get-tracks-of-album  {:id "6akEvsycLGftJxYudPjmqK"}) correct-test-data)
+          differences (data/diff (sptfy/get-tracks-of-album  {:id "6akEvsycLGftJxYudPjmqK"} spotify-oauth-token) correct-test-data)
           ]
       (is (= nil (first differences) (second differences)))))
     )
@@ -114,7 +126,7 @@
   (testing "Get an artist and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
     (let [correct-test-data (parse-json (slurp artist-data-file))
-          differences (data/diff  (sptfy/get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"}) correct-test-data) 
+          differences (data/diff  (sptfy/get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"} spotify-oauth-token) correct-test-data) 
           ]
       (is (= nil (first differences) (second differences)) )))
     )
@@ -124,7 +136,7 @@
   (testing "Get several artists and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (parse-json (slurp artists-data-file))
-            differences (data/diff ( sptfy/get-several-artists {:ids ["0oSGxfWSnnOXhD2fKuz2Gy","3dBVyJ7JuOMt4GE9607Qin"]}) correct-test-data)
+            differences (data/diff ( sptfy/get-several-artists {:ids ["0oSGxfWSnnOXhD2fKuz2Gy","3dBVyJ7JuOMt4GE9607Qin"]} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences)))))
     )
@@ -134,7 +146,7 @@
   (testing "Get an artists albums and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (parse-json (slurp artists-albums-file))
-            differences (data/diff (sptfy/get-an-artists-albums {:id "0TnOYISbd1XYRBk9myaseg"}) correct-test-data)
+            differences (data/diff (sptfy/get-an-artists-albums {:id "0TnOYISbd1XYRBk9myaseg"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences)))))
     )
@@ -144,7 +156,7 @@
   (testing "Get an artists top tracks and verify the json data to be equal to test data in artists-otp-tracks.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (parse-json (slurp artists-top-tracks-file))
-            differences (data/diff ( sptfy/get-an-artists-top-tracks {:id "0TnOYISbd1XYRBk9myaseg" :country "ES"}) correct-test-data)
+            differences (data/diff ( sptfy/get-an-artists-top-tracks {:id "0TnOYISbd1XYRBk9myaseg" :country "ES"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )
@@ -154,7 +166,7 @@
   (testing "Get an artists top tracks and verify the json data to be equal to test data in artists-otp-tracks.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (parse-json (slurp artists-related-artists-file))
-            differences (data/diff ( sptfy/get-an-artists-related-artists {:id "0TnOYISbd1XYRBk9myaseg"}) correct-test-data)
+            differences (data/diff ( sptfy/get-an-artists-related-artists {:id "0TnOYISbd1XYRBk9myaseg"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )
