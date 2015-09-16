@@ -146,7 +146,7 @@
   (testing "Get an artists albums and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (parse-json (slurp artists-albums-file))
-            differences (data/diff (sptfy/get-an-artists-albums {:id "0TnOYISbd1XYRBk9myaseg"} spotify-oauth-token) correct-test-data)
+            differences (data/diff (sptfy/get-an-artists-albums {:id "1H1jG5SxsBzeuUk3ktdbeG"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences)))))
     )

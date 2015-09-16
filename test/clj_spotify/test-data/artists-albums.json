@@ -1,488 +1,104 @@
 {
-  "href" : "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on",
+  "href" : "https://api.spotify.com/v1/artists/1H1jG5SxsBzeuUk3ktdbeG/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on",
   "items" : [ {
     "album_type" : "album",
-    "available_markets" : [ "AD", "BE", "BG", "CY", "CZ", "DK", "EE", "ES", "FI", "FR", "GB", "GR", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK", "TR" ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/67PTz2RQnuh6fRf1JgxUI7"
+      "spotify" : "https://open.spotify.com/album/1qc9rw9ncP92nT30EM2FDf"
     },
-    "href" : "https://api.spotify.com/v1/albums/67PTz2RQnuh6fRf1JgxUI7",
-    "id" : "67PTz2RQnuh6fRf1JgxUI7",
+    "href" : "https://api.spotify.com/v1/albums/1qc9rw9ncP92nT30EM2FDf",
+    "id" : "1qc9rw9ncP92nT30EM2FDf",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/cc6c9be0e7d92b6779e1ac1346fcd40bf90102ca",
+      "url" : "https://i.scdn.co/image/8d2a09e5b565339a6bb1b101a2c82c403af1628c",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/1204a4b52bede0594311d5f48ee9b6f6546df7de",
+      "url" : "https://i.scdn.co/image/b396232dc3a755c8f961d0ab4cda4524e7ff7acc",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/22e7aab55c81274bbcc1eb03df0bbbfe40891c75",
+      "url" : "https://i.scdn.co/image/c0c38a95272f8e9cd90c6b7f7f3212ad76993f0d",
       "width" : 64
     } ],
-    "name" : "Dale",
+    "name" : "Relight",
     "type" : "album",
-    "uri" : "spotify:album:67PTz2RQnuh6fRf1JgxUI7"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/62AITKgUMplmKKSTsTlDDo"
-    },
-    "href" : "https://api.spotify.com/v1/albums/62AITKgUMplmKKSTsTlDDo",
-    "id" : "62AITKgUMplmKKSTsTlDDo",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/cc6c9be0e7d92b6779e1ac1346fcd40bf90102ca",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/1204a4b52bede0594311d5f48ee9b6f6546df7de",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/22e7aab55c81274bbcc1eb03df0bbbfe40891c75",
-      "width" : 64
-    } ],
-    "name" : "Dale",
-    "type" : "album",
-    "uri" : "spotify:album:62AITKgUMplmKKSTsTlDDo"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AT", "CH", "DE", "LI" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/2HRKbLqu1kLcYRMZpSuq4k"
-    },
-    "href" : "https://api.spotify.com/v1/albums/2HRKbLqu1kLcYRMZpSuq4k",
-    "id" : "2HRKbLqu1kLcYRMZpSuq4k",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/cc6c9be0e7d92b6779e1ac1346fcd40bf90102ca",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/1204a4b52bede0594311d5f48ee9b6f6546df7de",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/22e7aab55c81274bbcc1eb03df0bbbfe40891c75",
-      "width" : 64
-    } ],
-    "name" : "Dale",
-    "type" : "album",
-    "uri" : "spotify:album:2HRKbLqu1kLcYRMZpSuq4k"
+    "uri" : "spotify:album:1qc9rw9ncP92nT30EM2FDf"
   }, {
     "album_type" : "album",
     "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/1KugyPdDes7ppC7SUcT4gS"
+      "spotify" : "https://open.spotify.com/album/7yXlEmDhoWFl272ON3ZjZ3"
     },
-    "href" : "https://api.spotify.com/v1/albums/1KugyPdDes7ppC7SUcT4gS",
-    "id" : "1KugyPdDes7ppC7SUcT4gS",
+    "href" : "https://api.spotify.com/v1/albums/7yXlEmDhoWFl272ON3ZjZ3",
+    "id" : "7yXlEmDhoWFl272ON3ZjZ3",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/e8a34a8c0bb8e16c63fb0ac784639aebda667d65",
+      "url" : "https://i.scdn.co/image/b4686eeb8f57b4eb9196be8ff2760143e597ef98",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/4677d22cde0a938f500381a8c40ae7769d3685ef",
+      "url" : "https://i.scdn.co/image/9896f07e07e3dbb7a57ef5ddd2fe133e63dd652f",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/3027622a40980ab0466fed9e509e4574b6a30460",
+      "url" : "https://i.scdn.co/image/1e8109cff400fceeaacb0e25d2a65bf293c20df3",
       "width" : 64
     } ],
-    "name" : "Fun (Remixes)",
+    "name" : "Smoke Signals",
     "type" : "album",
-    "uri" : "spotify:album:1KugyPdDes7ppC7SUcT4gS"
+    "uri" : "spotify:album:7yXlEmDhoWFl272ON3ZjZ3"
   }, {
-    "album_type" : "album",
+    "album_type" : "compilation",
+    "available_markets" : [ "AD", "BE", "FR", "LU", "MC" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4QsqKTSV8K5hihokwaCN4O"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4QsqKTSV8K5hihokwaCN4O",
+    "id" : "4QsqKTSV8K5hihokwaCN4O",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/846f5dd6ba1738d87a0ab08a50cd13a40b57d1f9",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/70acd44b2972da9a5c73a0bdfc33549d2dbbd3b7",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/d5b7fc3265bf5f7e8af39c6cfee98915714b35a7",
+      "width" : 64
+    } ],
+    "name" : "Télérama Dub Festival (La compil' des 10 ans)",
+    "type" : "album",
+    "uri" : "spotify:album:4QsqKTSV8K5hihokwaCN4O"
+  }, {
+    "album_type" : "compilation",
     "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/4EUf4YyNjuXypWY6W5wEDm"
+      "spotify" : "https://open.spotify.com/album/6aweXMJ74SJBejhbfGx6e5"
     },
-    "href" : "https://api.spotify.com/v1/albums/4EUf4YyNjuXypWY6W5wEDm",
-    "id" : "4EUf4YyNjuXypWY6W5wEDm",
+    "href" : "https://api.spotify.com/v1/albums/6aweXMJ74SJBejhbfGx6e5",
+    "id" : "6aweXMJ74SJBejhbfGx6e5",
     "images" : [ {
       "height" : 640,
-      "url" : "https://i.scdn.co/image/835884befb1b595476e590e656f27b3ec028308b",
+      "url" : "https://i.scdn.co/image/bda5d8032e33a7c4a7e9f3df62a6e624ba08095f",
       "width" : 640
     }, {
       "height" : 300,
-      "url" : "https://i.scdn.co/image/b3074557f3c45bb3a2c9884ecbfeb692f3c51be4",
+      "url" : "https://i.scdn.co/image/cb7b1c18e9a1887f06e1708a6abb0caeadab6f7e",
       "width" : 300
     }, {
       "height" : 64,
-      "url" : "https://i.scdn.co/image/6dc754ec4bc27563dc707fb2178a55c71b7352c9",
+      "url" : "https://i.scdn.co/image/bdea34b2ec4886001486a0a901b67367d2d85f62",
       "width" : 64
     } ],
-    "name" : "Globalization",
+    "name" : "New (Dub) Excursion",
     "type" : "album",
-    "uri" : "spotify:album:4EUf4YyNjuXypWY6W5wEDm"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AR", "AU", "BO", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "IE", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/398EKzFttiMH4ojxOsnd7t"
-    },
-    "href" : "https://api.spotify.com/v1/albums/398EKzFttiMH4ojxOsnd7t",
-    "id" : "398EKzFttiMH4ojxOsnd7t",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/835884befb1b595476e590e656f27b3ec028308b",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/b3074557f3c45bb3a2c9884ecbfeb692f3c51be4",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/6dc754ec4bc27563dc707fb2178a55c71b7352c9",
-      "width" : 64
-    } ],
-    "name" : "Globalization",
-    "type" : "album",
-    "uri" : "spotify:album:398EKzFttiMH4ojxOsnd7t"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AD", "DO", "GB", "IE", "IS", "LI", "MC" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/3xMLqaskrhtCvvACgulDbq"
-    },
-    "href" : "https://api.spotify.com/v1/albums/3xMLqaskrhtCvvACgulDbq",
-    "id" : "3xMLqaskrhtCvvACgulDbq",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
-      "width" : 64
-    } ],
-    "name" : "Global Warming (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:3xMLqaskrhtCvvACgulDbq"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "FR" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/1rRi2XpTdpOp4D3uQxg1pF"
-    },
-    "href" : "https://api.spotify.com/v1/albums/1rRi2XpTdpOp4D3uQxg1pF",
-    "id" : "1rRi2XpTdpOp4D3uQxg1pF",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
-      "width" : 64
-    } ],
-    "name" : "Global Warming (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:1rRi2XpTdpOp4D3uQxg1pF"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AU", "HK", "MY", "NZ", "PH", "SG" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/3zDXeAmrZkjvWsQqa8niwc"
-    },
-    "href" : "https://api.spotify.com/v1/albums/3zDXeAmrZkjvWsQqa8niwc",
-    "id" : "3zDXeAmrZkjvWsQqa8niwc",
-    "images" : [ {
-      "height" : 636,
-      "url" : "https://i.scdn.co/image/559ee42d34920098f3262b4f7d399bbc3df94429",
-      "width" : 640
-    }, {
-      "height" : 298,
-      "url" : "https://i.scdn.co/image/690077c865110e31baa8aabe51862f41c44bc870",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/b434b6fdf582e0fd3c23221b4523ff5711f7e971",
-      "width" : 64
-    } ],
-    "name" : "Global Warming (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:3zDXeAmrZkjvWsQqa8niwc"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "US" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/2USiuZqEAyfOcKmcujg4hs"
-    },
-    "href" : "https://api.spotify.com/v1/albums/2USiuZqEAyfOcKmcujg4hs",
-    "id" : "2USiuZqEAyfOcKmcujg4hs",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
-      "width" : 64
-    } ],
-    "name" : "Global Warming (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:2USiuZqEAyfOcKmcujg4hs"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "US" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/7I4Vx91kradxSJNwg1ycbq"
-    },
-    "href" : "https://api.spotify.com/v1/albums/7I4Vx91kradxSJNwg1ycbq",
-    "id" : "7I4Vx91kradxSJNwg1ycbq",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
-      "width" : 64
-    } ],
-    "name" : "Global Warming (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:7I4Vx91kradxSJNwg1ycbq"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AD", "AT", "BE", "BG", "CH", "CY", "CZ", "DE", "EE", "ES", "FI", "FR", "GB", "GR", "HU", "IE", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK", "TR" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/4aawyAB9vmqN3uQ7FjRGTy"
-    },
-    "href" : "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy",
-    "id" : "4aawyAB9vmqN3uQ7FjRGTy",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/9b535d1040f9512ba0c6554938251c01d5ddfbfc",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/0cf4a8587a811d7e1e5b52aeec4735552a1cf3c7",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/125521548f6a4bf771611c3cb42e00ab1dd753a4",
-      "width" : 64
-    } ],
-    "name" : "Global Warming",
-    "type" : "album",
-    "uri" : "spotify:album:4aawyAB9vmqN3uQ7FjRGTy"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/4brEzXAZB8SWqgQIOBn7nF"
-    },
-    "href" : "https://api.spotify.com/v1/albums/4brEzXAZB8SWqgQIOBn7nF",
-    "id" : "4brEzXAZB8SWqgQIOBn7nF",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/63f66228ccd63d047788d903f4b4e955ab92dcb4",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/9796552d6abe30ddcd24eb79f590abe2d1e694dd",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/8d7087dc0de61f4648af061ac056f6eec2eeacbd",
-      "width" : 64
-    } ],
-    "name" : "I Am Armando (Armando Reloaded)",
-    "type" : "album",
-    "uri" : "spotify:album:4brEzXAZB8SWqgQIOBn7nF"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AR", "AT", "BE", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "DE", "DK", "DO", "EC", "GT", "HN", "IS", "LI", "LU", "MX", "NI", "NL", "PA", "PE", "PY", "SV", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/2F7tejLHzTqFq2XLol9ZGy"
-    },
-    "href" : "https://api.spotify.com/v1/albums/2F7tejLHzTqFq2XLol9ZGy",
-    "id" : "2F7tejLHzTqFq2XLol9ZGy",
-    "images" : [ {
-      "height" : 636,
-      "url" : "https://i.scdn.co/image/d096684f9d3fa3525421f2c4204f4e8e2cbba471",
-      "width" : 640
-    }, {
-      "height" : 298,
-      "url" : "https://i.scdn.co/image/fad28af03d6381d90324a95c7bf702503c00c311",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/f40eb2678f5a001c70d66423926cd4d760b7b6c1",
-      "width" : 64
-    } ],
-    "name" : "Global Warming: Meltdown (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:2F7tejLHzTqFq2XLol9ZGy"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "CA", "GB", "US" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/7sIlk4PsSWt7WhUs0JsFoG"
-    },
-    "href" : "https://api.spotify.com/v1/albums/7sIlk4PsSWt7WhUs0JsFoG",
-    "id" : "7sIlk4PsSWt7WhUs0JsFoG",
-    "images" : [ {
-      "height" : 636,
-      "url" : "https://i.scdn.co/image/d096684f9d3fa3525421f2c4204f4e8e2cbba471",
-      "width" : 640
-    }, {
-      "height" : 298,
-      "url" : "https://i.scdn.co/image/fad28af03d6381d90324a95c7bf702503c00c311",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/f40eb2678f5a001c70d66423926cd4d760b7b6c1",
-      "width" : 64
-    } ],
-    "name" : "Global Warming: Meltdown (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:7sIlk4PsSWt7WhUs0JsFoG"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "GB", "IE" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/516hWSssyH0S1SBp9Xb2N2"
-    },
-    "href" : "https://api.spotify.com/v1/albums/516hWSssyH0S1SBp9Xb2N2",
-    "id" : "516hWSssyH0S1SBp9Xb2N2",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/3d397071d0e97f18471ebe45852d14681773da0b",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/be5fe65fdcce64bab564fc02c75b11c7a6eee270",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/91c5816e713663e7aa642293d4d19e444e9ab15c",
-      "width" : 64
-    } ],
-    "name" : "Planet Pit",
-    "type" : "album",
-    "uri" : "spotify:album:516hWSssyH0S1SBp9Xb2N2"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AR", "BO", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/3K3wPSsFq3jt0tgZXerYma"
-    },
-    "href" : "https://api.spotify.com/v1/albums/3K3wPSsFq3jt0tgZXerYma",
-    "id" : "3K3wPSsFq3jt0tgZXerYma",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/441e5a7bdab0793f942d2e2765394866fc845064",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/7b300abf411f892f2dc5d374aa416f8e4b0524a8",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/ebe9beae6680db9ee5265fea9615dfedb67bc62c",
-      "width" : 64
-    } ],
-    "name" : "Planet Pit",
-    "type" : "album",
-    "uri" : "spotify:album:3K3wPSsFq3jt0tgZXerYma"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AR", "BO", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/30JZqToNZZH4mN7I0ymGvH"
-    },
-    "href" : "https://api.spotify.com/v1/albums/30JZqToNZZH4mN7I0ymGvH",
-    "id" : "30JZqToNZZH4mN7I0ymGvH",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/3d397071d0e97f18471ebe45852d14681773da0b",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/be5fe65fdcce64bab564fc02c75b11c7a6eee270",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/91c5816e713663e7aa642293d4d19e444e9ab15c",
-      "width" : 64
-    } ],
-    "name" : "Planet Pit",
-    "type" : "album",
-    "uri" : "spotify:album:30JZqToNZZH4mN7I0ymGvH"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/4rG0MhkU6UojACJxkMHIXB"
-    },
-    "href" : "https://api.spotify.com/v1/albums/4rG0MhkU6UojACJxkMHIXB",
-    "id" : "4rG0MhkU6UojACJxkMHIXB",
-    "images" : [ {
-      "height" : 636,
-      "url" : "https://i.scdn.co/image/1dcac421f3ddb49cb12a007929bbc4733d5c3b96",
-      "width" : 640
-    }, {
-      "height" : 298,
-      "url" : "https://i.scdn.co/image/af821d65c1a0a08488ac480247f0b6a77f13f96f",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/0feadca0eaa45ca2de6662c20b2344b8e6cd65b5",
-      "width" : 64
-    } ],
-    "name" : "Planet Pit (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:4rG0MhkU6UojACJxkMHIXB"
-  }, {
-    "album_type" : "album",
-    "available_markets" : [ "AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
-    "external_urls" : {
-      "spotify" : "https://open.spotify.com/album/6QYAJnxQVosXMMszGfVGvO"
-    },
-    "href" : "https://api.spotify.com/v1/albums/6QYAJnxQVosXMMszGfVGvO",
-    "id" : "6QYAJnxQVosXMMszGfVGvO",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/cd24aed2633e740145aa0ce739791facd907fbee",
-      "width" : 640
-    }, {
-      "height" : 300,
-      "url" : "https://i.scdn.co/image/6be3f0c32e5de32ae0563bea264d4e9ff9fbe4f2",
-      "width" : 300
-    }, {
-      "height" : 64,
-      "url" : "https://i.scdn.co/image/2ad16fdd28e264e2552aea01290be1be1df66c80",
-      "width" : 64
-    } ],
-    "name" : "Planet Pit (Deluxe Version)",
-    "type" : "album",
-    "uri" : "spotify:album:6QYAJnxQVosXMMszGfVGvO"
+    "uri" : "spotify:album:6aweXMJ74SJBejhbfGx6e5"
   } ],
   "limit" : 20,
-  "next" : "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on",
+  "next" : null,
   "offset" : 0,
   "previous" : null,
   "total" : 0
