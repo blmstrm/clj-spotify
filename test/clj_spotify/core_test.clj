@@ -30,6 +30,7 @@
 (def artists-albums-file "./test/clj_spotify/test-data/artists-albums.json")
 (def artists-top-tracks-file "./test/clj_spotify/test-data/artists-top-tracks.json")
 (def artists-related-artists-file "./test/clj_spotify/test-data/artists-related-artists.json")
+(def featured-playlists-file "./test/clj_spotify/test-data/featured-playlists.json")
 
 
 (defn reset-volatile-vals
@@ -172,5 +173,15 @@
     )
   )
 
+;TODO set timestamp in url in reply to be something hard coded, both in test data and in incoming json. Look for where v contains "timestamp=..."
+(deftest test-get-a-list-of-featured-playlists
+  (testing "Get a list of spotify featured playlists and verify the json data to be equal to test data in featured-playlists.json"
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (parse-json (slurp featured-playlists-file))
+            differences (data/diff ( sptfy/get-a-list-of-featured-playlists {:country "SE" :limit 2}  spotify-oauth-token) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences) ))))
+    )
+  )
 
 

@@ -1,0 +1,72 @@
+{
+  "message" : "Enjoy a peaceful evening...",
+  "playlists" : {
+    "href" : "https://api.spotify.com/v1/browse/featured-playlists?country=SE&timestamp=2015-09-17T22:38:43&offset=0&limit=2",
+    "items" : [ {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/2yQuxmP152cS0MFKgnDP2U"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/2yQuxmP152cS0MFKgnDP2U",
+      "id" : "2yQuxmP152cS0MFKgnDP2U",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/203bceb2489d1c65a9f244165802e581a48a05a7",
+        "width" : 300
+      } ],
+      "name" : "Evening Acoustic",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "snapshot_id" : "c0WXxdHuH9hwRjKEyHlQicPFgLxLqbwU4d8rgAion2MSsw4lXYlYk/hp49EvePPc",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/2yQuxmP152cS0MFKgnDP2U/tracks",
+        "total" : 0
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:2yQuxmP152cS0MFKgnDP2U"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify__sverige/playlist/03wFlOp3mE9udttjUPp4fr"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/03wFlOp3mE9udttjUPp4fr",
+      "id" : "03wFlOp3mE9udttjUPp4fr",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/70bb47695f87673ef4dd5cd9d1fd38595c1b17b4",
+        "width" : 300
+      } ],
+      "name" : "Egentid",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify__sverige"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige",
+        "id" : "spotify__sverige",
+        "type" : "user",
+        "uri" : "spotify:user:spotify__sverige"
+      },
+      "public" : null,
+      "snapshot_id" : "QRnj1bzBPtFYnL92cEMeWKihshJr6wsAT2Ki4zHsNYEVEBBRnpZ81Q8y+fdEh3x6",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/03wFlOp3mE9udttjUPp4fr/tracks",
+        "total" : 0
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify__sverige:playlist:03wFlOp3mE9udttjUPp4fr"
+    } ],
+    "limit" : 2,
+    "next" : "https://api.spotify.com/v1/browse/featured-playlists?country=SE&timestamp=2015-09-17T22:38:43&offset=2&limit=2",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 0
+  }
+}
