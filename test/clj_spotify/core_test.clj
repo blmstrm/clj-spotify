@@ -36,10 +36,13 @@
 (defn reset-volatile-vals
   "Function to reset values that change over time such as amount of followers or popularity ranking."
   [k v]
+  (if (string? v) (.contains "i.scdn.co" v))
   (cond
   (= k :followers){:href nil, :total 0}
   (= k :popularity) 0
   (= k :total) 0
+  (= k :snapshot_id) "123456"
+  (and (string? v) (.contains v "i.scdn.co")) "https://i.scdn.co/image/ref"
   :else v
   )
   )
@@ -48,9 +51,6 @@
   "Read string and transform to json but ignore key :followers"
   (json/read-str s :value-fn reset-volatile-vals :key-fn keyword)
   )
-
-(defn parse-json [s]
-  (json/read-str s :key-fn keyword))
 
 (def correct-map {:test-key "test-value" :test-map {:a "a"} :test-vector [1 2 3] :test-null nil})
 
@@ -96,7 +96,7 @@
 (deftest test-get-an-album
   (testing "Get a spotify album and verify the json data to be equal to test data in album.json"
     ( with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-    (let [correct-test-data (parse-json (slurp album-data-file))
+    (let [correct-test-data (test-json-string-to-map (slurp album-data-file))
           differences (data/diff (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"} spotify-oauth-token) correct-test-data)]  
       (is (= nil (first differences) (second differences)))))
     )
@@ -105,7 +105,7 @@
 (deftest test-get-several-albums
   (testing "Get several spotify albums and verify the json data to be equal to test data in albums.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-    (let [correct-test-data (parse-json (slurp albums-data-file))
+    (let [correct-test-data (test-json-string-to-map (slurp albums-data-file))
           differences (data/diff (sptfy/get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]} spotify-oauth-token) correct-test-data)
           ]
       (is (= nil (first differences) (second differences)))
@@ -116,7 +116,7 @@
 (deftest test-get-tracks-of-an-album
   (testing "Get the tracks of a spotify album and verify the json data to be equal to test data in tracks-of-an-album.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-    (let [correct-test-data (parse-json (slurp track-of-album-data-file))
+    (let [correct-test-data (test-json-string-to-map (slurp track-of-album-data-file))
           differences (data/diff (sptfy/get-tracks-of-album  {:id "6akEvsycLGftJxYudPjmqK"} spotify-oauth-token) correct-test-data)
           ]
       (is (= nil (first differences) (second differences)))))
@@ -126,7 +126,7 @@
 (deftest test-get-an-artist
   (testing "Get an artist and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-    (let [correct-test-data (parse-json (slurp artist-data-file))
+    (let [correct-test-data (test-json-string-to-map (slurp artist-data-file))
           differences (data/diff  (sptfy/get-an-artist {:id "0OdUWJ0sBjDrqHygGUXeCF"} spotify-oauth-token) correct-test-data) 
           ]
       (is (= nil (first differences) (second differences)) )))
@@ -136,7 +136,7 @@
 (deftest test-get-several-artists
   (testing "Get several artists and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (parse-json (slurp artists-data-file))
+      (let [correct-test-data (test-json-string-to-map (slurp artists-data-file))
             differences (data/diff ( sptfy/get-several-artists {:ids ["0oSGxfWSnnOXhD2fKuz2Gy","3dBVyJ7JuOMt4GE9607Qin"]} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences)))))
@@ -146,7 +146,7 @@
 (deftest test-get-an-artists-albums
   (testing "Get an artists albums and verify the json data to be equal to test data in artist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (parse-json (slurp artists-albums-file))
+      (let [correct-test-data (test-json-string-to-map (slurp artists-albums-file))
             differences (data/diff (sptfy/get-an-artists-albums {:id "1H1jG5SxsBzeuUk3ktdbeG"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences)))))
@@ -156,27 +156,19 @@
 (deftest test-get-an-artists-top-tracks
   (testing "Get an artists top tracks and verify the json data to be equal to test data in artists-otp-tracks.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (parse-json (slurp artists-top-tracks-file))
+      (let [correct-test-data (test-json-string-to-map (slurp artists-top-tracks-file))
             differences (data/diff ( sptfy/get-an-artists-top-tracks {:id "0TnOYISbd1XYRBk9myaseg" :country "ES"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )
   )
 
-(deftest test-get-artists-related-artists
-  (testing "Get an artists top tracks and verify the json data to be equal to test data in artists-otp-tracks.json"
-    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (parse-json (slurp artists-related-artists-file))
-            differences (data/diff ( sptfy/get-an-artists-related-artists {:id "0TnOYISbd1XYRBk9myaseg"} spotify-oauth-token) correct-test-data)
-            ]
-        (is (= nil (first differences) (second differences) ))))
-    )
-  )
+;Get related artists is untestable as the response json data changes every time.
 
 (deftest test-get-a-list-of-featured-playlists
   (testing "Get a list of spotify featured playlists and verify the json data to be equal to test data in featured-playlists.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (parse-json (slurp featured-playlists-file))
+      (let [correct-test-data (test-json-string-to-map (slurp featured-playlists-file))
             differences (data/diff ( sptfy/get-a-list-of-featured-playlists {:country "US" :timestamp "2014-10-23T07:00:00"}  spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
