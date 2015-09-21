@@ -341,10 +341,10 @@
 
   Example: (get-a-playlist {:owner_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\" :market \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
 
-(def-spotify-api-call get-a-playlists-tracks client/get (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
+(def-spotify-api-call get-a-playlists-tracks client/get (str spotify-api-url "users/owner_id/playlists/playlist_id/tracks")
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory keys in  m are :user_id and :playlist_id, optional keys are :fields, :limit and :offset and :market.
-  :user_id is the users spotify id.
+  :owner_id is the users spotify id.
   :playlist_id is the playlist spotify id.
   :fields is a comma-separated string of fields to return from the playlist.
   See developer.spotify.com for a full list of field names.
@@ -352,7 +352,7 @@
   :offset is the index of the first track to return, default is 0.
   :market is an ISO 3166-1 alpha-2 country code.
 
-  Example: (get-a-playlists-tracks {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\":limit 50 :offset 50 :market \"SE\"} \"BQBw-JtC..._7GvA\")")
+  Example: (get-a-playlists-tracks {:owner_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\":limit 50 :offset 50 :market \"SE\"} \"BQBw-JtC..._7GvA\")")
 
 (def-spotify-api-call create-a-playlist client/post (str spotify-api-url "users/user_id/playlists")
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
