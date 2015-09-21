@@ -328,7 +328,7 @@
   Example: (get-a-list-of-a-users-playlists {:user_id \"elkalel\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
 
 ;TODO - Change this fields string to be a map?
-(def-spotify-api-call get-a-playlist client/get (str spotify-api-url "users/user_id/playlists/playlist_id")
+(def-spotify-api-call get-a-playlist client/get (str spotify-api-url "users/owner_id/playlists/playlist_id")
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory keys in  m are :user_id and :playlist_id, optional keys are :fields, :market, :limit and :offset.
   :user_id is the users spotify id.
@@ -339,7 +339,7 @@
   :limit is the maxium number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
-  Example: (get-a-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\" :market \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
+  Example: (get-a-playlist {:owner_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :fields \"href,name,owner\" :market \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")")
 
 (def-spotify-api-call get-a-playlists-tracks client/get (str spotify-api-url "users/user_id/playlists/playlist_id/tracks")
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.

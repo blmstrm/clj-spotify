@@ -34,6 +34,7 @@
 (def browse-categories-file "./test/clj_spotify/test-data/list-of-browse-categories.json")
 (def category-file "./test/clj_spotify/test-data/category.json")
 (def categorys-playlists-file "./test/clj_spotify/test-data/categorys-playlists.json")
+(def playlist-file "./test/clj_spotify/test-data/playlist.json")
 
 
 (defn reset-volatile-vals
@@ -217,3 +218,12 @@
     )
   )
 
+(deftest test-get-a-playlist
+  (testing "Get a spotify playlist and verify the json data to be equal to test data in user-playlist.json"
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (test-json-string-to-map (slurp playlist-file))
+            differences (data/diff (sptfy/get-a-playlist {:owner_id "jmperezperez" :playlist_id "3cEYpjA9oz9GiPac4AsH4n" :market "ES"} spotify-oauth-token) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences) ))))
+    )
+  )
