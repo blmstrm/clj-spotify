@@ -163,7 +163,11 @@
     )
   )
 
-;Get related artists is untestable as the response json data changes every time.
+(deftest test-get-an-artists-related-artists
+  (testing "Get spotify information about similar artists, due to ever changing data, only verify a status 200 response."
+    (= 200 (:status (meta (sptfy/get-an-artists-related-artists {:id "5ZKMPRDHc7qElVJFh3uRqB"} spotify-oauth-token)))))
+  )
+
 
 (deftest test-get-a-list-of-featured-playlists
   (testing "Get a list of spotify featured playlists and verify the json data to be equal to test data in featured-playlists.json"
@@ -173,6 +177,11 @@
             ]
         (is (= nil (first differences) (second differences) ))))
     )
+  )
+
+(deftest test-get-a-list-of-new-releases
+  (testing "Get a list of new releases, due to ever changing data, only verify a status 200 response."
+    (= 200 (:status (meta (sptfy/get-a-list-of-new-releases {:country "SE" :limit 2} spotify-oauth-token)))))
   )
 
 
