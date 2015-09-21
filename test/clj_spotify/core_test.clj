@@ -31,6 +31,7 @@
 (def artists-top-tracks-file "./test/clj_spotify/test-data/artists-top-tracks.json")
 (def artists-related-artists-file "./test/clj_spotify/test-data/artists-related-artists.json")
 (def featured-playlists-file "./test/clj_spotify/test-data/featured-playlists.json")
+(def browse-categories-file "./test/clj_spotify/test-data/list-of-browse-categories.json")
 
 
 (defn reset-volatile-vals
@@ -184,4 +185,13 @@
     (= 200 (:status (meta (sptfy/get-a-list-of-new-releases {:country "SE" :limit 2} spotify-oauth-token)))))
   )
 
+(deftest test-get-a-list-of-browse-categories
+  (testing "Get a list of spotify browse categories and verify the json data to be equal to test data in list-of-browse-categories.json"
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (test-json-string-to-map (slurp browse-categories-file))
+            differences (data/diff ( sptfy/get-a-list-of-categories {:locale "sv_SE" :country "SE" :limit 10 :offset 5}  spotify-oauth-token) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences) ))))
+    )
+  )
 
