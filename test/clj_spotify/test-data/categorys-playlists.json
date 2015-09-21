@@ -1,0 +1,311 @@
+{
+  "playlists" : {
+    "href" : "https://api.spotify.com/v1/browse/categories/dinner/playlists?country=SE&offset=5&limit=10",
+    "items" : [ {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/1OL9sHukbhFyx2pcpjhOfF"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/1OL9sHukbhFyx2pcpjhOfF",
+      "id" : "1OL9sHukbhFyx2pcpjhOfF",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/900658f332ad8a4d64bd3c5e54ce9dc4210b9ecd",
+        "width" : 300
+      } ],
+      "name" : "Dinner at my place",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "snapshot_id" : "RAdOqFaMFUCkXhtjbsKy+IGsG/R+VXVzCmbtXbCF472GqNRasv/4uBb5uep8kk6C",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/1OL9sHukbhFyx2pcpjhOfF/tracks",
+        "total" : 37
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:1OL9sHukbhFyx2pcpjhOfF"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/1Hd6FKA6On582nMsfpoRTl"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/1Hd6FKA6On582nMsfpoRTl",
+      "id" : "1Hd6FKA6On582nMsfpoRTl",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/c2c17c024b3a301a05b5a71aea880d2fda2ae5c8",
+        "width" : 300
+      } ],
+      "name" : "Dinnertime Acoustics",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "snapshot_id" : "cM+jqL3ELnYvB342TB3mHiy2nWLLTEfViHJxGmG/NKGhitls4vT0SPeWgiyON7/P",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/1Hd6FKA6On582nMsfpoRTl/tracks",
+        "total" : 37
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:1Hd6FKA6On582nMsfpoRTl"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/63UdjnaWDFp0VNrwQ28qUw"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/63UdjnaWDFp0VNrwQ28qUw",
+      "id" : "63UdjnaWDFp0VNrwQ28qUw",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/43acef2b70469885e7a5e0982c878fde7211963f",
+        "width" : 300
+      } ],
+      "name" : "Dinner Party",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "snapshot_id" : "WfaYvNDln9IK+XSdkLQN2U4Ey0uWQp0BIDaPnqmV0wh5iw5F59IAqNIYUipRnRlp",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/63UdjnaWDFp0VNrwQ28qUw/tracks",
+        "total" : 50
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:63UdjnaWDFp0VNrwQ28qUw"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify__sverige/playlist/2XKDWX126USctv3vYrbAho"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/2XKDWX126USctv3vYrbAho",
+      "id" : "2XKDWX126USctv3vYrbAho",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/a6a76240856cff22f9b209abbacce589362a7d46",
+        "width" : 300
+      } ],
+      "name" : "Middagsmusik",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify__sverige"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige",
+        "id" : "spotify__sverige",
+        "type" : "user",
+        "uri" : "spotify:user:spotify__sverige"
+      },
+      "public" : null,
+      "snapshot_id" : "eyP16P+DjBQuCNkkHJvglIMqdh33O5nJfPo4jG/jXcaLzg40nJmzLQbUJk1Br6Hk",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/2XKDWX126USctv3vYrbAho/tracks",
+        "total" : 42
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify__sverige:playlist:2XKDWX126USctv3vYrbAho"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify__sverige/playlist/42H5h0a1c0eCtYr9xs57kL"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/42H5h0a1c0eCtYr9xs57kL",
+      "id" : "42H5h0a1c0eCtYr9xs57kL",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/4c4004f0052f1c6a3c92c593436966d295011bbd",
+        "width" : 300
+      } ],
+      "name" : "Smakfullt",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify__sverige"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige",
+        "id" : "spotify__sverige",
+        "type" : "user",
+        "uri" : "spotify:user:spotify__sverige"
+      },
+      "public" : null,
+      "snapshot_id" : "dUIHQf0p1iCILo1WHoK1fvpDpG74I4N0DDlcUT6bGp4izlRfagIT9KVa1oubLfkT",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/42H5h0a1c0eCtYr9xs57kL/tracks",
+        "total" : 32
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify__sverige:playlist:42H5h0a1c0eCtYr9xs57kL"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/digster.se/playlist/4sSlnNKsFJbnBzO2hK6LRo"
+      },
+      "href" : "https://api.spotify.com/v1/users/digster.se/playlists/4sSlnNKsFJbnBzO2hK6LRo",
+      "id" : "4sSlnNKsFJbnBzO2hK6LRo",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/5f1610a60101a988bd0d985dcdb4942cbf0c87c3",
+        "width" : 300
+      } ],
+      "name" : "Digster WINE AND DINE",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/digster.se"
+        },
+        "href" : "https://api.spotify.com/v1/users/digster.se",
+        "id" : "digster.se",
+        "type" : "user",
+        "uri" : "spotify:user:digster.se"
+      },
+      "public" : null,
+      "snapshot_id" : "U54TH8/j37T4zUD/BMSuD5w2bKHHASPTFIWm5lzTec8JQZUhZI8oSNqmnFT7cQ9o",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/digster.se/playlists/4sSlnNKsFJbnBzO2hK6LRo/tracks",
+        "total" : 50
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:digster.se:playlist:4sSlnNKsFJbnBzO2hK6LRo"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify__sverige/playlist/1wxQEf9jRByTmgD0Pm4C2t"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/1wxQEf9jRByTmgD0Pm4C2t",
+      "id" : "1wxQEf9jRByTmgD0Pm4C2t",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/1518c050af28ab66612a3b96f18c3fa002fac5d9",
+        "width" : 300
+      } ],
+      "name" : "Grillparty",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify__sverige"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige",
+        "id" : "spotify__sverige",
+        "type" : "user",
+        "uri" : "spotify:user:spotify__sverige"
+      },
+      "public" : null,
+      "snapshot_id" : "FhT356PvnOSh/s90V9KbBWZ6Z3UF7NUXfDqTCNonF0XKq6dDxcmRp7IY5kpzzsdB",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/1wxQEf9jRByTmgD0Pm4C2t/tracks",
+        "total" : 57
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify__sverige:playlist:1wxQEf9jRByTmgD0Pm4C2t"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/1oTVoAzl0uw6tcmPxznwSy"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/1oTVoAzl0uw6tcmPxznwSy",
+      "id" : "1oTVoAzl0uw6tcmPxznwSy",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/37a41b2fbda584b6b991a0bbb30c863be5a6de68",
+        "width" : 300
+      } ],
+      "name" : "Dinner Chill",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "snapshot_id" : "YnuXh+uRhGkk75m/154SaNBL8aQG9zRyjjJLzJP/uuGRs1+ImttswRNdhG87NUJo",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/1oTVoAzl0uw6tcmPxznwSy/tracks",
+        "total" : 65
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:1oTVoAzl0uw6tcmPxznwSy"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/myplay.com/playlist/4Ubi5jpk6sud8tluFqDjxP"
+      },
+      "href" : "https://api.spotify.com/v1/users/myplay.com/playlists/4Ubi5jpk6sud8tluFqDjxP",
+      "id" : "4Ubi5jpk6sud8tluFqDjxP",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/2f8105058fd20b0518b3d6ae0914c0f59687ef58",
+        "width" : 300
+      } ],
+      "name" : "ROMANTIC DINNER MUSIC",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/myplay.com"
+        },
+        "href" : "https://api.spotify.com/v1/users/myplay.com",
+        "id" : "myplay.com",
+        "type" : "user",
+        "uri" : "spotify:user:myplay.com"
+      },
+      "public" : null,
+      "snapshot_id" : "dHVLJbpjhKxepIPu/sn2Ku+wkbNo7VrUPGrA5nqPZqt59v3mTexOq50arEx06ZGn",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/myplay.com/playlists/4Ubi5jpk6sud8tluFqDjxP/tracks",
+        "total" : 71
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:myplay.com:playlist:4Ubi5jpk6sud8tluFqDjxP"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify__sverige/playlist/02Ia7PBv03vPW3jGiPoOJn"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/02Ia7PBv03vPW3jGiPoOJn",
+      "id" : "02Ia7PBv03vPW3jGiPoOJn",
+      "images" : [ {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/16893d79675dfb472a41bf63ac9d5747a9b062fe",
+        "width" : 300
+      } ],
+      "name" : "Middagsmixen",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify__sverige"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige",
+        "id" : "spotify__sverige",
+        "type" : "user",
+        "uri" : "spotify:user:spotify__sverige"
+      },
+      "public" : null,
+      "snapshot_id" : "haZSyG52dsUeKUg78BGvnGZ6B4FiDSXa3S4xSxaDPtPLImedllvFTE62TIGkGdON",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify__sverige/playlists/02Ia7PBv03vPW3jGiPoOJn/tracks",
+        "total" : 30
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify__sverige:playlist:02Ia7PBv03vPW3jGiPoOJn"
+    } ],
+    "limit" : 10,
+    "next" : "https://api.spotify.com/v1/browse/categories/dinner/playlists?country=SE&offset=15&limit=10",
+    "offset" : 5,
+    "previous" : "https://api.spotify.com/v1/browse/categories/dinner/playlists?country=SE&offset=0&limit=10",
+    "total" : 48
+  }
+}
