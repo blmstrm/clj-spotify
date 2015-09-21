@@ -1,0 +1,15 @@
+{
+  "display_name" : null,
+  "external_urls" : {
+    "spotify" : "https://open.spotify.com/user/elkalel"
+  },
+  "followers" : {
+    "href" : null,
+    "total" : 3
+  },
+  "href" : "https://api.spotify.com/v1/users/elkalel",
+  "id" : "elkalel",
+  "images" : [ ],
+  "type" : "user",
+  "uri" : "spotify:user:elkalel"
+}
