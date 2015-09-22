@@ -37,6 +37,7 @@
 (def playlist-file "./test/clj_spotify/test-data/playlist.json")
 (def playlists-tracks-file "./test/clj_spotify/test-data/playlists-tracks.json")
 (def user-profile-file "./test/clj_spotify/test-data/user-profile.json")
+(def search-file "./test/clj_spotify/test-data/search.json")
 
 
 (defn reset-volatile-vals
@@ -255,6 +256,16 @@
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (test-json-string-to-map (slurp user-profile-file))
             differences (data/diff (sptfy/get-a-users-profile {:user_id "elkalel"} spotify-oauth-token) correct-test-data)
+            ]
+        (is (= nil (first differences) (second differences) ))))
+    )
+  )
+
+(deftest test-search
+  (testing "Search spotify."
+    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+      (let [correct-test-data (test-json-string-to-map (slurp search-file))
+            differences (data/diff (sptfy/search {:q "Muse" :type "track,artist" :market "US" :limit 1 :offset 5} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )
