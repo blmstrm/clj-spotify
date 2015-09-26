@@ -7,11 +7,6 @@
             [clojure.data.codec.base64 :as b64]
             ))
 
-;TODO - Create fixtures for json responses.
-;TODO - Use spotifys client credentials flow to get token to perform tests.
-;TODO - Encrypt client_id,client_secret to use with travis.
-;TODO - Remove followers key from artist data as it changes over time.
-
 
 ;TODO - Make the below look nice! Separate maybe.
 (defn create-enc-auth-string
