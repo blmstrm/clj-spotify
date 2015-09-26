@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/blmstrm/clj-spotify.svg?branch=master)](https://travis-ci.org/blmstrm/clj-spotify)
 [![Clojars](https://img.shields.io/clojars/v/clj-spotify.svg)](http://clojars.org/clj-spotify)
-# clj-spotify
 [![Coverage Status](https://coveralls.io/repos/blmstrm/clj-spotify/badge.svg?branch=master&service=github)](https://coveralls.io/github/blmstrm/clj-spotify?branch=master)
-
+# clj-spotify
 A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
