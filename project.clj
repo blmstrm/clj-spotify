@@ -3,6 +3,7 @@
   :url "https://github.com/blmstrm/clj-spotify"
   :license {:name "The MIT License (MIT)"
             :url "http://opensource.org/licenses/MIT"}
+  :plugins [[lein-cloverage "1.0.6"]]
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/data.json "0.2.6"]
                  [org.clojure/data.codec "0.1.0"]
