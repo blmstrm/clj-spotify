@@ -2,7 +2,7 @@
 [![Clojars](https://img.shields.io/clojars/v/clj-spotify.svg)](http://clojars.org/clj-spotify)
 [![Coverage Status](https://coveralls.io/repos/blmstrm/clj-spotify/badge.svg?branch=master&service=github)](https://coveralls.io/github/blmstrm/clj-spotify?branch=master)
 # clj-spotify
-clj-spotify is a client library for accessing the Spotify Web API. `clj-spotify` aims to be identical to Spotifys Web API when it comes to naming of endpoints, path elements and query parameters therefor the documentation found here is very short. Please read through the [Spotifys API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/), a one to one mapping from the endpoints to functions in this library should be possible.  
+clj-spotify is a client library for accessing the Spotify Web API. clj-spotify aims to be identical to Spotifys Web API when it comes to naming of endpoints, path elements and query parameters therefor the documentation found here is very short. Please read through the [Spotifys API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/), a one to one mapping from the endpoints to functions in this library should be possible.  
 
 ##Usage
 Each function takes a map `m` of parameters and a sometimes optional oauth token `t`. Function names are the same as the names found in [Spotifys API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/). A function call to retreive a track from Spotify then has the function signature `(get-a-track m t)` and a function call to get an album's tracks has the function signature `(get-an-albums-tracks m t)` and so on.
@@ -15,10 +15,10 @@ Key names and value types in `m` are the same as found in the [Spotifys API Endp
 For a simple method to deal with authentication through the Client Credentials Flow see the `spotify-oauth-token` variable in `core_test-clj`. If you need oauth2 authentication through the Authorization Code Flow see this blog post on how to roll your own: [OAuth2 is easy - illustrated in 50 lines of Clojure](http://leonid.shevtsov.me/en/oauth2-is-easy). 
 
 ###Return values
-`clj-spotify`returns the data received from the Spotify Web API unaltered.
+clj-spotify returns the data received from the Spotify Web API unaltered.
 
 ###Error handling
-Error messages received from Spotify are returned unaltered as received from the servers. If an API call would result in an exception in `clj-spotify` this will be returned on the same format as Spotifys error messages but with the `:status` key set to `Exception`and the result of calling `(.getMessage e)` on the Exception `e` associated with the `:message` key.
+Error messages received from Spotify are returned unaltered as received from the servers. If an API call would result in an exception in clj-spotify this will be returned on the same format as Spotifys error messages but with the `:status` key set to `Exception`and the result of calling `(.getMessage e)` on the Exception `e` associated with the `:message` key.
 
 ##Additional documentation
 Each function has a basic doc string but if the usage still is unclear please consult [Spotifys API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/).
