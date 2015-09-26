@@ -46,8 +46,7 @@
   (= k :popularity) 0
   (= k :total) 0
   (= k :snapshot_id) "123456"
-  (and (string? v) (.contains v "i.scdn.co")) "https://i.scdn.co/image/ref"
-  (and (string? v) (.contains v "p.scdn.co")) "https://p.scdn.co/preview/ref"
+  (and (string? v) (.contains v "scdn.co")) "https://scdn.co/preview/ref"
   :else v
   )
   )
