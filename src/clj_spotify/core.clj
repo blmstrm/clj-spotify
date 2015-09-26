@@ -126,7 +126,7 @@
 
   Example: (get-several-albums {:ids \"4hTil0JVdMyxK2vH11ZbiX,4RjjFbiqFaO8mKTDM2Kzna\" :market \"SE\"} \"BQBw-JtC..._7GvA\") ")
 
-(def-spotify-api-call get-tracks-of-album client/get (str spotify-api-url "albums/id/tracks")
+(def-spotify-api-call get-an-albums-tracks client/get (str spotify-api-url "albums/id/tracks")
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in m is :id, optional keys are :limit, :offset and :market.
   :id has to have the value of an existing album's id.
