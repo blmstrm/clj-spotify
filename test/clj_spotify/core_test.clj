@@ -216,7 +216,7 @@
   (testing "Get a spotify playlist and verify the json data to be equal to test data in user-playlist.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (test-json-string-to-map (slurp playlist-file))
-            differences (data/diff (sptfy/get-a-playlist {:owner_id "jmperezperez" :playlist_id "3cEYpjA9oz9GiPac4AsH4n" :market "ES"} spotify-oauth-token) correct-test-data)
+            differences (data/diff (sptfy/get-a-playlist {:owner_id "elkalel" :playlist_id "5X6O7Wb8y3we9VzYTT9l64" :market "SE"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )
@@ -226,7 +226,7 @@
   (testing "Get a spotify playlist's tracks and verify the json data to be equal to test data in playlists-tracks.json"
     (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
       (let [correct-test-data (test-json-string-to-map (slurp playlists-tracks-file))
-            differences (data/diff (sptfy/get-a-playlists-tracks {:owner_id "jmperezperez" :playlist_id "3cEYpjA9oz9GiPac4AsH4n" :market "ES" :offset 0 :limit 100} spotify-oauth-token) correct-test-data)
+            differences (data/diff (sptfy/get-a-playlists-tracks {:owner_id "elkalel" :playlist_id "5X6O7Wb8y3we9VzYTT9l64" :offset 0 :limit 100 :market "SE"} spotify-oauth-token) correct-test-data)
             ]
         (is (= nil (first differences) (second differences) ))))
     )
