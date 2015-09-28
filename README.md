@@ -15,7 +15,7 @@ Key names and value types in `m` are the same as found in the [Spotifys API Endp
 For a simple method to deal with authentication through the Client Credentials Flow see the `spotify-oauth-token` variable in `core_test-clj`. If you need oauth2 authentication through the Authorization Code Flow see this blog post on how to roll your own: [OAuth2 is easy - illustrated in 50 lines of Clojure](http://leonid.shevtsov.me/en/oauth2-is-easy). 
 
 ###Return values
-clj-spotify returns the data received from the Spotify Web API unaltered.
+clj-spotify returns the data received from the Spotify Web API unaltered but the response will be converted from json to a Clojure map.
 
 ###Error handling
 Error messages received from Spotify are returned unaltered as received from the servers. If an API call would result in an exception in clj-spotify this will be returned on the same format as Spotifys error messages but with the `:status` key set to `Exception`and the result of calling `(.getMessage e)` on the Exception `e` associated with the `:message` key.
