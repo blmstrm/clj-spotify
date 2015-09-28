@@ -12,8 +12,7 @@
 (defn json-string-to-map
   "Read string and transform into json"
   [s]
-  (json/read-str s :key-fn keyword)
-  )
+  (json/read-str s :key-fn keyword))
 
 (defn response-to-map
   "Parse body of http respose to json"
@@ -23,8 +22,7 @@
     (json-string-to-map (:body response))
     (catch java.lang.NullPointerException e {:error {:status "NullPointerException"  :message (.getMessage e)}})
     (catch Exception e {:error {:status "Exception"  :message (.getMessage e)}})
-    ) {:status (:status response)})
-  )
+    ) {:status (:status response)}))
 
 (defn- build-new-url
   "Do the building nescessary in replace-url-values here. url-parts is the split up url which values works as keys in param-map."
@@ -35,9 +33,7 @@
           new-url (str "/" (if (contains? param-map url-key)
                              (url-key param-map)
                              (last url-parts))  url)]
-      (recur new-url (pop url-parts) param-map))
-    ) 
-  )
+      (recur new-url (pop url-parts) param-map))))
 
 (defn replace-url-values
   "Build a new url by switching parts in url with values in param-map. Keys are substrings of the full url. If a key is not present in template-keys it won't be exchanged."
@@ -47,29 +43,24 @@
   (let [act-tmplt-keys  (select-keys param-map template-keys)
         split-url (string/split (string/replace url "https://" "") #"/") 
         ]
-    (build-new-url "" split-url act-tmplt-keys)
-    )))
+    (build-new-url "" split-url act-tmplt-keys))))
 
 (defn comma-separate
   "If v is a sequence, convert to a comma separated string." 
   [k v]
   (if (or (seq? v) (vector? v))
     [k (string/join "," v)]
-    [k v]
-    ) 
-  )
+    [k v]))
 
 (defn convert-values
   "Convert values in query-params to match spotifys api."
   [m]
-  (into {} (for [[k v] m] (comma-separate k v)))
-  )
+  (into {} (for [[k v] m] (comma-separate k v))))
 
 (defn remove-path-keys
   "Remove keys that are used in modifying the path."
   [m]
-  (apply dissoc m template-keys) 
-  )
+  (apply dissoc m template-keys))
 
 (defn modify-form-params
   "Do nescessary conversion of form parameters."
@@ -77,9 +68,7 @@
   (->
     m
     (remove-path-keys)
-    (convert-values)
-    )
-  )
+    (convert-values)))
 
 (defn set-params-type
   "Return either :query-params or :form-params key depending on value of verb"
@@ -88,9 +77,7 @@
   (if
     (or (= verb-type clj_http.client$put) (= verb-type clj_http.client$post))
     :form-params
-    :query-params 
-    ))
-  )
+    :query-params)))
 
 ;TODO - better doc string
 (defmacro def-spotify-api-call
@@ -106,8 +93,7 @@
             (~verb (replace-url-values m# ~url) query-params#)
             (catch Exception e# (ex-data e#))
             )
-          (response-to-map)
-          )))))
+          (response-to-map))))))
 
 ;Albums
 (def-spotify-api-call get-an-album client/get (str spotify-api-url "albums/id")
