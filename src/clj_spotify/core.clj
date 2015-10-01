@@ -79,9 +79,8 @@
       :form-params
       :query-params))
 
-;TODO - better doc string
 (defn spotify-api-call
-  "Creates a function f with doc-string d that calls the http-verb verb for url url."
+  "Returns a function that takes a map m and an optional oauth-token t as arguments."
   [verb url]
   (fn f
     ([m] (f m nil))
