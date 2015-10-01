@@ -70,14 +70,14 @@
     (remove-path-keys)
     (convert-values)))
 
-(defn set-params-type
+(defn select-params-type
   "Return either :query-params or :form-params key depending on value of verb"
   [verb]
-  (let [verb-type (type verb)] 
+
     (if
-      (or (= verb-type clj_http.client$put) (= verb-type clj_http.client$post))
+      (or (= verb client/put) (= verb client/post))
       :form-params
-      :query-params)))
+      :query-params))
 
 ;TODO - better doc string
 (defn spotify-api-call
@@ -86,7 +86,7 @@
   (fn f
     ([m] (f m nil))
     ([m t]
-     (let [query-params {(set-params-type verb) (modify-form-params m) :oauth-token t :content-type :json}]
+     (let [query-params {(select-params-type verb) (modify-form-params m) :oauth-token t :content-type :json}]
        (->
          (try
            (verb (replace-url-values m url) query-params)
