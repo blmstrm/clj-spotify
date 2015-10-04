@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/blmstrm/clj-spotify.svg?branch=master)](https://travis-ci.org/blmstrm/clj-spotify)
 [![Clojars](https://img.shields.io/clojars/v/clj-spotify.svg)](http://clojars.org/clj-spotify)
 [![Coverage Status](https://coveralls.io/repos/blmstrm/clj-spotify/badge.svg?branch=master&service=github)](https://coveralls.io/github/blmstrm/clj-spotify?branch=master)
+[![Dependencies Status](http://jarkeeper.com/blmstrm/clj-spotify/status.png)](http://jarkeeper.com/blmstrm/clj-spotify)
 # clj-spotify
 clj-spotify is a client library for accessing the Spotify Web API. clj-spotify aims to be identical to Spotifys Web API when it comes to naming of endpoints, path elements and query parameters therefore the documentation found here is very short. Please read through the [Spotifys API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/), a one to one mapping from the endpoints to functions in this library should be possible.  
 
