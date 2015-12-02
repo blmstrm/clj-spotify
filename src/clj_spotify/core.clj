@@ -100,14 +100,10 @@
              (catch Exception e (ex-data e)))
            (response-to-map))))))
 
-
-; Define (api-get), (api-post), etc.
-(let [defverb #(intern *ns*
-                       (symbol (str "api-" %))
-                       (partial spotify-api-call
-                                (resolve (symbol "client" %))))]
-  (doseq [verb ["get" "post" "put" "delete"]]
-    (defverb verb)))
+(def api-get    (partial spotify-api-call client/get))
+(def api-post   (partial spotify-api-call client/post))
+(def api-put    (partial spotify-api-call client/put))
+(def api-delete (partial spotify-api-call client/delete))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
