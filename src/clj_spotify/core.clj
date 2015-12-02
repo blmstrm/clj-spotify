@@ -1,9 +1,7 @@
 (ns clj-spotify.core
   (:require [clj-http.client :as client]
             [clojure.data.json :as json]
-            [clojure.string :as string]
-            )
-  )
+            [clojure.string :as string]))
 
 (def template-keys [:id :category_id :owner_id :playlist_id :user_id])
 
@@ -15,24 +13,29 @@
   (json/read-str s :key-fn keyword))
 
 (defn response-to-map
-  "Parse body of http respose to json"
+  "Parse body of http response to json"
   [response]
   (with-meta
     (try
       (json-string-to-map (:body response))
-      (catch java.lang.NullPointerException e {:error {:status "NullPointerException"  :message (.getMessage e)}})
-      (catch Exception e {:error {:status "Exception"  :message (.getMessage e)}})
-      ) {:status (:status response)}))
+      (catch java.lang.NullPointerException e
+        {:error {:status "NullPointerException"
+                 :message (.getMessage e)}})
+      (catch Exception e
+        {:error {:status "Exception"
+                 :message (.getMessage e)}}))
+    {:status (:status response)}))
 
 (defn- build-new-url
-  "Do the building nescessary in replace-url-values here. url-parts is the split up url which values works as keys in param-map."
+  "Do the building necessary in replace-url-values here. url-parts is the split up url which values works as keys in param-map."
   [url url-parts param-map]
   (if (empty? url-parts)
     (str "https:/" url)
     (let [url-key (keyword (last url-parts))
           new-url (str "/" (if (contains? param-map url-key)
                              (url-key param-map)
-                             (last url-parts))  url)]
+                             (last url-parts))
+                       url)]
       (recur new-url (pop url-parts) param-map))))
 
 (defn replace-url-values
@@ -40,22 +43,27 @@
   [param-map url]
   (if (string/blank? url)
     "" 
-    (let [act-tmplt-keys  (select-keys param-map template-keys)
-          split-url (string/split (string/replace url "https://" "") #"/") 
-          ]
+    (let [act-tmplt-keys (select-keys param-map template-keys)
+          split-url (string/split (string/replace url "https://" "") #"/")]
       (build-new-url "" split-url act-tmplt-keys))))
 
 (defn comma-separate
   "If v is a sequence, convert to a comma separated string." 
-  [k v]
+  [v]
   (if (or (seq? v) (vector? v))
-    [k (string/join "," v)]
-    [k v]))
+    (string/join "," v)
+    v))
+
+(defn- map-vals
+  "Applies f to each value in m."
+  [f m]
+  (zipmap (keys m)
+          (map f (vals m))))
 
 (defn convert-values
   "Convert values in query-params to match spotifys api."
   [m]
-  (into {} (for [[k v] m] (comma-separate k v))))
+  (map-vals comma-separate m))
 
 (defn remove-path-keys
   "Remove keys that are used in modifying the path."
@@ -63,21 +71,19 @@
   (apply dissoc m template-keys))
 
 (defn modify-form-params
-  "Do nescessary conversion of form parameters."
+  "Do necessary conversion of form parameters."
   [m]
-  (->
-    m
-    (remove-path-keys)
-    (convert-values)))
+  (-> m
+      remove-path-keys
+      convert-values))
 
 (defn select-params-type
   "Return either :query-params or :form-params key depending on value of verb"
   [verb]
-
-    (if
-      (or (= verb client/put) (= verb client/post))
-      :form-params
-      :query-params))
+  (if
+    (or (= verb client/put) (= verb client/post))
+    :form-params
+    :query-params))
 
 (defn spotify-api-call
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
