@@ -90,7 +90,7 @@
 
 (defn spotify-api-call
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
-  [method endpoint & {:keys [query-params]}]
+  [method endpoint & {:keys [query-params] :or {query-params []}}]
   (fn f
     ([m] (f m nil))
     ([m t]
