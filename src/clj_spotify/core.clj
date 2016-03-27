@@ -80,32 +80,40 @@
       convert-values))
 
 (defn select-params-type
-  "Return either :query-params or :form-params key depending on value of verb"
-  [verb]
+  "Return either :query-params or :form-params key depending on value of method"
+  [method]
   (if
-    (or (= verb client/put) (= verb client/post))
+    (or (= method :put) (= method :post))
     :form-params
     :query-params))
 
+(defn api-request
+  "Returns a request map for a particular api call."
+  [method endpoint params-spec m t]
+  (let [query-params {(select-params-type method) (modify-form-params m)
+                      :oauth-token t
+                      :content-type :json}
+        url (replace-url-values m (str spotify-api-url endpoint))]
+    (-> (try
+          (client/check-url! url)
+          (merge query-params {:method method :url url})
+          (catch Exception e (ex-data e))))))
+
 (defn spotify-api-call
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
-  [verb endpoint]
+  [method endpoint & {:keys [params-spec]}]
   (fn f
     ([m] (f m nil))
     ([m t]
-     (let [query-params {(select-params-type verb) (modify-form-params m)
-                         :oauth-token t
-                         :content-type :json}
-           url (str spotify-api-url endpoint)]
-       (-> (try
-             (verb (replace-url-values m url) query-params)
-             (catch Exception e (ex-data e)))
-           (response-to-map))))))
+     (-> (try
+           (client/request (api-request method endpoint params-spec m t))
+           (catch Exception e (ex-data e)))
+         (response-to-map)))))
 
-(def api-get    (partial spotify-api-call client/get))
-(def api-post   (partial spotify-api-call client/post))
-(def api-put    (partial spotify-api-call client/put))
-(def api-delete (partial spotify-api-call client/delete))
+(def api-get    (partial spotify-api-call :get))
+(def api-post   (partial spotify-api-call :post))
+(def api-put    (partial spotify-api-call :put))
+(def api-delete (partial spotify-api-call :delete))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
