@@ -20,10 +20,12 @@
       (json-string-to-map (:body response))
       (catch java.lang.NullPointerException e
         {:error {:status "NullPointerException"
-                 :message (.getMessage e)}})
+                 :message (.getMessage e)
+                 :response response}})
       (catch Exception e
         {:error {:status "Exception"
-                 :message (.getMessage e)}}))
+                 :message (.getMessage e)
+                 :reponse response}}))
     {:status (:status response)}))
 
 (defn- build-new-url
