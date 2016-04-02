@@ -25,7 +25,7 @@
       (catch Exception e
         {:error {:status "Exception"
                  :message (.getMessage e)
-                 :reponse response}}))
+                 :response response}}))
     {:status (:status response)}))
 
 (defn- build-new-url
