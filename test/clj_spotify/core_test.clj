@@ -64,9 +64,10 @@
 
 (def malformed-json-response {:body "{\"test-key\": \"test-value\", \"test-map\" : {\"a\": \"a\"}, \"test-vector\" : [1 2 3], \"test-null\" : }"}) 
 
-(def nullpointer-error-map {:error {:status "NullPointerException", :message nil}}) 
+(defn nullpointer-error-map [response] {:error {:status "NullPointerException", :message nil, :response response}})
 
-(def json-missing-key-error-map {:error {:status "Exception", :message "JSON error (key missing value in object)"}})
+(defn json-missing-key-error-map [response]
+  {:error {:status "Exception", :message "JSON error (key missing value in object)", :response response}})
 
 (def test-url (str sptfy/spotify-api-url "users/user_id/playlists/playlist_id/tracks"))
 (def correct-test-url (str sptfy/spotify-api-url "users/elkalel/playlists/6IIjEBw2BrRXbrSLerA7A6/tracks"))
@@ -78,9 +79,9 @@
   (testing "Conversion from string to clojure map"
     (is (= correct-map (sptfy/response-to-map correctly-formatted-response))))
   (testing "Missing body tag in response."
-    (is (= nullpointer-error-map (sptfy/response-to-map missing-body-tag-response)))) 
+    (is (= (nullpointer-error-map missing-body-tag-response) (sptfy/response-to-map missing-body-tag-response))))
   (testing "Malformed json syntax in string."
-    (is (= json-missing-key-error-map (sptfy/response-to-map malformed-json-response)))))
+    (is (= (json-missing-key-error-map malformed-json-response) (sptfy/response-to-map malformed-json-response)))))
 
 (deftest test-replace-url-values
   (testing "Replace template values in spotify url and compare to correct url."

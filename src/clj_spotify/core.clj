@@ -20,10 +20,12 @@
       (json-string-to-map (:body response))
       (catch java.lang.NullPointerException e
         {:error {:status "NullPointerException"
-                 :message (.getMessage e)}})
+                 :message (.getMessage e)
+                 :response response}})
       (catch Exception e
         {:error {:status "Exception"
-                 :message (.getMessage e)}}))
+                 :message (.getMessage e)
+                 :response response}}))
     {:status (:status response)}))
 
 (defn- build-new-url
@@ -70,40 +72,37 @@
   [m]
   (apply dissoc m template-keys))
 
-(defn modify-form-params
-  "Do necessary conversion of form parameters."
-  [m]
-  (-> m
-      remove-path-keys
-      convert-values))
+(defn filter-map-keys [map keys]
+  (into {} (filter #(.contains keys (key %)) map)))
 
-(defn select-params-type
-  "Return either :query-params or :form-params key depending on value of verb"
-  [verb]
-  (if
-    (or (= verb client/put) (= verb client/post))
-    :form-params
-    :query-params))
+(defn api-request
+  "Returns a request map for a particular api call."
+  [method endpoint query-params-spec m t]
+  (let [url (replace-url-values m (str spotify-api-url endpoint))
+        params (remove-path-keys m)
+        query-params (convert-values (if (or (= method :put) (= method :post))
+                                       (filter-map-keys params query-params-spec)
+                                       params))
+        form-params (apply dissoc params (keys query-params))]
+    {:method method :url url
+     :query-params query-params :form-params form-params
+     :oauth-token t :content-type :json}))
 
 (defn spotify-api-call
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
-  [verb endpoint]
+  [method endpoint & {:keys [query-params] :or {query-params []}}]
   (fn f
     ([m] (f m nil))
     ([m t]
-     (let [query-params {(select-params-type verb) (modify-form-params m)
-                         :oauth-token t
-                         :content-type :json}
-           url (str spotify-api-url endpoint)]
-       (-> (try
-             (verb (replace-url-values m url) query-params)
-             (catch Exception e (ex-data e)))
-           (response-to-map))))))
+     (-> (try
+           (client/request (api-request method endpoint query-params m t))
+           (catch Exception e (ex-data e)))
+         (response-to-map)))))
 
-(def api-get    (partial spotify-api-call client/get))
-(def api-post   (partial spotify-api-call client/post))
-(def api-put    (partial spotify-api-call client/put))
-(def api-delete (partial spotify-api-call client/delete))
+(def api-get    (partial spotify-api-call :get))
+(def api-post   (partial spotify-api-call :post))
+(def api-put    (partial spotify-api-call :put))
+(def api-delete (partial spotify-api-call :delete))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -402,9 +401,10 @@
   :uris a list of spotify track uris.
   :position the position to insert the tracks.
 
-  Example: (add-tracks-to-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :uris \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh,
-  spotify:track:1301WleyT98MSxVHPZCA6M\" :position 2} \"BQBw-JtC..._7GvA\")"
-  (api-post "users/user_id/playlists/playlist_id/tracks"))
+  Example: (add-tracks-to-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\"
+  :uris [\"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\", \"spotify:track:1301WleyT98MSxVHPZCA6M\"]
+  :position 2} \"BQBw-JtC..._7GvA\")"
+  (api-post "users/user_id/playlists/playlist_id/tracks" :query-params [:position]))
 
 ;TODO - Deal with correct formatting of :tracks.
 ;TODO - Additional doc string with optional and required values in :tracks.
