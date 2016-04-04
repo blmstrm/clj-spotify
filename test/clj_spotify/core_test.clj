@@ -4,103 +4,36 @@
             [clojure.data.json :as json]
             [clojure.data :as data]
             [clj-http.client :as client]
-            [clojure.data.codec.base64 :as b64]
+            [clj-spotify.test-util :as util]
+            [clj-spotify.test-fixtures :as tf]
             ))
-
-(def album-data-file "./test/clj_spotify/test-data/album.json")
-(def albums-data-file "./test/clj_spotify/test-data/albums.json")
-(def track-of-album-data-file "./test/clj_spotify/test-data/tracks-of-album.json")
-(def artist-data-file "./test/clj_spotify/test-data/artist.json")
-(def artists-data-file "./test/clj_spotify/test-data/artists.json")
-(def artists-albums-file "./test/clj_spotify/test-data/artists-albums.json")
-(def artists-top-tracks-file "./test/clj_spotify/test-data/artists-top-tracks.json")
-(def artists-related-artists-file "./test/clj_spotify/test-data/artists-related-artists.json")
-(def featured-playlists-file "./test/clj_spotify/test-data/featured-playlists.json")
-(def browse-categories-file "./test/clj_spotify/test-data/list-of-browse-categories.json")
-(def category-file "./test/clj_spotify/test-data/category.json")
-(def categorys-playlists-file "./test/clj_spotify/test-data/categorys-playlists.json")
-(def playlist-file "./test/clj_spotify/test-data/playlist.json")
-(def playlists-tracks-file "./test/clj_spotify/test-data/playlists-tracks.json")
-(def user-profile-file "./test/clj_spotify/test-data/user-profile.json")
-(def search-file "./test/clj_spotify/test-data/search.json")
-(def get-a-track-file "./test/clj_spotify/test-data/get-a-track.json")
-(def get-several-tracks-file "./test/clj_spotify/test-data/get-several-tracks.json")
- 
-(def enc-auth-string
-  (str "Basic "
-  (->
-    (str (System/getenv "SPOTIFY_CLIENT_ID") ":" (System/getenv "SPOTIFY_SECRET_TOKEN"))
-    (.getBytes)
-    (b64/encode)
-    (String. "UTF-8"))))
-
-(def spotify-oauth-token (->
-                           "https://accounts.spotify.com/api/token" 
-                           (client/post {:form-params {:grant_type "client_credentials"} :headers {:Authorization enc-auth-string}})
-                           :body 
-                           (json/read-str :key-fn keyword)
-                           :access_token))
-
-(defn reset-volatile-vals
-  "Function to reset values that change over time such as amount of followers or popularity ranking."
-  [k v]
-  (condp
-    :followers {:href nil, :total 0}
-    :popularity 0
-    :total 0
-    :snapshot_id "123456"
-    (and (string? v) (.contains v "scdn.co")) "https://scdn.co/preview/ref"
-    :else v))
-
-(defn test-json-string-to-map [s]
-  "Read string and transform to json but ignore key :followers"
-  (json/read-str s :value-fn reset-volatile-vals :key-fn keyword))
-
-(def correct-map {:test-key "test-value" :test-map {:a "a"} :test-vector [1 2 3] :test-null nil})
-
-(def correctly-formatted-response {:body "{\"test-key\": \"test-value\", \"test-map\" : {\"a\": \"a\"}, \"test-vector\" : [1 2 3], \"test-null\" : null}"}) 
-
-(def missing-body-tag-response {}) 
-
-(def malformed-json-response {:body "{\"test-key\": \"test-value\", \"test-map\" : {\"a\": \"a\"}, \"test-vector\" : [1 2 3], \"test-null\" : }"}) 
-
-(defn nullpointer-error-map [response] {:error {:status "NullPointerException", :message nil, :response response}})
-
-(defn json-missing-key-error-map [response]
-  {:error {:status "Exception", :message "JSON error (key missing value in object)", :response response}})
-
-(def test-url (str sptfy/spotify-api-url "users/user_id/playlists/playlist_id/tracks"))
-(def correct-test-url (str sptfy/spotify-api-url "users/elkalel/playlists/6IIjEBw2BrRXbrSLerA7A6/tracks"))
-
-(def correct-param-map {:user_id "elkalel" :playlist_id "6IIjEBw2BrRXbrSLerA7A6"})
-(def keys-not-present-param-map {:category_id "pop" :owner_id "elkalel"})
 
 (deftest test-response-to-map
   (testing "Conversion from string to clojure map"
-    (is (= correct-map (sptfy/response-to-map correctly-formatted-response))))
+    (is (= tf/corret-map (sptfy/response-to-map correctly-formatted-response))))
   (testing "Missing body tag in response."
-    (is (= (nullpointer-error-map missing-body-tag-response) (sptfy/response-to-map missing-body-tag-response))))
+    (is (= (tf/nullpointer-error-map tf/missing-body-tag-response) (sptfy/response-to-map tf/missing-body-tag-response))))
   (testing "Malformed json syntax in string."
-    (is (= (json-missing-key-error-map malformed-json-response) (sptfy/response-to-map malformed-json-response)))))
+    (is (= (tf/json-missing-key-error-map tf/malformed-json-response) (sptfy/response-to-map tf/malformed-json-response)))))
 
 (deftest test-replace-url-values
   (testing "Replace template values in spotify url and compare to correct url."
-    (is (= correct-test-url (sptfy/replace-url-values correct-param-map test-url))))
+    (is (= tf/correct-test-url (sptfy/replace-url-values tf/correct-param-map test-url))))
   (testing "Call replace-url-values with empty map and empty url"
     (is (= "" (sptfy/replace-url-values {} ""))))
   (testing "Call replace-url-values with key in param-map not present in url"
-    (is (= test-url (sptfy/replace-url-values keys-not-present-param-map test-url)))))
+    (is (= tf/test-url (sptfy/replace-url-values tf/keys-not-present-param-map tf/test-url)))))
 
 (deftest test-get-an-album
   (testing "Get a spotify album and verify the json data to be equal to test data in album.json"
-    ( with-redefs [sptfy/json-string-to-map test-json-string-to-map]
-      (let [correct-test-data (test-json-string-to-map (slurp album-data-file))
-            differences (data/diff (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"} spotify-oauth-token) correct-test-data)]  
+    ( with-redefs [sptfy/json-string-to-map tf/test-json-string-to-map]
+      (let [correct-test-data (tf/test-json-string-to-map (slurp tf/album-data-file))
+            differences (data/diff (sptfy/get-an-album {:id "0sNOF9WDwhWunNAHPD3Baj"} util/spotify-oauth-token) tf/correct-test-data)]  
         (is (= nil (first differences) (second differences)))))))
 
 (deftest test-get-several-albums
   (testing "Get several spotify albums and verify the json data to be equal to test data in albums.json"
-    (with-redefs [sptfy/json-string-to-map test-json-string-to-map]
+    (with-redefs [sptfy/json-string-to-map tf/test-json-string-to-map]
       (let [correct-test-data (test-json-string-to-map (slurp albums-data-file))
             differences (data/diff (sptfy/get-several-albums {:ids ["41MnTivkwTO3UUJ8DrqEJJ" ,"6JWc4iAiJ9FjyK0B59ABb4","6UXCm6bOO4gFlDQZV5yL37"]} spotify-oauth-token) correct-test-data)]
         (is (= nil (first differences) (second differences)))))))
@@ -211,7 +144,3 @@
       (let [correct-test-data (test-json-string-to-map (slurp get-several-tracks-file))
             differences (data/diff (sptfy/get-several-tracks {:ids "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B" :market "ES"} spotify-oauth-token) correct-test-data)]
         (is (= nil (first differences) (second differences)))))))
-
-
-
-
