@@ -1,4 +1,4 @@
-(ns clj-spotify.test-util
+(ns clj-spotify.test-utils
   (:require
             [clojure.data.json :as json]
             [clojure.data :as data]
@@ -31,4 +31,8 @@
     :snapshot_id "123456"
     (and (string? v) (.contains v "scdn.co")) "https://scdn.co/preview/ref"
     :else v))
+
+ (defn test-json-string-to-map [s]
+  "Read string and transform to json but ignore key :followers"
+  (json/read-str s :value-fn reset-volatile-vals :key-fn keyword))
  

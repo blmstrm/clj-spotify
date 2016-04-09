@@ -1,4 +1,5 @@
-(ns clj-spotify.test-fixtures)
+(ns clj-spotify.test-fixtures
+  (:require [clj-spotify.core :as sptfy]))
 
 ;Test data files
 (def album-data-file "./test/clj_spotify/test-data/album.json")
@@ -20,9 +21,6 @@
 (def get-a-track-file "./test/clj_spotify/test-data/get-a-track.json")
 (def get-several-tracks-file "./test/clj_spotify/test-data/get-several-tracks.json")
  
-(defn test-json-string-to-map [s]
-  "Read string and transform to json but ignore key :followers"
-  (json/read-str s :value-fn util/reset-volatile-vals :key-fn keyword))
 
 (def correct-map {:test-key "test-value" :test-map {:a "a"} :test-vector [1 2 3] :test-null nil})
 
