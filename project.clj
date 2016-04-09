@@ -1,4 +1,4 @@
-(defproject clj-spotify "0.1.1"
+(defproject clj-spotify "0.1.2"
   :description "A client library for the Spotify Web API"
   :url "https://github.com/blmstrm/clj-spotify"
   :license {:name "The MIT License (MIT)"
@@ -7,5 +7,4 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/data.json "0.2.6"]
                  [org.clojure/data.codec "0.1.0"]
-                 [clj-http "2.1.0"]
-                 ])
+                 [clj-http "2.1.0"] ])
