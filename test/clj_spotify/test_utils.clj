@@ -33,6 +33,6 @@
     :else v))
 
  (defn test-json-string-to-map [s]
-  "Read string and transform to json but ignore key :followers"
+  "Read string and transform to json but ignore certain keys."
   (json/read-str s :value-fn reset-volatile-vals :key-fn keyword))
  
