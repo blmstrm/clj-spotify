@@ -3,7 +3,9 @@
 [![Coverage Status](https://coveralls.io/repos/blmstrm/clj-spotify/badge.svg?branch=master&service=github)](https://coveralls.io/github/blmstrm/clj-spotify?branch=master)
 [![Dependencies Status](http://jarkeeper.com/blmstrm/clj-spotify/status.png)](http://jarkeeper.com/blmstrm/clj-spotify)
 # clj-spotify
-clj-spotify is a client library for accessing the Spotify Web API. clj-spotify aims to be identical to Spotify's Web API when it comes to naming of endpoints, path elements and query parameters therefore the documentation found here is very short. Please read through the [Spotify API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/), a one to one mapping from the endpoints to functions in this library should be possible.  
+clj-spotify is a client library for accessing the Spotify Web API. clj-spotify aims to be identical to Spotify's Web API when it comes to naming of endpoints, path elements and query parameters therefore the documentation found here is very short. Please read through the [Spotify API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/), a one to one mapping from the endpoints to functions in this library should be possible.
+
+Please note that at the moment clj-spotify needs [cheshire](https://github.com/dakrone/cheshire) as a dependency in your `project.clj`. See this [PR](https://github.com/blmstrm/clj-spotify/pull/4).
 
 ##Usage
 Each function takes a map `m` of parameters and a sometimes optional oauth token `t`. Function names are the same as the names found in [Spotify's API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/). A function call to retrieve a track from Spotify then has the function signature `(get-a-track m t)` and a function call to get an album's tracks has the function signature `(get-an-albums-tracks m t)` and so on.
