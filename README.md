@@ -12,10 +12,10 @@ Each function takes a map `m` of parameters and a sometimes optional oauth token
 
 ### map `m`
 The map `m` holds both path elements and query parameters.
-Key names and value types in `m` are the same as those found in [Spotify's API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/) for path elements and query parameters. Integer values such as :limit and :offset can be specified either as integers or strings in `m`. 
+Key names and value types in `m` are the same as those found in [Spotify's API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/) for path elements and query parameters. Integer values such as `:limit` and `:offset` can be specified either as integers or strings in `m`. 
 
 ### oauth token `t`
-For a simple method to deal with authentication through the Client Credentials Flow see the `spotify-oauth-token` variable in `core_test-clj`. If you need oauth2 authentication through the Authorization Code Flow see this blog post on how to roll your own: [OAuth2 is easy - illustrated in 50 lines of Clojure](http://leonid.shevtsov.me/en/oauth2-is-easy). 
+For a simple method to deal with authentication through the Client Credentials Flow see the `spotify-oauth-token` variable in `core_test.clj`. If you need oauth2 authentication through the Authorization Code Flow see this blog post on how to roll your own: [OAuth2 is easy - illustrated in 50 lines of Clojure](http://leonid.shevtsov.me/en/oauth2-is-easy). 
 
 ### Return values
 clj-spotify returns the data received from the Spotify Web API unaltered but the response will be converted from json to a Clojure map.
