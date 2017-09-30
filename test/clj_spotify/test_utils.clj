@@ -1,17 +1,11 @@
 (ns clj-spotify.test-utils
-  (:require
-            [clojure.data.json :as json]
-            [clj-http.client :as client]
-            ))
+  (:require [clojure.data.json :as json]
+            [clj-spotify.util :refer [get-access-token]]))
 
 (defonce spotify-oauth-token
-  (-> "https://accounts.spotify.com/api/token"
-      (client/post {:form-params {:grant_type "client_credentials"}
-                    :basic-auth [(System/getenv "SPOTIFY_CLIENT_ID")
-                                 (System/getenv "SPOTIFY_SECRET_TOKEN")]
-                    :as :json})
-      :body
-      :access_token))
+  (get-access-token
+    (System/getenv "SPOTIFY_CLIENT_ID")
+    (System/getenv "SPOTIFY_SECRET_TOKEN")))
 
 (defn reset-volatile-vals
   "Function to reset values that change over time such as amount of followers or popularity ranking."
