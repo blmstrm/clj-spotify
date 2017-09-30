@@ -24,7 +24,8 @@
     (and (string? v) (.contains v "scdn.co")) "https://scdn.co/preview/ref"
     :else v))
 
- (defn test-json-string-to-map [s]
+ (defn test-json-string-to-map
   "Read string and transform to json but ignore certain keys."
+   [s]
   (json/read-str s :value-fn reset-volatile-vals :key-fn keyword))
  

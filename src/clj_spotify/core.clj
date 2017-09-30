@@ -94,10 +94,10 @@
   (fn f
     ([m] (f m nil))
     ([m t]
-     (-> (try
+     (response-to-map
+       (try
            (client/request (api-request method endpoint query-params m t))
-           (catch Exception e (ex-data e)))
-         (response-to-map)))))
+           (catch Exception e (ex-data e)))))))
 
 (def api-get    (partial spotify-api-call :get))
 (def api-post   (partial spotify-api-call :post))

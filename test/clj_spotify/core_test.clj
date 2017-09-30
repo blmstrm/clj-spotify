@@ -8,8 +8,8 @@
             [clj-spotify.test-fixtures :as tf]))
 
 (defn test-setup
-  [f]
   "Wrapper function for use with use-fixtures."
+  [f]
   (with-redefs [sptfy/json-string-to-map util/test-json-string-to-map]
     (f)))
 
@@ -88,7 +88,7 @@
 
 (deftest test-get-a-categorys-playlists
   (testing "Get a spotify category's playlist, due to ever changing data, only verify a status 200 response."
-    (= 200 (:status (meta (sptfy/get-a-categorys-playlists {:category_id "dinner" :country "SE" :limit 10 :offset 5} util/spotify-oauth-token))))))
+    (is (= 200 (:status (meta (sptfy/get-a-categorys-playlists {:category_id "dinner" :country "SE" :limit 10 :offset 5} util/spotify-oauth-token)))))))
 
 (deftest test-get-a-playlist
   (testing "Get a spotify playlist and verify the json data to be equal to test data in user-playlist.json"
