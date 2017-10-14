@@ -455,6 +455,8 @@
   Example: (change-a-playlists-details {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :name \"Fantastic playlist\" :public true} \"BQBw-JtC..._7GvA\")"
   (api-put "users/user_id/playlists/playlist_id"))
 
+;;TODO Upload a custom playlist cover
+
 ;Profiles
 (def get-a-users-profile
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
@@ -467,9 +469,34 @@
 ;TODO - what happens when map is not present or nil?
 (def get-current-users-profile
   " Takes an oauth-token t.
-
   Example: (get-current-users-profile {} \"BQBw-JtC..._7GvA\")"
   (api-get "me"))
+
+;;TODO Get current users recently played tracks.
+
+;;TODO Get a users available devices.
+
+;;TODO Get information about the users current playback.
+
+;;TODO Get the users currently playing track.
+
+;;TODO Transfer a users playback.
+
+;;TODO Start/Resume a users playback.
+
+;;TODO Pause a users playback.
+
+;;TODO Skip users playback to next track.
+
+;;TODO Skip users playback to previous track.
+
+;;TODO Seek to position in currently playing track.
+
+;;TODO Set repeat mode on user's playback.
+
+;;TODO Set volume for user's playback.
+
+;;TODO Toggle shuffle for users playback.
 
 ;Search
 (def search
