@@ -472,15 +472,43 @@
   Example: (get-current-users-profile {} \"BQBw-JtC..._7GvA\")"
   (api-get "me"))
 
-;;TODO Get current users recently played tracks.
+(def get-current-users-recently-played-tracks
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional keys are :limit, :after and :before.
+  :limit is the maximum of items to return.
+  :after is a unix timestamp in milliseconds. All items after this timestamp will be returned.
+  :before is a unix timestamp in milliseconds. All items before this timestamp will be returned.
+  Example: (get-current-users-profile {:limit 5 :before 1508531199 :after 380934000} \"BQBw-JtC..._7GvA\")"
+  (api-get "me/player/recently-played"))
 
-;;TODO Get a users available devices.
+;Player / Device
+(def get-current-users-available-devices
+  " Takes an oauth-token t.
+  Example: (get-current-users-available-devices  \"BQBw-JtC..._7GvA\")"
+  (api-get "me/player/devices"))
 
-;;TODO Get information about the users current playback.
+(def get-info-about-current-users-current-playback
+  " Takes two arguments, a map with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional key is :market.
+  :market is an ISO 3166-1 alpha-2 country code.
+  Example: (get-info-about-current-users-current-playback {:market \"SE\"}  \"BQBw-JtC..._7GvA\")"
+  (api-get "me/player"))
 
-;;TODO Get the users currently playing track.
+(def get-users-currently-playing-track
+  " Takes two arguments, a map with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional key is :market.
+  :market is an ISO 3166-1 alpha-2 country code.
+  Example: (get-users-currently-playing-track {:market \"SE\"}  \"BQBw-JtC..._7GvA\")"
+  (api-get "me/player/currently-playing"))
 
-;;TODO Transfer a users playback.
+(def transfer-current-users-playback
+  " Takes two arguments, a map with query parameters and an oauth-token t.
+  Compulsary key in m is :device_ids, optional key is :play.
+  :device_ids is a array of devices IDs to where the playback should be transfered. 
+  Even though it is an array, only a single device_id is currently supported.
+  :play is a boolean value, if true - ensure playback happens on new device, else keep current playback state.
+  Example: (transfer-current-users-playback {:device_ids [74ASZWbe4lXaubB36ztrGX] :play true}  \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player"))
 
 ;;TODO Start/Resume a users playback.
 
