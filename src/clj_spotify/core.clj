@@ -547,21 +547,33 @@
   Compulsary key in m is :position_ms, optional key is :device_id.
   :position_ms is the position in milliseconds to seek to.
   :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
-  Example: (seek-to-position-in-currently-playing-track {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  Example: (seek-to-position-in-currently-playing-track {:position_ms 10000 :device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/seek"))
 
-;;TODO Set repeat mode on user's playback.
 (def set-repeat-mode-on-users-playback
   " Takes two arguments, a map m with query parameters and an oauth-token t.
   Compulsary key in m is :state, optional key is :device_id.
-  :state one of \"track\",\"context\" or \"off\". track will repeat the current track, context will repeat the current context (album, playlist) and off will turn repeat off.
+  :state is one of \"track\",\"context\" or \"off\". track will repeat the current track, context will repeat the current context (album, playlist) and off will turn repeat off.
   :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
-  Example: (set-repeat-mode-on-users-playback {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  Example: (set-repeat-mode-on-users-playback {:state \"context\" :device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/repeat"))
 
-;;TODO Set volume for user's playback.
+(def set-volume-for-users-playback
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  Compulsary key in m is :volume_percent, optional key is :device_id.
+  :volume_percent is the volume to set in percent. An integer between 0 and 100.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (set-volume-for-users-playback {:volume_percent 11 :device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player/volume"))
 
-;;TODO Toggle shuffle for users playback.
+(def toggle-shuffle-for-users-playback
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  Compulsary key in m is :state, optional key is :device_id.
+  :state is either true or false.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (toogle-shuffle-for-users-playback {:state true :device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player/shuffle"))
+
 
 ;Search
 (def search
