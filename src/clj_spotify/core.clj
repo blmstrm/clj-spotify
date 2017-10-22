@@ -488,21 +488,21 @@
   (api-get "me/player/devices"))
 
 (def get-info-about-current-users-current-playback
-  " Takes two arguments, a map with query parameters and an oauth-token t.
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
   There are no compulsary keys in m, optional key is :market.
   :market is an ISO 3166-1 alpha-2 country code.
   Example: (get-info-about-current-users-current-playback {:market \"SE\"}  \"BQBw-JtC..._7GvA\")"
   (api-get "me/player"))
 
 (def get-users-currently-playing-track
-  " Takes two arguments, a map with query parameters and an oauth-token t.
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
   There are no compulsary keys in m, optional key is :market.
   :market is an ISO 3166-1 alpha-2 country code.
   Example: (get-users-currently-playing-track {:market \"SE\"}  \"BQBw-JtC..._7GvA\")"
   (api-get "me/player/currently-playing"))
 
 (def transfer-current-users-playback
-  " Takes two arguments, a map with query parameters and an oauth-token t.
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
   Compulsary key in m is :device_ids, optional key is :play.
   :device_ids is an array of devices IDs to where the playback should be transfered. 
   Even though it is an array, only a single device_id is currently supported.
@@ -511,7 +511,7 @@
   (api-put "me/player"))
 
 (def start-or-resume-a-users-playback
-  " Takes two arguments, a map with query parameters and an oauth-token t.
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
   There are no compulsary keys in m, optional keys are :device_id, : context_uri, :uris and :offset.
   :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
   :context_uri is the Spotify URI to play. Can be albums,artists or playlists.
@@ -521,21 +521,43 @@
   Example: (start-or-resume-a-users-playback {:device_id [\"74ASZWbe4lXaubB36ztrGX\"] :context_uri \"spotify:album:2cX9e3renOX5bUQEXWFrJr\"} :offset {:position 5}} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/play"))
 
-;;TODO Pause a users playback.
 (def pause-a-users-playback
-  " Takes two arguments, a map with query parameters and an oauth-token t.
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
   There are no compulsary keys in m, optional key is :device_id.
   :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
   Example: (pause-a-users-playback {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/pause"))
 
-;;TODO Skip users playback to next track.
+(def skip-users-playback-to-the-next-track
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional key is :device_id.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (skip-users-playback-to-the-next-track {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-post "me/player/next"))
 
-;;TODO Skip users playback to previous track.
+(def skip-users-playback-to-the-previous-track
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional key is :device_id.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (skip-users-playback-to-the-previous-track {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-post "me/player/previous"))
 
-;;TODO Seek to position in currently playing track.
+(def seek-to-position-in-currently-playing-track
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  Compulsary key in m is :position_ms, optional key is :device_id.
+  :position_ms is the position in milliseconds to seek to.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (seek-to-position-in-currently-playing-track {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player/seek"))
 
 ;;TODO Set repeat mode on user's playback.
+(def set-repeat-mode-on-users-playback
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  Compulsary key in m is :state, optional key is :device_id.
+  :state one of \"track\",\"context\" or \"off\". track will repeat the current track, context will repeat the current context (album, playlist) and off will turn repeat off.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (set-repeat-mode-on-users-playback {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player/repeat"))
 
 ;;TODO Set volume for user's playback.
 
