@@ -504,13 +504,23 @@
 (def transfer-current-users-playback
   " Takes two arguments, a map with query parameters and an oauth-token t.
   Compulsary key in m is :device_ids, optional key is :play.
-  :device_ids is a array of devices IDs to where the playback should be transfered. 
+  :device_ids is an array of devices IDs to where the playback should be transfered. 
   Even though it is an array, only a single device_id is currently supported.
   :play is a boolean value, if true - ensure playback happens on new device, else keep current playback state.
-  Example: (transfer-current-users-playback {:device_ids [74ASZWbe4lXaubB36ztrGX] :play true}  \"BQBw-JtC..._7GvA\")"
+  Example: (transfer-current-users-playback {:device_ids [\"74ASZWbe4lXaubB36ztrGX\"] :play true}  \"BQBw-JtC..._7GvA\")"
   (api-put "me/player"))
 
-;;TODO Start/Resume a users playback.
+(def start-or-resume-a-users-playback
+  " Takes two arguments, a map with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional keys are :device_id, : context_uri, :uris and :offset.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  :context_uri is the Spotify URI to play. Can be albums,artists or playlists.
+  :uris is An array of Spotify track URIs to play.
+  :offset is a map indicating from where playback should start. This is only available when either :context_uri is set to an artist or an album or when the :uris parameter is populated. The map has to contain one of two keys, :position or :uri. 
+:position is an integer describing a position in a playlist and :uri is the Spotify URI representing the item to start at.
+  Example: (start-or-resume-a-users-playback {:device_id [\"74ASZWbe4lXaubB36ztrGX\"] :context_uri \"spotify:album:2cX9e3renOX5bUQEXWFrJr\"} :offset {:position 5}} \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player/play"))
+
 
 ;;TODO Pause a users playback.
 
