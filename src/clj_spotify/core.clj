@@ -3,7 +3,7 @@
             [clojure.data.json :as json]
             [clojure.string :as string]))
 
-(def template-keys [:id :category_id :owner_id :playlist_id :user_id])
+(def template-keys [:id :category_id :owner_id :playlist_id :user_id :device_id])
 
 (def spotify-api-url "https://api.spotify.com/v1/")
 
@@ -521,8 +521,13 @@
   Example: (start-or-resume-a-users-playback {:device_id [\"74ASZWbe4lXaubB36ztrGX\"] :context_uri \"spotify:album:2cX9e3renOX5bUQEXWFrJr\"} :offset {:position 5}} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/play"))
 
-
 ;;TODO Pause a users playback.
+(def pause-a-users-playback
+  " Takes two arguments, a map with query parameters and an oauth-token t.
+  There are no compulsary keys in m, optional key is :device_id.
+  :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
+  Example: (pause-a-users-playback {:device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
+  (api-put "me/player/pause"))
 
 ;;TODO Skip users playback to next track.
 
