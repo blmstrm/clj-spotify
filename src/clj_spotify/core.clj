@@ -8,11 +8,13 @@
 (def spotify-api-url "https://api.spotify.com/v1/")
 
 (def defined-query-params [:fields :ids :limit :offset :market :position :state :position_ms :volume_percent :device_id :locale :country :timestamp :type]) 
+
 (defn json-string-to-map
   "Read string and transform into json"
   [s]
   (json/read-str s :key-fn keyword))
 
+;;TODO Deal with 204 NO CONTENT responses.
 (defn response-to-map
   "Parse body of http response to json"
   [response]
