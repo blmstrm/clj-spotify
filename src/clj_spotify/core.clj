@@ -3,7 +3,7 @@
             [clojure.data.json :as json]
             [clojure.string :as string]))
 
-(def template-keys [:id :category_id :owner_id :playlist_id :user_id :device_id])
+(def template-keys [:id :category_id :owner_id :playlist_id :user_id :device_id :volume_percent :position_ms :state])
 
 (def spotify-api-url "https://api.spotify.com/v1/")
 
@@ -573,7 +573,6 @@
   :device_id is the device id of the device the command is targeting. If not supplied, the users current device is the target.
   Example: (toogle-shuffle-for-users-playback {:state true :device_id \"74ASZWbe4lXaubB36ztrGX\"} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/shuffle"))
-
 
 ;Search
 (def search
