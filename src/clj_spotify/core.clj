@@ -16,11 +16,14 @@
 
 ;;TODO Deal with 204 NO CONTENT responses.
 (defn response-to-map
-  "Parse body of http response to json"
+  "Parse body of http response to json.
+  If http status 204 (No content) return an empty map."
   [response]
   (with-meta
     (try
-      (json-string-to-map (:body response))
+      (if (= (:status response) 204)
+        {}
+      (json-string-to-map (:body response)))
       (catch java.lang.NullPointerException e
         {:error {:status "NullPointerException"
                  :message (.getMessage e)
