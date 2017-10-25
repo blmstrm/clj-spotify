@@ -14,7 +14,6 @@
   [s]
   (json/read-str s :key-fn keyword))
 
-;;TODO Deal with 204 NO CONTENT responses.
 (defn response-to-map
   "Parse body of http response to json.
   If http status 204 (No content) return an empty map."
@@ -23,7 +22,7 @@
     (try
       (if (= (:status response) 204)
         {}
-      (json-string-to-map (:body response)))
+        (json-string-to-map (:body response)))
       (catch java.lang.NullPointerException e
         {:error {:status "NullPointerException"
                  :message (.getMessage e)
@@ -90,7 +89,7 @@
                                        (filter-map-keys params query-params-spec)
                                        params))
         form-params (apply dissoc params (keys query-params))]
-  prn  {:method method :url url
+    {:method method :url url
      :query-params query-params :form-params form-params
      :oauth-token t :content-type :json}))
 
@@ -98,11 +97,11 @@
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
   [method endpoint & {:keys [query-params] :or {query-params []}}]
   (let [merged-query-params (apply conj query-params defined-query-params)]
-  (fn f
-    ([m] (f m nil))
-    ([m t]
-     (response-to-map
-       (try
+    (fn f
+      ([m] (f m nil))
+      ([m t]
+       (response-to-map
+         (try
            (client/request (api-request method endpoint merged-query-params m t))
            (catch Exception e (ex-data e))))))))
 
@@ -522,7 +521,7 @@
   :context_uri is the Spotify URI to play. Can be albums,artists or playlists.
   :uris is An array of Spotify track URIs to play.
   :offset is a map indicating from where playback should start. This is only available when either :context_uri is set to an artist or an album or when the :uris parameter is populated. The map has to contain one of two keys, :position or :uri. 
-:position is an integer describing a position in a playlist and :uri is the Spotify URI representing the item to start at.
+  :position is an integer describing a position in a playlist and :uri is the Spotify URI representing the item to start at.
   Example: (start-or-resume-a-users-playback {:device_id [\"74ASZWbe4lXaubB36ztrGX\"] :context_uri \"spotify:album:2cX9e3renOX5bUQEXWFrJr\"} :offset {:position 5}} \"BQBw-JtC..._7GvA\")"
   (api-put "me/player/play"))
 
