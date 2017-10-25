@@ -92,11 +92,11 @@
 
 (deftest test-get-a-playlist
   (testing "Get a spotify playlist and verify the json data to be equal to test data in user-playlist.json"
-    (generate-test (sptfy/get-a-playlist {:owner_id "elkalel" :playlist_id "5X6O7Wb8y3we9VzYTT9l64" :market "SE"} util/spotify-oauth-token) tf/playlist-file)))
+    (generate-test (sptfy/get-a-playlist {:user_id "elkalel" :playlist_id "5X6O7Wb8y3we9VzYTT9l64" :market "SE"} util/spotify-oauth-token) tf/playlist-file)))
 
 (deftest test-get-a-playlists-tracks
   (testing "Get a spotify playlist's tracks and verify the json data to be equal to test data in playlists-tracks.json"
-    (generate-test (sptfy/get-a-playlists-tracks {:owner_id "elkalel" :playlist_id "5X6O7Wb8y3we9VzYTT9l64" :offset 0 :limit 100 :market "SE"} util/spotify-oauth-token) tf/playlists-tracks-file)))
+    (generate-test (sptfy/get-a-playlists-tracks {:user_id "elkalel" :playlist_id "5X6O7Wb8y3we9VzYTT9l64" :offset 0 :limit 100 :market "SE"} util/spotify-oauth-token) tf/playlists-tracks-file)))
 
 (deftest test-get-a-users-profile
   (testing "Get a users profile and verify the json data to be equal to test data in user-profile.json"
