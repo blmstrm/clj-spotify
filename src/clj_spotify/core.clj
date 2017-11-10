@@ -609,3 +609,28 @@
 
   Example: (get-several-tracks {:ids \"2Dlo9QsN9ohaz9kASYkKmv,6XYvLpqJFebcjnOTolwkGw\" :market \"SE\"} \"BQBw-JtC..._7GvA\")"
   (api-get "tracks"))
+
+(def get-audio-analysis-for-a-track
+  " Takes two arguments, a map m with query parameters and an optional oauth-token t.
+  Compulsory key in m is :id.
+:id has to have the value of an existing track's id.
+
+  Example: (get-audio-analysis-for-a-track {:id \"2Dlo9QsN9ohaz9kASYkKmv\"} \"BQBw-JtC..._7GvA\")"
+  (api-get "audio-analysis/id"))
+
+(def get-audio-features-for-a-track
+  " Takes two arguments, a map m with query parameters and an optional oauth-token t.
+  Compulsory key in m is :id.
+:id has to have the value of an existing track's id.
+
+  Example: (get-audio-features-for-a-track {:id \"2Dlo9QsN9ohaz9kASYkKmv\"} \"BQBw-JtC..._7GvA\")"
+  (api-get "audio-features/id"))
+
+(def get-audio-features-for-several-tracks
+  " Takes two arguments, a map m with query parameters and an optional oauth-token t.
+  Compulsory key in m is :ids.
+:ids has to be a comma separated string of spotify track ids.
+
+  Example: (get-audio-features-for-several-tracks {:ids \"2Dlo9QsN9ohaz9kASYkKmv,6XYvLpqJFebcjnOTolwkGw\"} \"BQBw-JtC..._7GvA\")"
+  (api-get "audio-features"))
+
