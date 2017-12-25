@@ -33,7 +33,7 @@
                  :message (.getMessage e)
                  :response response}}))
     {:status (:status response)
-     :header (json-string-to-map (:header response))}))
+     :headers (:headers response)}))
 
 (defn- build-new-url
   "Do the building necessary in replace-url-values here. url-parts is the split up url which values works as keys in param-map."
