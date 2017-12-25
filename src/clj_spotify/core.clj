@@ -16,6 +16,7 @@
 
 (defn response-to-map
   "Parse body of http response to json.
+  Include header as meta-data.
   If http status 204 (No content) return an empty map."
   [response]
   (with-meta
@@ -31,7 +32,8 @@
         {:error {:status "Exception"
                  :message (.getMessage e)
                  :response response}}))
-    {:status (:status response)}))
+    {:status (:status response)
+     :header (json-string-to-map (:header response))}))
 
 (defn- build-new-url
   "Do the building necessary in replace-url-values here. url-parts is the split up url which values works as keys in param-map."

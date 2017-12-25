@@ -1,4 +1,4 @@
-(defproject clj-spotify "0.1.5"
+(defproject clj-spotify "0.1.6-SNAPSHOT"
   :description "A client library for the Spotify Web API"
   :url "https://github.com/blmstrm/clj-spotify"
   :license {:name "The MIT License (MIT)"
