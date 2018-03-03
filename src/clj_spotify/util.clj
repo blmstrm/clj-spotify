@@ -12,3 +12,15 @@
                     :as :json})
       :body
       :access_token))
+
+(defn refresh-access-token
+  "Refreshes an access token using a refresh token that was generated
+  via the OAuth 2 Authorization Code flow."
+  [client-id client-secret refresh_token]
+  (-> "https://accounts.spotify.com/api/token"
+      (client/post {:form-params {:grant_type "refresh_token"
+                                  :refresh_token refresh_token}
+                    :basic-auth [client-id client-secret]
+                    :as :json})
+      :body
+      :access_token))
