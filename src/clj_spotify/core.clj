@@ -462,6 +462,15 @@
   (api-put "users/user_id/playlists/playlist_id"))
 
 ;;TODO Upload a custom playlist cover
+(def upload-custom-playlist-cover
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  Compulsory key in m are :user_id, :playlist_id and :image_data.
+  :user_id is the users spotify id.
+  :playlist_id is the playlist spotify id.
+  :image_data is a base64 encoded jpeg image. 
+
+  Example: (upload-custom-playlist-cover {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :image_data \"iVBORw0KGgoAAA...\" } \"BQBw-JtC..._7GvA\")"
+  (api-put "users/user_id/playlists/playlist_id/images"))
 
 ;Profiles
 (def get-a-users-profile
@@ -615,7 +624,7 @@
 (def get-audio-analysis-for-a-track
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in m is :id.
-:id has to have the value of an existing track's id.
+  :id has to have the value of an existing track's id.
 
   Example: (get-audio-analysis-for-a-track {:id \"2Dlo9QsN9ohaz9kASYkKmv\"} \"BQBw-JtC..._7GvA\")"
   (api-get "audio-analysis/id"))
@@ -623,7 +632,7 @@
 (def get-audio-features-for-a-track
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in m is :id.
-:id has to have the value of an existing track's id.
+  :id has to have the value of an existing track's id.
 
   Example: (get-audio-features-for-a-track {:id \"2Dlo9QsN9ohaz9kASYkKmv\"} \"BQBw-JtC..._7GvA\")"
   (api-get "audio-features/id"))
@@ -631,7 +640,7 @@
 (def get-audio-features-for-several-tracks
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in m is :ids.
-:ids has to be a comma separated string of spotify track ids.
+  :ids has to be a comma separated string of spotify track ids.
 
   Example: (get-audio-features-for-several-tracks {:ids \"2Dlo9QsN9ohaz9kASYkKmv,6XYvLpqJFebcjnOTolwkGw\"} \"BQBw-JtC..._7GvA\")"
   (api-get "audio-features"))
