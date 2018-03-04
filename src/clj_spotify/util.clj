@@ -1,5 +1,8 @@
 (ns clj-spotify.util
-  (:require [clj-http.client :as client]))
+  (:require [clj-http.client :as client]
+            [clojure.data.codec.base64 :as b64]
+            [clojure.java.io :as io])
+  (import [org.apache.commons.io IOUtils]))
 
 (defn get-access-token
   "Requests an access token from Spotify's API via the Client Credentials flow.
@@ -24,3 +27,8 @@
                     :as :json})
       :body
       :access_token))
+
+(defn encode-to-base64
+  "Encode an image file to base64."
+  [image-path]
+  (b64/encode (IOUtils/toByteArray (io/input-stream image-path))))

@@ -12,3 +12,4 @@ pom.xml.asc
 endpoints-with-oauth.txt
 *.*~
 *.swp
+.DS_Store

@@ -20,7 +20,14 @@
 (def search-file "./test/clj_spotify/test-data/search.json")
 (def get-a-track-file "./test/clj_spotify/test-data/get-a-track.json")
 (def get-several-tracks-file "./test/clj_spotify/test-data/get-several-tracks.json")
- 
+
+(def test-album-cover "./test/clj_spotify/test-data/test-album-cover.png")
+
+(def test-base64-encoded-image-hex-string 
+  (slurp "./test/clj_spotify/test-data/test-album-cover-png.hex"))
+
+()
+
 (def correct-map {:test-key 0, :test-map 0, :test-vector 0, :test-null 0})
 
 (def correctly-formatted-response {:body "{\"test-key\": \"test-value\", \"test-map\" : {\"a\": \"a\"}, \"test-vector\" : [1 2 3], \"test-null\" : null}"}) 

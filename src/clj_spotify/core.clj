@@ -93,16 +93,20 @@
                                        (filter-map-keys params query-params-spec)
                                        params))
         form-params (apply dissoc params (keys query-params))]
-    {:method method
-     :url url
-     :query-params query-params
-     :form-params (if (:image_data form-params)
-                    (:image_data form-params)
-                    form-params)
-     :oauth-token t
-     :content-type (if (:image_data form-params)
-                     :image/jpeg
-                     :json)}))
+    (merge
+      {:debug true
+       :debug-body true
+       :method method
+       :url url
+       :oauth-token t
+       :content-type (if (:image form-params)
+                       "image/jpeg"
+                       :json)}
+      (if (:image form-params)
+        {:body (:image form-params)}
+        {:form-params form-params
+         :query-params query-params
+         }))))
 
 (defn spotify-api-call
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
@@ -113,6 +117,7 @@
       ([m t]
        (response-to-map
          (try
+           (prn (api-request method endpoint merged-query-params m t))
            (client/request (api-request method endpoint merged-query-params m t))
            (catch Exception e (ex-data e))))))))
 
@@ -473,12 +478,12 @@
 ;;TODO Upload a custom playlist cover
 (def upload-custom-playlist-cover
   " Takes two arguments, a map m with query parameters and an oauth-token t.
-  Compulsory key in m are :user_id, :playlist_id and :image_data.
+  Compulsory key in m are :user_id, :playlist_id and :image.
   :user_id is the users spotify id.
   :playlist_id is the playlist spotify id.
-  :image_data is a base64 encoded jpeg image. 
+  :image is a base64 encoded jpeg image. 
 
-  Example: (upload-custom-playlist-cover {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :image_data \"iVBORw0KGgoAAA...\" } \"BQBw-JtC..._7GvA\")"
+  Example: (upload-custom-playlist-cover {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :image  } \"BQBw-JtC..._7GvA\")"
   (api-put "users/user_id/playlists/playlist_id/images"))
 
 ;Profiles
