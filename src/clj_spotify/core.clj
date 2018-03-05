@@ -475,15 +475,15 @@
   Example: (change-a-playlists-details {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :name \"Fantastic playlist\" :public true} \"BQBw-JtC..._7GvA\")"
   (api-put "users/user_id/playlists/playlist_id"))
 
-;;TODO Upload a custom playlist cover
 (def upload-custom-playlist-cover
   " Takes two arguments, a map m with query parameters and an oauth-token t.
   Compulsory key in m are :user_id, :playlist_id and :image.
   :user_id is the users spotify id.
   :playlist_id is the playlist spotify id.
-  :image is a base64 encoded jpeg image. 
+  :image is a byte array containing a base64 encoded jpeg image.
+  See the clj-spotify.util namespace for a conversion function from an image file to a base64 encoded byte array.
 
-  Example: (upload-custom-playlist-cover {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :image  } \"BQBw-JtC..._7GvA\")"
+  Example: (upload-custom-playlist-cover {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :image #object[\"[B\" 0x7a4cb3a6 \"[B@7a4cb3a6\"]} \"BQBw-JtC..._7GvA\")"
   (api-put "users/user_id/playlists/playlist_id/images"))
 
 ;Profiles
