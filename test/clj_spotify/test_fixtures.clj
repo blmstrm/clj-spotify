@@ -24,9 +24,7 @@
 (def test-album-cover "./test/clj_spotify/test-data/test-album-cover.png")
 
 (def test-base64-encoded-image-hex-string 
-  (slurp "./test/clj_spotify/test-data/test-album-cover-png.hex"))
-
-()
+  (slurp "./test/clj_spotify/test-data/test-album-cover.png.hex"))
 
 (def correct-map {:test-key 0, :test-map 0, :test-vector 0, :test-null 0})
 
