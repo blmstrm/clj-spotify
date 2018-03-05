@@ -29,6 +29,9 @@
       :access_token))
 
 (defn encode-to-base64
-  "Encode an image file to base64."
-  [image-path]
-  (b64/encode (IOUtils/toByteArray (io/input-stream image-path))))
+  "Encode file to base64."
+  [file-path]
+  (-> file-path
+      io/input-stream
+      IOUtils/toByteArray
+      b64/encode))
