@@ -9,6 +9,8 @@
 
 (def defined-query-params [:fields :ids :limit :offset :market :position :state :position_ms :volume_percent :device_id :locale :country :timestamp :type]) 
 
+(def http-code-should-return-empty-map #{202 204})
+
 (defn json-string-to-map
   "Read string and transform into json"
   [s]
@@ -17,11 +19,12 @@
 (defn response-to-map
   "Parse body of http response to json.
   Include header as meta-data.
-  If http status 204 (No content) return an empty map."
+  If http status 204 (No content) return an empty map.
+  If http status 202 (Async requested for processing) return an empty map."
   [response]
   (with-meta
     (try
-      (if (= (:status response) 204)
+      (if (http-code-should-return-empty-map (:status response))
         {}
         (json-string-to-map (:body response)))
       (catch java.lang.NullPointerException e
@@ -84,7 +87,7 @@
 
 (defn api-request
   "Returns a request map for a particular api call.
-  The change spotify playlist cover api call demands raw data in the :form-params call
+  The change spotify playlist cover api call demands raw data in the request body
   and content-type to be set to image/jpeg that's why we do the if statements below."
   [method endpoint query-params-spec m t]
   (let [url (replace-url-values m (str spotify-api-url endpoint))
@@ -94,9 +97,7 @@
                                        params))
         form-params (apply dissoc params (keys query-params))]
     (merge
-      {:debug true
-       :debug-body true
-       :method method
+      { :method method
        :url url
        :oauth-token t
        :content-type (if (:image form-params)
@@ -117,7 +118,6 @@
       ([m t]
        (response-to-map
          (try
-           (prn (api-request method endpoint merged-query-params m t))
            (client/request (api-request method endpoint merged-query-params m t))
            (catch Exception e (ex-data e))))))))
 
