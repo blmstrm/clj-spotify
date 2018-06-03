@@ -88,7 +88,8 @@
 (defn api-request
   "Returns a request map for a particular api call.
   The change spotify playlist cover api call demands raw data in the request body
-  and content-type to be set to image/jpeg that's why we do the if statements below."
+  and content-type to be set to image/jpeg that's why we do the case statement below.
+  Also the delete tracks from playlist value demands that the data is sent in the request body."
   [method endpoint query-params-spec m t]
   (let [url (replace-url-values m (str spotify-api-url endpoint))
         params (remove-path-keys m)
@@ -103,16 +104,17 @@
        :content-type (if (:image form-params)
                        "image/jpeg"
                        :json)}
-      (if (:image form-params)
-        {:body (:image form-params)}
-        {:form-params form-params
-         :query-params query-params
-         }))))
+      (cond 
+        (:image form-params) {:body (:image form-params)}
+        (:tracks query-params) {:body {:tracks [(:tracks query-params)]}}
+        :else {:form-params form-params
+         :query-params query-params}))))
 
 (defn spotify-api-call
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
   [method endpoint & {:keys [query-params] :or {query-params []}}]
   (let [merged-query-params (apply conj query-params defined-query-params)]
+    (prn merged-query-params)
     (fn f
       ([m] (f m nil))
       ([m t]
