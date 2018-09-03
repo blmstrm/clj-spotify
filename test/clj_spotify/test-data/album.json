@@ -377,5 +377,6 @@
     "total" : 0
   },
   "type" : "album",
-  "uri" : "spotify:album:0sNOF9WDwhWunNAHPD3Baj"
+  "uri" : "spotify:album:0sNOF9WDwhWunNAHPD3Baj",
+  "total_tracks" : 0
 }

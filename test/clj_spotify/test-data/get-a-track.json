@@ -59,5 +59,7 @@
   "preview_url" : "https://p.scdn.co/mp3-preview/18d0a45538122fbe33f22604d0e5608789c10ae4",
   "track_number" : 1,
   "type" : "track",
-  "uri" : "spotify:track:1zHlj4dQ8ZAtrayhuDDmkY"
+  "uri" : "spotify:track:1zHlj4dQ8ZAtrayhuDDmkY",
+  "is_local" : 0
+
 }
