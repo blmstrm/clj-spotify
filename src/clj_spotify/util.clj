@@ -2,7 +2,7 @@
   (:require [clj-http.client :as client]
             [clojure.data.codec.base64 :as b64]
             [clojure.java.io :as io])
-  (import [org.apache.commons.io IOUtils]))
+  (:import [org.apache.commons.io IOUtils]))
 
 (defn get-access-token
   "Requests an access token from Spotify's API via the Client Credentials flow.
