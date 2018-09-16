@@ -1,16 +1,14 @@
 (ns user
   (:require
-    [clj-spotify.core :as sptfy]  
-    [clj-spotify.util :as util]  
     [loudmoauth.core :as lm]
     [ring.adapter.jetty :as ringj]
     [ring.util.response :as ringr]
     [ring.middleware.params :as ringp]
     [ring.middleware.keyword-params :as ringkp]
-    [clj-spotify.core :as sptfy]))
+    [clj-spotify.core :as sptfy]
+    [clj-spotify.util :as util]))
 
 (defn handler [request]
-  (prn request)
   (condp = (:uri request)
     "/oauth2" (lm/parse-params request)
     "/interact"  (ringr/redirect (lm/user-interaction))  
@@ -33,4 +31,3 @@
   []
   (future (ringj/run-jetty (ringp/wrap-params (ringkp/wrap-keyword-params handler))  {:port 3000}))
  (lm/add-provider spotify-oauth2-params))
-

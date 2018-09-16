@@ -93,12 +93,12 @@
   [method endpoint query-params-spec m t]
   (let [url (replace-url-values m (str spotify-api-url endpoint))
         params (remove-path-keys m)
-        query-params (convert-values (if (or (= method :put) (= method :post))
+        query-params (convert-values (if (or (= method :put) (= method :post) (= method :delete))
                                        (filter-map-keys params query-params-spec)
                                        params))
         form-params (apply dissoc params (keys query-params))]
     (merge
-      { :method method
+      {:method method
        :url url
        :oauth-token t
        :content-type (if (:image form-params)
@@ -106,7 +106,7 @@
                        :json)}
       (cond 
         (:image form-params) {:body (:image form-params)}
-        (:tracks query-params) {:body {:tracks [(:tracks query-params)]}}
+        (:tracks query-params) {:body (select-keys query-params [:tracks])}
         :else {:form-params form-params
          :query-params query-params}))))
 
@@ -114,7 +114,6 @@
   "Returns a function that takes a map m and an optional oauth-token t as arguments."
   [method endpoint & {:keys [query-params] :or {query-params []}}]
   (let [merged-query-params (apply conj query-params defined-query-params)]
-    (prn merged-query-params)
     (fn f
       ([m] (f m nil))
       ([m t]
@@ -432,15 +431,14 @@
 ;TODO - Additional doc string with optional and required values in :tracks.
 (def remove-tracks-from-a-playlist
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
-  Compulsory key in m are :user_id, :playlist_id and :tracks, optional keys is :snapshot_id.
-  :user_id is the users spotify id.
+  Compulsory key in m are :playlist_id and :tracks, optional keys is :snapshot_id.
   :playlist_id is the playlist spotify id.
   :tracks an array of objects containing spotify URI strings and corresponding position maps.
   :snapshot_id a playlist snapshot ID.
   See the spotify developer API for the logic behind deleting tracks.
 
-  Example: (remove-tracks-from-playlist {:user_id \"elkalel\" :playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :tracks [{:uri \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\", :positions [2]} {:uri \"spotify:track:1301WleyT98MSxVHPZCA6M\", :positions [7]}]}  \"BQBw-JtC..._7GvA\")"
-  (api-delete "users/user_id/playlists/playlist_id/tracks"))
+  Example: (remove-tracks-from-playlist {:playlist_id \"6IIjEBw2BrRXbrSLerA7A6\" :tracks [{:uri \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\", :positions [2]} {:uri \"spotify:track:1301WleyT98MSxVHPZCA6M\", :positions [7]}]}  \"BQBw-JtC..._7GvA\")"
+  (api-delete "playlists/playlist_id/tracks"))
 
 (def reorder-a-playlists-tracks
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
