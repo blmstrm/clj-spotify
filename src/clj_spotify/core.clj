@@ -377,6 +377,15 @@
   Example: (get-a-list-of-a-users-playlists {:user_id \"elkalel\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
   (api-get "users/user_id/playlists"))
 
+(def get-a-list-of-current-users-playlists
+  " Takes two arguments, a map m with query parameters and an oauth-token t.
+  There are no compulsary keys in m. Optional keys are :limit and :offset.
+  :limit is the maxium number of tracks to return, default is 20.
+  :offset is the index of the first track to return, default is 0.
+
+  Example: (get-a-list-of-current-users-playlists {:limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
+  (api-get "me/playlists"))
+
 ;TODO - Change this fields string to be a map?
 (def get-a-playlist
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
