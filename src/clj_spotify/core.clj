@@ -156,7 +156,7 @@
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in m is :id, optional keys are :limit, :offset and :market.
   :id has to have the value of an existing album's id.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
   :market is an ISO 3166-1 alpha-2 country code.
 
@@ -187,7 +187,7 @@
   :album_type a comma-separated list of one or several of the following:
   album, single, appears_on and compilation. Default is to query for all types.
   :market is an ISO 3166-1 alpha-2 country code.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-an-artists-albums {:id \"7lOJ7WXyopaxri0dbOiZkd\" :album_type \"album, single\" :market \"SE\" :limit 50 :offset 50}} \"BQBw-JtC..._7GvA\")"
@@ -217,7 +217,7 @@
   :locale is an ISO 639 language code and a ISO 3166-1 alpha-2 country code joined with an underscore.
   :country is an ISO 3166-1 alpha-2 country code.
   :timestamp is ISO 8601 formatted timestamp.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-a-list-of-featured-playlists {:locale \"sv_SE\" :country \"SE\" :timestamp \"2015-10-23T09:00:00\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
@@ -227,7 +227,7 @@
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   There are no compulsary keys in m, optional keys are :country, :limit and :offset.
   :country is an ISO 3166-1 alpha-2 country code.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-a-list-of-new-releases {:country \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
@@ -238,7 +238,7 @@
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   There are no compulsary keys in m, optional keys are :country, :limit and :offset.
   :country is an ISO 3166-1 alpha-2 country code.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-a-list-of-categories {:country \"SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
@@ -259,7 +259,7 @@
   Compulsory key in m is :category_id, optional keys are :country, :limit and :offset.
   :category_id has to be a spotify category id.
   :country is an ISO 3166-1 alpha-2 country code.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-a-categorys-playlist {:category_id \"dinner\" :country \"SE\" :locale \"sv_SE\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
@@ -270,7 +270,7 @@
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in m is :type, optional keys are :limit and :after.
   :type has to be set to \"artist\".
-  :limit is the maxium number of items to return, default is 20.
+  :limit is the maximum number of items to return, default is 20.
   :after the last artist id retrieved from a previous request. Use this to get next set of artists.
 
   Example: (get-users-followed-artists {:type \"artist\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\") "
@@ -343,7 +343,7 @@
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   There are no compulsory keys in m, optional keys are :market, :limit and :offset.
   :market is an ISO 3166-1 alpha-2 country code.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-users-saved-tracks {:market \"SE\" :limit 50 :offset 50}} \"BQBw-JtC..._7GvA\")"
@@ -371,7 +371,7 @@
   " Takes two arguments, a map m with query parameters and an optional oauth-token t.
   Compulsory key in  m is :user_id, optional keys are :limit and :offset.
   :user_id is the users spotify id.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-a-list-of-a-users-playlists {:user_id \"elkalel\" :limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
@@ -380,7 +380,7 @@
 (def get-a-list-of-current-users-playlists
   " Takes two arguments, a map m with query parameters and an oauth-token t.
   There are no compulsary keys in m. Optional keys are :limit and :offset.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (get-a-list-of-current-users-playlists {:limit 50 :offset 50} \"BQBw-JtC..._7GvA\")"
@@ -406,7 +406,7 @@
   :playlist_id is the playlist spotify id.
   :fields is a comma-separated string of fields to return from the playlist.
   See developer.spotify.com for a full list of field names.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
   :market is an ISO 3166-1 alpha-2 country code.
 
@@ -619,7 +619,7 @@
   :q is the search string.
   :type is a comma separated list of items types to search for, album, artist, playlist and track.
   :market is an ISO 3166-1 alpha-2 country code.
-  :limit is the maxium number of tracks to return, default is 20.
+  :limit is the maximum number of tracks to return, default is 20.
   :offset is the index of the first track to return, default is 0.
 
   Example: (search {:q \"Gerry Rafferty\" :type \"artist\"  :market \"SE\" :limit 50 :offset 50}} \"BQBw-JtC..._7GvA\")"
