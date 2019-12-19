@@ -22,6 +22,26 @@ clj-spotify returns the data received from the Spotify Web API unaltered but the
 ### Error handling
 Error messages received from Spotify are returned unaltered as received from the servers. If an API call would result in an exception in clj-spotify this will be returned on the same format as Spotify's error messages but with the `:status` key set to `Exception`and the result of calling `(.getMessage e)` on the Exception `e` associated with the `:message` key.
 
+## Development
+### Registering a Client
+Head to the [developer dashboard](https://developer.spotify.com/dashboard) and register a new application.
+If you wish to make use of the [`dev-resources`](./dev-resources/user.clj) in this project:
+- Navigate to [your new app](https://developers.spotify.com/dashboard/applications), then > _edit settings_
+- Setup two redirects: `http://localhost:3000/interact`, `http://localhost:3000/oauth2`
+  * NOTE: The port/endpoint is arbitrary; just make sure your jetty server + handler, and redirects are pointing to the same URIs
+- Take note of `CLIENTID, CLIENTSECRET`
+- If you want to grab your user's URI while you're there, the [`/v1/me`](https://developer.spotify.com/console/get-current-user/) console is by far the most straightforward way.
+  * Find the "uri" property in the payload, e.g. `"uri": "spotify:user:1134745600"`
+
+### Hello Spotify (oauth2)
+With credentials in hand, we're ready to make our first request!
+- Ensure you've exported ClientId / ClientSecret as `SPOTIFY_OAUTH2_CLIENT_ID` & `SPOTIFY_OAUTH2_CLIENT_SECRET` respectively.
+  * e.g, in a POSIX shell `EXPORT SPOTIFY_OAUTH2_CLIENT_ID='7bf224e8jn954215s3g11degh599e3an'`
+- Open [`dev-resources/user.clj`](./dev-resources/user.clj), and a REPL
+- Eval the buffer to load the forms, then call `(run)` to start the server
+- Open http://localhost:8889/interact, go through the oauth flow
+- Eval the following `(spotify/get-current-users-profile {} (lm/oauth-token :spotify))`
+
 ## Additional documentation
 Each function has a basic doc string but if the usage still is unclear please consult [Spotify's API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/).
 
