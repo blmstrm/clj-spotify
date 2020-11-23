@@ -60,6 +60,6 @@
   "track_number" : 1,
   "type" : "track",
   "uri" : "spotify:track:1zHlj4dQ8ZAtrayhuDDmkY",
-  "is_local" : 0
-
+  "is_local" : 0,
+  "available_markets" : 0
 }
