@@ -39,8 +39,8 @@ With credentials in hand, we're ready to make our first request!
   * e.g, in a POSIX shell `EXPORT SPOTIFY_OAUTH2_CLIENT_ID='7bf224e8jn954215s3g11degh599e3an'`
 - Open [`dev-resources/user.clj`](./dev-resources/user.clj), and a REPL
 - Eval the buffer to load the forms, then call `(run)` to start the server
-- Open http://localhost:8889/interact, go through the oauth flow
-- Eval the following `(spotify/get-current-users-profile {} (lm/oauth-token :spotify))`
+- Open http://localhost:3000/interact, go through the oauth flow
+- Eval the following `(sptfy/get-current-users-profile {} (lm/oauth-token :spotify))`
 
 ## Additional documentation
 Each function has a basic doc string but if the usage still is unclear please consult [Spotify's API Endpoint Reference](https://developer.spotify.com/web-api/endpoint-reference/).

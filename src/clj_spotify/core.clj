@@ -512,7 +512,7 @@
 
 (def get-current-users-recently-played-tracks
   " Takes two arguments, a map m with query parameters and an oauth-token t.
-  There are no compulsary keys in m, optional keys are :limit, :after and :before.
+  There are no compulsory keys in m, optional keys are :limit, :after and :before.
   :limit is the maximum of items to return.
   :after is a unix timestamp in milliseconds. All items after this timestamp will be returned.
   :before is a unix timestamp in milliseconds. All items before this timestamp will be returned.

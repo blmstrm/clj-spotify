@@ -4,8 +4,8 @@
 
 (defonce spotify-oauth-token
   (get-access-token
-    (System/getenv "SPOTIFY_CLIENT_ID")
-    (System/getenv "SPOTIFY_SECRET_TOKEN")))
+    (System/getenv "SPOTIFY_OAUTH2_CLIENT_ID")
+    (System/getenv "SPOTIFY_OAUTH2_CLIENT_SECRET")))
 
 (defn reset-volatile-vals
   "Function to reset values that change over time such as amount of followers or popularity ranking."
